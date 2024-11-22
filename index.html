@@ -11,8 +11,6 @@ body {
   max-width: 1000px;
   margin: auto;
   
-
-
 }
 }
 </style>
@@ -22,15 +20,12 @@ body {
 
 <h1>Squeex Screenshot :3</h1>
 
-<iframe onload="myFunction()"></iframe>
-
 <script>
   let N = Math.floor(Math.random() * 5) + 1;
   N = Math.floor(N);
 
-  function myFunction() {
-    document.querySelector(".img").src = `screenshots/shot${N}.png`;
-}
+  document.querySelector(".img").src = `screenshots/shot${N}.png`;
+
 </script>
 
 <p>A website created by driedapps.</p>
