@@ -11,10 +11,7 @@ body {
   max-width: 1000px;
   margin: auto;
   
-  .responsive {
-  max-width: 100%;
-  height: auto;
-}
+
 
 }
 }
@@ -25,12 +22,14 @@ body {
 
 <h1>Squeex Screenshot :3</h1>
 
-    <script>
-      document.querySelector(".img").src = `screenshots/shot${Math.floor(Math.random() * 8) + 1}.png`;
-    </script>
+<iframe onload="myFunction()"></iframe>
 
+<script>
+  function myFunction() {
+  document.querySelector(".img").src = `screenshots/shot${Math.floor(Math.random() * 8) + 1}.png`;
+}
+</script>
 
-<img src="screenshots/shot2.png" alt="pookie :3" class="responsive">
 <p>A website created by driedapps.</p>
 </div>
 </body>
