@@ -11,8 +11,9 @@ body {
   max-width: 1000px;
   margin: auto;
   
-  img {
-  border-radius: 8px;
+  .responsive {
+  max-width: 100%;
+  height: auto;
 }
 
 }
@@ -23,12 +24,7 @@ body {
 <div class="content">
 
 <h1>Squeex Screenshot :3</h1>
-
-<?php
-echo(rand(10, 100));
-?>
-
-<img src="screenshots/shot4.png" alt="pookie :3">
+<img src="/screenshots/screenshots/shot<?php $random = rand(1,8); echo $random; ?>.png" alt="pookie :3" class="responsive">
 <p>A website created by driedapps.</p>
 </div>
 </body>
