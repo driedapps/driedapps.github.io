@@ -38,14 +38,14 @@ p {
 <p>A website created by driedapps.</p>
 
 <script>
-  let N = Math.floor(Math.random() * 8) + 1;
+let N = Math.floor(Math.random() * 8) + 1;  
 
   document.addEventListener('DOMContentLoaded', function() {
                const myImage = document.getElementById('my-image');
                if (myImage) {
-                   myImage.src = 'screenshots/shot${N}.png';
+                  myImage.src = `screenshots/shot${N}.png`;
                } else {
-                   console.error("Image element not found!");
+                  console.error("Image element not found!");
                }
            });
 </script>
