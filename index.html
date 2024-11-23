@@ -32,14 +32,15 @@ p {
 <h1>Squeex Screenshot :3</h1>
 <div class="w3-row" id="img-container">
 
-
-  <script>
-      let N = Math.floor(Math.random() * 8) + 1;
-      document.querySelector(".img").src = `screenshots/shot${N}.png`;
-  </script>
+  <img id="squeexpic">
 
 </div>
 <p>A website created by driedapps.</p>
+
+<script>
+  let N = Math.floor(Math.random() * 8) + 1;
+  var squeexpic = document.querySelector(".img").src = `screenshots/shot${N}.png`;
+</script>
 
 </body>
 </html>
