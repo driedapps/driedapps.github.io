@@ -10,7 +10,6 @@ body {
   width:80%;
   padding: 5px;
   margin:auto;
-  
 }
 div {
   width: 50%;
@@ -31,11 +30,13 @@ p {
 
 <h1>Squeex Screenshot :3</h1>
 <div class="w3-row">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
   const n = Math.floor(Math.random() * 6) + 1;
-  console.log(`screenshots/shot${n}.png`);
-
+  document.querySelector(".img").src = `screenshots/shot${n}.png`;
 </script>
+
 </div>
 <p>A website created by driedapps.</p>
 
