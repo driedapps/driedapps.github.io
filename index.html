@@ -26,15 +26,16 @@ p {
 }
 </style>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <body>
 
 <h1>Squeex Screenshot :3</h1>
 <div class="w3-row" id="img-container">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <script>
-  const n = Math.floor(Math.random() * 6) + 1;
-  document.querySelector(".img").src = `screenshots/shot${n}.png`;
+  let N = Math.floor(Math.random() * 8) + 1;
+  document.querySelector(".img").src = `screenshots/shot${N}.png`;
 </script>
 
 </div>
