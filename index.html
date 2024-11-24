@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>hello world! <3</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      width:100%;
-      margin:auto;
-    }
-    div {
-      width: 80%;
-      height: 80%;
-      padding: 5px;
-      margin: auto;
-    }
-    h1 {
-      text-align: center;
-    }
-    p {
-      text-align: center;
-    }
-    img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
-</style>
+   <title>hello world! <3</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- style ref for css file-->
+   <link rel="stylesheet" href="squeexle.css">
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<body>
 
-<h1>Squeex Screenshot :3</h1>
-<div class="w3-row" id="img-container">
 
-  <img id="my-image" alt="where is pookie :(" class="center">
+<body oncontextmenu="return false">
+   <div class="container">
+      
+      <div class="header">
+         <h1>Squeexle</h1>
+      </div>
 
-</div>
+      <div class="game-container">
+            <div class="vod-screenshot">
+               <!--display the screenshot with and empty source-->
+               <img id="vod" src="" alt="Squeex VOD">
+            </div>
+
+            <!--hint information? give them the year after 3 tries-->
+            <div id="hint">Year:</div>
+
+            <!--create options for the game-->
+            <button class="option" onclick="checkAnswerOptions()">Check Answer</button>
+
+         <!--display the number of tries-->
+         <div id="score">Tries: 0</div>
+
+      </div>
+
+
+      <!--container for displaying messages-->
+      <div class="message"></div>   
+
+      <!--create a button to link to that vod so you can watch, hide it initially-->
+      <button id="watch-here" onclick="watchVod()" style="display: none;">
+   
+         <!--use an image to represent the button!!!!!!!!!!!! need to make one!!!-->
+         <img src="watchthevod.png" alt="Watcht the VOD" width="40px" height="40px"> 
+      </button>
+
+
+   </div>
+
+   <script src="squeexle.js"></script>
+
 <p>A website created by driedapps.</p>
-
-<script>
-let N = Math.floor(Math.random() * 8) + 1;  
-
-  document.addEventListener('DOMContentLoaded', function() {
-               const myImage = document.getElementById('my-image');
-               if (myImage) {
-                  myImage.src = `screenshots/shot${N}.png`;
-               } else {
-                  console.error("Image element not found!");
-               }
-           });
-</script>
 
 </body>
 </html>
