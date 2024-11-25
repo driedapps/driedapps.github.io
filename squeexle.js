@@ -42,7 +42,7 @@ Datepicker.active
 
 //datepicker
 const elem = document.querySelector('input[name="datepicker"]');
-const new datepicker = Datepicker(elem, {
+const datepicker = new Datepicker(elem, {
     autohide: false,
     clearBtn: true,
     buttonClass: 'button',
