@@ -35,4 +35,4 @@ const vods = [
     }
 ]
 
-export { vods };
+export {vods};
