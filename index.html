@@ -6,6 +6,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- style ref for css file-->
    <link rel="stylesheet" href="squeexle.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Titillium+Web&display=swap" rel="stylesheet">
+   <link href="datepicker.min.css" rel="stylesheet" />
+   <script src="locales/fr.min.js"></script>
 </head>
 
 
@@ -26,7 +31,11 @@
             <div id="hint">Year:</div>
 
             <!--create options for the game-->
-            <button class="option" onclick="checkAnswerOptions()">Check Answer</button>
+            <button class="option" onclick="checkAnswerOptions()">Guess Year</button>
+               
+            <input type="text" name="datepicker">
+               
+            <button class="option" onclick="checkGameGuess()">Guess Game</button>
 
          <!--display the number of tries-->
          <div id="score">Tries: 0</div>
@@ -44,12 +53,33 @@
          <img src="watchthevod.png" alt="Watcht the VOD" width="40px" height="40px"> 
       </button>
 
-
+      <footer>
+         <p>A website created by driedapps.</p>
+      </footer>
    </div>
 
    <script src="squeexle.js"></script>
-
-<p>A website created by driedapps.</p>
-
+   <script src="datepicker.min.js"></script>
+   <script>
+      //datepicker
+      const elem = document.querySelector('input[name="datepicker"]');
+      const datepicker = new Datepicker(elem, {
+         autohide: false,
+         clearBtn: true,
+         buttonClass: 'button',
+         format: 'mm-dd-yyyy',
+         show: {key: 'ArrowDown'},
+         toggle: {key: 'Escape'},
+         prevButton: {key: 'ArrowLeft', ctrlOrMetaKey: true},
+         nextButton: {key: 'ArrowRight', ctrlOrMetaKey: true},
+         viewSwitch: {key: 'ArrowUp', ctrlOrMetaKey: true},
+         clearButton: {key: 'Backspace', ctrlOrMetaKey: true},
+         todayButton: {key: '.', ctrlOrMetaKey: true},
+         exitEditMode: {key: 'ArrowDown', ctrlOrMetaKey: true},
+         todayHighlight: true
+      });
+   </script>
 </body>
+
+
 </html>
