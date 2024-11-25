@@ -6,6 +6,8 @@ let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
 
+Datepicker.active
+
 //function to shuffle the array
 function shuffleArray(array) {
     for (let i = array.length - 1; i >0; i--) {
