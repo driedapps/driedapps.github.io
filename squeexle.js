@@ -4,6 +4,7 @@ import { vods } from '/squeextionary.js';
 //import datepicker 
 import { Datepicker } from '/datepicker.min.js';
 
+
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
 let score = 0;
@@ -54,6 +55,9 @@ const new datepicker = Datepicker(elem, {
     exitEditMode: {key: 'ArrowDown', ctrlOrMetaKey: true},
     todayHighlight: true
 });
+
+
+Datepicker.active
 
 const vodDateYear = vod.voddate.slice(-4);
 
