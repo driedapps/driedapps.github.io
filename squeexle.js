@@ -58,6 +58,9 @@ const new datepicker = Datepicker(elem, {
     todayHighlight: true
 });
 
+datepicker.show();
+
+
 const vodDateYear = vod.voddate.slice(-4);
 
 console.log(vodDateYear);
