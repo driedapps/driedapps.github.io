@@ -34,4 +34,4 @@ function loadVod() {
     }
 }
 
-const vodDateYear = vod.voddate.slice(-4)
+export vodDateYear = vod.voddate.slice(-4)
