@@ -39,7 +39,7 @@ function loadVod() {
 
 //datepicker
 const elem = document.querySelector('input[name="datepicker"]');
-const datepicker = Datepicker(elem, {
+const new datepicker = Datepicker(elem, {
     autohide: false,
     clearBtn: true,
     buttonClass: 'button',
