@@ -30,12 +30,13 @@
             <!--hint information? give them the year after 3 tries-->
             <div id="hint">Year:</div>
 
-            <!--create options for the game-->
-            <button class="option" onclick="checkAnswerOptions()">Guess Year</button>
-               
-            <input type="text" name="datepicker">
-               
-            <button class="option" onclick="checkGameGuess()">Guess Game</button>
+               <!--create options for the game-->
+               <h2>What day was this stream?</h2>
+               <input type="text" name="datepicker">
+               <button class="option" onclick="checkAnswer()">Guess Date</button>
+
+               <h2>What game is Squeex playing?</h2>
+               <button class="option" onclick="checkGameGuess()">Guess Game</button>
 
          <!--display the number of tries-->
          <div id="score">Tries: 0</div>
