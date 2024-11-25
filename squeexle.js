@@ -4,7 +4,7 @@ import {vods} from 'squeextionary.js'
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
 let score = 0;
-let shuffledVods = [...vods]
+let shuffledVods = [...vods];
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -52,4 +52,4 @@ const datepicker = new Datepicker(elem, {
     todayHighlight: true
 });
 
-export vodDateYear = vod.voddate.slice(-4)
+export vodDateYear = vod.voddate.slice(-4);
