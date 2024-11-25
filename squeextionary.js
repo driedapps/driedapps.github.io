@@ -33,4 +33,6 @@ const vods = [
         game: ['SM64','Super Mario 64'],
         vodlink: 'https://www.twitch.tv/videos/1641776218'
     }
-];
+]
+
+export { vods };

@@ -1,3 +1,6 @@
+//import the squeextionary
+import {vods} from 'squeextionary.js'
+
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
 let score = 0;
@@ -24,26 +27,12 @@ function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
         const vod = shuffledVods[currentVodIndex];
         document.getElementById('vod').src = vod.filepath;
-        document.getElementById('hint').innerHTML = `<strong>Year: ${flag.voddate.slice(-4)}`;
+        document.getElementById('hint').innerHTML = `<strong>Year: ${vod.voddate.slice(-4)}`;
         const options = shuffleArray([vod.voddate, vod.game]); options.array.forEach(element => {
             document.getElementsByClassName('option')[index].textContent = option;
         });   
     }
 }
 
-//function to check if the selected answer is correct
-function checkAnswer(button) {
-    const selectedAnswer = button.textContent;
-    const vod = shuffledVods[currentVodIndex];
-    const hintElement = document.getElementById('hint');
+console.log(vod.voddate.slice(-4))
 
-    if (selectedAnswer === vod.voddate) {
-        score++;
-        hintElement.textContent = 'Correct!';
-        hintElement.style.color = 'green';
-    } else{
-        hintElement.textContent = 'Try again...'
-    }
-
-    document.
-}
