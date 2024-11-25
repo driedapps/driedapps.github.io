@@ -34,4 +34,22 @@ function loadVod() {
     }
 }
 
+//datepicker
+const elem = document.querySelector('input[name="datepicker"]');
+const datepicker = new Datepicker(elem, {
+    autohide: false,
+    clearBtn: true,
+    buttonClass: 'button',
+    format: 'mm-dd-yyyy',
+    show: {key: 'ArrowDown'},
+    toggle: {key: 'Escape'},
+    prevButton: {key: 'ArrowLeft', ctrlOrMetaKey: true},
+    nextButton: {key: 'ArrowRight', ctrlOrMetaKey: true},
+    viewSwitch: {key: 'ArrowUp', ctrlOrMetaKey: true},
+    clearButton: {key: 'Backspace', ctrlOrMetaKey: true},
+    todayButton: {key: '.', ctrlOrMetaKey: true},
+    exitEditMode: {key: 'ArrowDown', ctrlOrMetaKey: true},
+    todayHighlight: true
+});
+
 export vodDateYear = vod.voddate.slice(-4)
