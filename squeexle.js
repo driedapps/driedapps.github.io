@@ -1,6 +1,8 @@
 //import the squeextionary
 import { vods } from '/squeextionary.js';
 
+//import datepicker 
+import { Datepicker } from '/datepicker.min.js';
 
 
 //initialize variables for tracking game progress and other stuff
