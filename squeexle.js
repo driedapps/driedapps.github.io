@@ -1,5 +1,5 @@
 //import the squeextionary
-import {vods} from '/squeextionary.js'
+import {vods} from 'squeextionary.js'
 
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
@@ -52,4 +52,6 @@ const datepicker = new Datepicker(elem, {
     todayHighlight: true
 });
 
-export const vodDateYear = vod.voddate.slice(-4);
+const vodDateYear = vod.voddate.slice(-4);
+
+console.log(vodDateYear);
