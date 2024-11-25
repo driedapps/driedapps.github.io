@@ -58,7 +58,7 @@ const datepicker = new Datepicker(elem, {
     todayHighlight: true
 });
 
+const voddates = Object.voddate(vods);
+const vodDateYear = voddates.slice(-4);
 
-const vodDateYear = vod.voddate.slice(-4);
-
-console.log(vod.voddate);
+console.log(vodDateYear);
