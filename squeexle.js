@@ -38,9 +38,11 @@ function loadVod() {
     }
 }
 
+Datepicker.active
+
 //datepicker
 const elem = document.querySelector('input[name="datepicker"]');
-const datepicker = Datepicker(elem, {
+const new datepicker = Datepicker(elem, {
     autohide: false,
     clearBtn: true,
     buttonClass: 'button',
@@ -55,9 +57,6 @@ const datepicker = Datepicker(elem, {
     exitEditMode: {key: 'ArrowDown', ctrlOrMetaKey: true},
     todayHighlight: true
 });
-
-
-Datepicker.active
 
 const vodDateYear = vod.voddate.slice(-4);
 
