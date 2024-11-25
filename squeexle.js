@@ -61,4 +61,4 @@ const datepicker = new Datepicker(elem, {
 
 const vodDateYear = vod.voddate.slice(-4);
 
-console.log(vodDateYear);
+console.log(vod.voddate);
