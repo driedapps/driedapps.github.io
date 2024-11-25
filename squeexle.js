@@ -1,5 +1,5 @@
 //import the squeextionary
-import {vods} from 'squeextionary.js'
+import { vods } from './squeextionary.js'
 
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
