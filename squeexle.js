@@ -1,12 +1,13 @@
 //import the squeextionary
 import { vods } from '/squeextionary.js';
 
+//import datepicker 
+import { Datepicker } from '/datepicker.min.js';
+
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
-
-Datepicker.active
 
 //function to shuffle the array
 function shuffleArray(array) {
