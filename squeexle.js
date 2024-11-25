@@ -34,5 +34,5 @@ function loadVod() {
     }
 }
 
-console.log(vod.voddate.slice(-4));
+
 
