@@ -61,4 +61,4 @@ const datepicker = new Datepicker(elem, {
 const voddates = vods.voddate;
 const vodDateYear = voddates.substring(8,12);
 
-console.log(vodDateYear);
+console.log(voddates);
