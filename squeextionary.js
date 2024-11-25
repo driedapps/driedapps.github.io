@@ -1,4 +1,4 @@
-const vods = [
+export const vods = [
     {
         filepath: 'screenshots/shot1.png',
         voddate: '10-23-2034',
@@ -34,5 +34,3 @@ const vods = [
         vodlink: 'https://www.twitch.tv/videos/1641776218'
     }
 ]
-
-export {vods};
