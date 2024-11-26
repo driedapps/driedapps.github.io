@@ -87,4 +87,4 @@ window.onload = function() {
     startGame()
 }
 
-console.log(shuffledVods[currentVodIndex]);
+console.log(shuffledVods[currentVodIndex].filepath);
