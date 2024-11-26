@@ -82,7 +82,7 @@ function endGame() {
 //funciton to try again ---- just repeat start game? loadVod()
 
 //initialize game on load
-window onload = function () {
+window onload = function() {
     shuffleVods()
     startGame()
 } 
