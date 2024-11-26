@@ -85,7 +85,7 @@ function endGame() {
 window onload = function() {
     shuffleVods()
     startGame()
-} 
+};
 
 document.getElementById('play-again').style.display = 'none';
 
