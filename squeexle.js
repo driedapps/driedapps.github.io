@@ -87,4 +87,4 @@ window.onload = function() {
     startGame()
 }
 
-console.log(shuffledVods);
+console.log(vod);
