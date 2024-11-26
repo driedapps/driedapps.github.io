@@ -86,8 +86,3 @@ window.onload = function() {
     shuffleVods()
     startGame()
 }
-
-document.getElementById('play-again').style.display = 'none';
-
-//load and display first vod
-loadVod();
