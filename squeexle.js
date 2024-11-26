@@ -86,3 +86,5 @@ window.onload = function() {
     shuffleVods()
     startGame()
 }
+
+console.log(shuffledVods);
