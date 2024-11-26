@@ -58,6 +58,36 @@ const datepicker = new Datepicker(elem, {
     todayHighlight: true
 });
 
-const voddates = vods;
+function startGame() {
+     currentVodIndex = 0;
+     score = 0;
+     document.getElementById('score').textContent = 'Tries: 0';
+     document.getElementById('hint').textContent = '';
+     document.getElementById('vod').style.display = 'block';
+     document.getElementById('options').style.display = 'block';
+     document.getElementById('try-again').style.display = 'none';
 
-console.log(voddates);
+     shuffleVods();
+     loadVod();
+}
+
+function endGame() {
+    const scoreText = `Tries: ${score}`;
+    document.getElementById('hint').textContent = 'Game Over!';
+    document.getElementById('score').textContent = scoreText;
+    document.getElementById('vod').textContent = 'none';
+    document.getElementById('play-again').style.display = 'block';
+}
+
+//funciton to try again ---- just repeat start game? loadVod()
+
+//initialize game on load
+window onload = function () {
+    shuffleVods()
+    startGame()
+} 
+
+document.getElementById('play-again').style.display = 'none';
+
+//load and display first vod
+loadVod();
