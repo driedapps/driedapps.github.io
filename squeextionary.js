@@ -1,7 +1,7 @@
 export const vods = [
     {
         filepath: 'screenshots/shot1.png',
-        voddate: '10-23-2034',
+        voddate: '10-23-2024',
         game: ['Super Mario Party Jamboree', 'Super Mario Party'],
         vodlink: 'https://www.twitch.tv/videos/2283448308'
     },

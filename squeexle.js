@@ -83,7 +83,7 @@ function endGame() {
 
 //initialize game on load
 window.onload = function() {
-    loadVod(shuffledVods[currentVodIndex].filepath)
+    loadVod()
 }
 
-console.log('hi mal');
+console.log(shuffledVods[currentVodIndex].filepath);
