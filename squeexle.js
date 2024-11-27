@@ -86,4 +86,4 @@ window.onload = function() {
     loadVod(shuffledVods[currentVodIndex].filepath)
 }
 
-console.log(shuffledVods[currentVodIndex].filepath);
+console.log('hi mal');
