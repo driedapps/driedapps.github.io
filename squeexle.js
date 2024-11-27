@@ -34,7 +34,7 @@ function loadVod() {
         document.getElementById('hint').innerHTML = `<strong>Year: ${vod_.voddate.slice(-4)}`
         };   
     }
-}
+
 
 Datepicker.active
 
