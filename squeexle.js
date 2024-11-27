@@ -29,10 +29,10 @@ function shuffleVods() {
 /*VODDATE SLICE MIGHT NOT WORK??????????????? ~30:00 in yt video*/
 function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
-        const vod = shuffledVods[currentVodIndex];
-        document.getElementById('vod').src = vod.filepath;
-        document.getElementById('hint').innerHTML = `<strong>Year: ${vod.voddate.slice(-4)}`;
-        const options = shuffleArray([vod.voddate, vod.game]); options.array.forEach(element => {
+        const vod_ = shuffledVods[currentVodIndex];
+        document.getElementById('vod').src = vod_.filepath;
+        document.getElementById('hint').innerHTML = `<strong>Year: ${vod_.voddate.slice(-4)}`;
+        const options = shuffleArray([vod_.voddate, vod_.game]); options.array.forEach(element => {
             document.getElementsByClassName('option')[index].textContent = option;
         });   
     }
