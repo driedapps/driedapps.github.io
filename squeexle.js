@@ -83,8 +83,7 @@ function endGame() {
 
 //initialize game on load
 window.onload = function() {
-    shuffleVods()
-    startGame()
+    loadVod(shuffledVods[currentVodIndex].filepath)
 }
 
 console.log(shuffledVods[currentVodIndex].filepath);
