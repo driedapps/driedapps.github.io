@@ -31,10 +31,8 @@ function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
         const vod_ = shuffledVods[currentVodIndex];
         document.getElementById('vod').src = vod_.filepath;
-        document.getElementById('hint').innerHTML = `<strong>Year: ${vod_.voddate.slice(-4)}`;
-        const options = shuffleArray([vod_.voddate, vod_.game]); options.array.forEach(element => {
-            document.getElementsByClassName('option')[index].textContent = option;
-        });   
+        document.getElementById('hint').innerHTML = `<strong>Year: ${vod_.voddate.slice(-4)}`
+        };   
     }
 }
 
@@ -83,6 +81,7 @@ function endGame() {
 
 //initialize game on load
 window.onload = function() {
+    shuffledVods()
     loadVod()
 }
 
