@@ -41,7 +41,7 @@ Datepicker.active
 //datepicker
 const elem = document.querySelector('input[name="datepicker"]');
 const datepicker = new Datepicker(elem, {
-    autohide: false,
+    autohide: true,
     clearBtn: true,
     buttonClass: 'button',
     format: 'mm-dd-yyyy',
@@ -85,4 +85,4 @@ window.onload = function() {
     loadVod()
 }
 
-console.log(shuffledVods[currentVodIndex].filepath);
+console.log(datepicker.getDate('MM-DD-YYYY'));
