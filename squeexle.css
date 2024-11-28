@@ -10,7 +10,7 @@
 
 body {
     background-color: dimgray;
-    position: relative;
+    position: bottom;
     min-height: 100vh;
     font-weight: 400;
     margin:auto;
