@@ -85,4 +85,4 @@ window.onload = function() {
     loadVod()
 }
 
-console.log(datepicker.getDate('MM-DD-YYYY'));
+console.log(instance.getDate("MM-DD-YYYY"));
