@@ -1,9 +1,6 @@
 //import the squeextionary
 import { vods } from '/squeextionary.js';
 
-//import datepicker 
-import { Datepicker } from '/datepicker.min.js';
-
 
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
@@ -12,11 +9,6 @@ let shuffledVods = [...vods];
 const dateInput = document.getElementById('datepicker');
 const dateJS = dateInput.format('YYYY-MM-DD');
 
-//date input
-dateJS.addEventListener('change', (event) => {
-    const selectedDate = new Date(event.target.value);
-    console.log(selectedDate);
-  });
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -43,26 +35,11 @@ function loadVod() {
         };   
     }
 
-
-Datepicker.active
-
-//datepicker
-const elem = document.querySelector('input[name="datepicker"]');
-const datepicker = new Datepicker(elem, {
-    autohide: true,
-    clearBtn: true,
-    buttonClass: 'button',
-    format: 'mm-dd-yyyy',
-    show: {key: 'ArrowDown'},
-    toggle: {key: 'Escape'},
-    prevButton: {key: 'ArrowLeft', ctrlOrMetaKey: true},
-    nextButton: {key: 'ArrowRight', ctrlOrMetaKey: true},
-    viewSwitch: {key: 'ArrowUp', ctrlOrMetaKey: true},
-    clearButton: {key: 'Backspace', ctrlOrMetaKey: true},
-    todayButton: {key: '.', ctrlOrMetaKey: true},
-    exitEditMode: {key: 'ArrowDown', ctrlOrMetaKey: true},
-    todayHighlight: true
-});
+//date input
+dateJS.addEventListener('change', (event) => {
+    const selectedDate = new Date(event.target.value);
+    console.log(selectedDate);
+  });
 
 function startGame() {
      currentVodIndex = 0;
