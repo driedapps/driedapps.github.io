@@ -9,6 +9,14 @@ import { Datepicker } from '/datepicker.min.js';
 let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
+const dateInput = document.getElementById('datepicker');
+const dateJS = dateInput.format('YYYY-MM-DD');
+
+//date input
+dateJS.addEventListener('change', (event) => {
+    const selectedDate = new Date(event.target.value);
+    console.log(selectedDate);
+  });
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -84,5 +92,3 @@ window.onload = function() {
     shuffleVods()
     loadVod()
 }
-
-console.log(datepicker.getDate("MM-DD-YYYY"));
