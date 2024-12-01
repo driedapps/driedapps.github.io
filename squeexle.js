@@ -10,6 +10,7 @@ let shuffledVods = [...vods];
 const dateInput = document.getElementById('datepicker');
 const dateJS = moment(dateInput).format('YYYY-MM-DD');
 
+console.log(dateInput)
 
 //function to shuffle the array
 function shuffleArray(array) {
