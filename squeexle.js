@@ -7,7 +7,6 @@ import moment from 'moment';
 let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
-const moment = require('moment');
 const dateInput = document.getElementById('datepicker');
 const dateJS = dateInput.format('YYYY-MM-DD');
 
