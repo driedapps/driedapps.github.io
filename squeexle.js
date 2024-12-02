@@ -35,8 +35,8 @@ function loadVod() {
     }
 
 //date input
-dateInput.addEventListener('change', (event) => {
-    const selectedDate = new Date(event.target.value);
+dateInput.addEventListener('change', (datepicker) => {
+    const selectedDate = new Date(datepicker.target.value);
     console.log(selectedDate);
   });
 
