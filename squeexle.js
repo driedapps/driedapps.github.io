@@ -7,8 +7,6 @@ let score = 0;
 let shuffledVods = [...vods];
 const dateInput = document.getElementById('datepicker');
 
-console.log(dateInput)
-
 //function to shuffle the array
 function shuffleArray(array) {
     for (let i = array.length - 1; i >0; i--) {
@@ -35,8 +33,8 @@ function loadVod() {
     }
 
 //date input
-dateInput.addEventListener('change', (datepicker) => {
-    const selectedDate = new Date(datepicker.target.value);
+dateInput.addEventListener('change', (event) => {
+    const selectedDate = new Date(event.target.value);
     console.log(selectedDate);
   });
 
