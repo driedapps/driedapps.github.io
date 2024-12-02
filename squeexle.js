@@ -36,8 +36,8 @@ function loadVod() {
 
 //date input
 dateJS.addEventListener('change', (event) => {
-    const selectedDate = new Date(event.target.value);
-    console.log(selectedDate);
+    const dateInput = new Date(event.target.value);
+    console.log(dateInput);
   });
 
 function startGame() {
