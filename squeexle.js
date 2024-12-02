@@ -5,9 +5,7 @@ import { vods } from '/squeextionary.js';
 let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
-const moment = require('moment');
 const dateInput = document.getElementById('datepicker');
-const dateJS = moment(dateInput).format('YYYY-MM-DD');
 
 console.log(dateInput)
 
