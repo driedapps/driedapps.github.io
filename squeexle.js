@@ -27,7 +27,10 @@ function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
         const vod = shuffledVods[currentVodIndex];
         document.getElementById('vod').src = vod.filepath;
-        document.getElementById('hint').innerHTML = `<strong>Year: ${vod.voddate.slice(-4)}`
+        const vod_year = vod.voddate.slice(-4)
+        const vod_month = vod.voddate.slice(1)
+        const vod_day = vod.voddate.slice(3,4)
+        document.getElementById('hint').innerHTML = `<strong>Year: ${vod_year}`
         };   
     }
 
@@ -35,7 +38,8 @@ function loadVod() {
 const date = new Date
 document.querySelector("input").valueAsDate = date;
 const strdate = date.toDateString();
-console.log(strdate)
+const input_year = strdate.slice(-4)
+console.log(input_year)
 
 
 function startGame() {
