@@ -5,7 +5,6 @@ import { vods } from '/squeextionary.js';
 let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
-const dateInput = document.getElementById('datepicker');
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -33,8 +32,10 @@ function loadVod() {
     }
 
 //date input
-dateInput.addEventListener('change', (event) => {
-    const selectedDate = new Date(event.target.value);
+document.getElementById('datepicker').addEventListener('change', (event) => {
+    const input = this.value;
+    const selectedDate = new Date(input);
+    console.log(input);
     console.log(selectedDate);
   });
 
