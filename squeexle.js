@@ -27,11 +27,15 @@ function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
         const vod = shuffledVods[currentVodIndex];
         document.getElementById('vod').src = vod.filepath;
-        document.getElementById('hint').innerHTML = `<strong>Year: ${vod_.voddate.slice(-4)}`
+        document.getElementById('hint').innerHTML = `<strong>Year: ${vod.voddate.slice(-4)}`
         };   
     }
 
-//date input
+//date input.
+const date = new Date;
+document.querySelector("input").valueAsDate = date;
+console.log(date)
+
 document.getElementById("datepicker").addEventListener('change', (event) => {
     const input = this.value;
     const selectedDate = new Date(input);
