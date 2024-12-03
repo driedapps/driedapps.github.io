@@ -32,16 +32,11 @@ function loadVod() {
     }
 
 //date input.
-const date = new Date;
+const date = new Date
 document.querySelector("input").valueAsDate = date;
-console.log(date)
+const strdate = date.toDateString();
+console.log(strdate)
 
-document.getElementById("datepicker").addEventListener('change', (event) => {
-    const input = this.value;
-    const selectedDate = new Date(input);
-    console.log(input);
-    console.log(selectedDate);
-  });
 
 function startGame() {
      currentVodIndex = 0;
