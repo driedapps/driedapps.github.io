@@ -32,7 +32,7 @@ function loadVod() {
     }
 
 //date input
-document.getElementById('datepicker').addEventListener('change', (event) => {
+document.getElementById("datepicker").addEventListener('change', (event) => {
     const input = this.value;
     const selectedDate = new Date(input);
     console.log(input);
