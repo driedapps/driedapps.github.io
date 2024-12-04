@@ -41,7 +41,7 @@ const input_year = strdate.slice(-4);
 const input_month = strdate.slice(0,2);
 const input_day = strdate.slice(3,5);
 
-console.log(input_month, input_day)
+console.log(strdate)
 
 //check if input and vod are equal
 if (input_year === vod_year) {
