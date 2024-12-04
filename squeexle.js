@@ -21,7 +21,6 @@ function shuffleArray(array) {
 
 //function to shuffle the 'shuffledVods' array
 function shuffleVods() {
-    shuffledVods = [...vods];
     shuffleArray(shuffledVods)
 }
 
