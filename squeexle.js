@@ -39,12 +39,7 @@ document.querySelector("input").valueAsDate = date;
 const strdate = date.toDateString();
 const input_year = strdate.slice(-4);
 
-if input_year == vod_year {
-    console.log('You got the year right!');
-} else {
-    console.log("That's not the right  year.");
-  }
-
+console.log(input_year, vod_year)
 
 
 function startGame() {
