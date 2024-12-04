@@ -34,9 +34,9 @@ function loadVod() {
     }
 
 //date input.
-const dateInput = document.getElementById("dateInput");
-const strdate = dateInput.toDateString();
-const input_year = strdate.slice(-4);
+const dateInput = document.getElementById("datepicker").value;
+// const strdate = dateInput.toDateString();
+// const input_year = strdate.slice(-4);
 const input_month = strdate.slice(0,2);
 const input_day = strdate.slice(3,5);
 
