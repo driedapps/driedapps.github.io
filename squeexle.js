@@ -38,8 +38,10 @@ const date = new Date
 document.querySelector("input").valueAsDate = date;
 const strdate = date.toDateString();
 const input_year = strdate.slice(-4);
+const input_month = strrdate.slice(0,2);
+const input_day = strdate.slice(3,5);
 
-console.log(vod_month, vod_day)
+console.log(input_month, input_day)
 
 //check if input and vod are equal
 if (input_year === vod_year) {
