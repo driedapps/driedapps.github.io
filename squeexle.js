@@ -6,7 +6,7 @@ let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
 const vod = shuffledVods[currentVodIndex];
-const vod_year = vod.voddate.slice(-4)
+const vod_year = String(vod.voddate.slice(-4))
 const vod_month = vod.voddate.slice(1)
 const vod_day = vod.voddate.slice(3,4)
 
@@ -39,7 +39,11 @@ document.querySelector("input").valueAsDate = date;
 const strdate = date.toDateString();
 const input_year = strdate.slice(-4);
 
-console.log(input_year, vod_year)
+if (input_year === vod_year) {
+    console.log("The strings are equal.");
+  } else {
+    console.log("The strings are not equal.");
+  }
 
 
 function startGame() {
