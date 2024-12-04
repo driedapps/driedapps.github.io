@@ -34,22 +34,30 @@ function loadVod() {
     }
 
 //date input.
-const date = new Date
-document.querySelector("input").valueAsDate = date;
-const strdate = date.toDateString();
+const dateInput = document.getElementById("dateInput");
+const strdate = dateInput.toDateString();
 const input_year = strdate.slice(-4);
 const input_month = strdate.slice(0,2);
 const input_day = strdate.slice(3,5);
 
-console.log(date)
+//start game options
+const guess_date = document.getElementById("guess_date");
+
+//need to get the month some other way because js has it as Dec
+console.log(strdate)
 
 //check if input and vod are equal
 if (input_year === vod_year) {
     console.log("The strings are equal.");
   } else {
     console.log("The strings are not equal.");
-  }
+  };
 
+guess_date.addEventListener("click", () => {
+    const selectedDate = new Date(dateInput.value);
+    // Use the selected date in your game logic
+    console.log("Selected Date:", selectedDate);
+});
 
 function startGame() {
      currentVodIndex = 0;
