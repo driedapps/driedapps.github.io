@@ -39,6 +39,9 @@ document.querySelector("input").valueAsDate = date;
 const strdate = date.toDateString();
 const input_year = strdate.slice(-4);
 
+console.log(vod_month, vod_day)
+
+//check if input and vod are equal
 if (input_year === vod_year) {
     console.log("The strings are equal.");
   } else {
