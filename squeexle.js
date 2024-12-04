@@ -5,6 +5,10 @@ import { vods } from '/squeextionary.js';
 let currentVodIndex = 0;
 let score = 0;
 let shuffledVods = [...vods];
+const vod = shuffledVods[currentVodIndex];
+const vod_year = vod.voddate.slice(-4)
+const vod_month = vod.voddate.slice(1)
+const vod_day = vod.voddate.slice(3,4)
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -25,11 +29,7 @@ function shuffleVods() {
 /*VODDATE SLICE MIGHT NOT WORK??????????????? ~30:00 in yt video*/
 function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
-        const vod = shuffledVods[currentVodIndex];
         document.getElementById('vod').src = vod.filepath;
-        const vod_year = vod.voddate.slice(-4)
-        const vod_month = vod.voddate.slice(1)
-        const vod_day = vod.voddate.slice(3,4)
         document.getElementById('hint').innerHTML = `<strong>Year: ${vod_year}`
         };   
     }
