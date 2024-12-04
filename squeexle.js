@@ -38,7 +38,7 @@ const date = new Date
 document.querySelector("input").valueAsDate = date;
 const strdate = date.toDateString();
 const input_year = strdate.slice(-4);
-const input_month = strrdate.slice(0,2);
+const input_month = strdate.slice(0,2);
 const input_day = strdate.slice(3,5);
 
 console.log(input_month, input_day)
