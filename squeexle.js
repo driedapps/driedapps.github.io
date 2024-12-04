@@ -7,8 +7,8 @@ let score = 0;
 let shuffledVods = [...vods];
 const vod = shuffledVods[currentVodIndex];
 const vod_year = String(vod.voddate.slice(-4))
-const vod_month = vod.voddate.slice(1)
-const vod_day = vod.voddate.slice(3,4)
+const vod_month = vod.voddate.slice(0:2)
+const vod_day = vod.voddate.slice(3:5)
 
 //function to shuffle the array
 function shuffleArray(array) {
