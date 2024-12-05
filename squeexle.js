@@ -53,11 +53,13 @@ if (input_year === vod_year) {
     console.log("The strings are not equal.");
   };
 
-guess_date.addEventListener("click", () => {
-    const selectedDate = new Date(dateInput.value);
-    // Use the selected date in your game logic
-    console.log("Selected Date:", selectedDate);
-});
+document.addEventListener('DOMContentLoaded', function() {
+    guess_date.addEventListener("click", () => {
+        const selectedDate = new Date(dateInput.value);
+        // Use the selected date in your game logic
+        console.log("Selected Date:", selectedDate);
+    });
+};)
 
 function startGame() {
      currentVodIndex = 0;
