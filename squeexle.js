@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Use the selected date in your game logic
         console.log("Selected Date:", selectedDate);
     });
-};)
+});
 
 function startGame() {
      currentVodIndex = 0;
