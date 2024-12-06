@@ -54,7 +54,7 @@ if (input_year === vod_year) {
   };
 
 document.addEventListener('DOMContentLoaded', function() {
-    guess_date.addEventListener("click", () => {
+    guess_date.addEventListener("guess_date", () => {
         const selectedDate = new Date(dateInput.value);
         // Use the selected date in your game logic
         console.log("Selected Date:", selectedDate);
