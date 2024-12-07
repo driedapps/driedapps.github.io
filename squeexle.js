@@ -44,7 +44,7 @@ const input_day = strdate.slice(3,5);
 const guess_date = document.getElementById("guess_date");
 
 //need to get the month some other way because js has it as Dec
-console.log(strdate)
+console.log(dateInput)
 
 //check if input and vod are equal
 if (input_year === vod_year) {
