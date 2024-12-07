@@ -37,8 +37,8 @@ function loadVod() {
 const dateInput = document.getElementById("datepicker");
 // const strdate = dateInput.toDateString();
 // const input_year = strdate.slice(-4);
-const input_month = strdate.slice(0,2);
-const input_day = strdate.slice(3,5);
+// const input_month = strdate.slice(0,2);
+// const input_day = strdate.slice(3,5);
 
 //start game options
 const guess_date = document.getElementById("guess_date");
