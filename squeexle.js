@@ -43,7 +43,7 @@ function loadVod() {
 //start game options
 // const guess_date = document.getElementById("guess_date");
 const dateBtn = document.getElementById("guess_date");
-const dateInput = document.querySelector("#datepicker");
+const dateInput = document.querySelector("date");
 
 //need to get the month some other way because js has it as Dec
 
