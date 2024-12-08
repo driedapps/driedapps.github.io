@@ -55,9 +55,9 @@ const dateInput = document.getElementById("date");
 // };
 
 dateBtn.addEventListener("click", () => {
-    dateInput.click();
-    const selectedDate = new Date(`${dateInput.value}T00:00`);
-    console.log("Selected Date:", selectedDate);
+    dateInput.addEventListener("change", () => {
+        const selectedDate = new Date(`${dateInput.value}T00:00`);
+        console.log("Selected Date:", selectedDate);})
 });
 
 //dateInput.addEventListener("change", () => {
