@@ -58,7 +58,7 @@ dateBtn.addEventListener("click", () => {
     dateInput.click();
 });
 
-dateInput.addEventListener("input", () => {
+dateInput.addEventListener("change", () => {
     const selectedDate = new Date(`${dateInput.value}T00:00`);
     // Use the selected date in your game logic
     console.log("Selected Date:", selectedDate);
