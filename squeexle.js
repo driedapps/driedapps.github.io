@@ -56,7 +56,7 @@ const dateInput = document.getElementById("date");
 
 dateBtn.addEventListener("click", () => {
 //        const selectedDate = new Date(`${dateInput.value}T00:00`);
-        selectedDate = dateInput.value
+        let selectedDate = dateInput.value
         console.log("Selected Date:", selectedDate)
 });
 
