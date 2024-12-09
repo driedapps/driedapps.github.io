@@ -45,13 +45,6 @@ function loadVod() {
 const dateBtn = document.getElementById("guess_date");
 let dateInput = document.getElementById("hidden_date");
 
-document.getElementById('guess_date').addEventListener('click', function() {
-    dateInput.style.display = 'block';
-    dateInput.focus();
-    dateInput.style.display = 'none';
-});
-
-console.log(dateInput.value)
 
 //need to get the month some other way because js has it as Dec
 
@@ -62,11 +55,11 @@ console.log(dateInput.value)
 //    console.log("The strings are not equal.");
 // };
 
-//dateInput.addEventListener("change", () => {
-//    const selectedDate = new Date(`${dateInput.value}T00:00`);
+dateInput.addEventListener("change", () => {
+    const selectedDate = new Date(`${dateInput.value}T00:00`);
     // Use the selected date in your game logic
-//    console.log("Selected Date:", selectedDate);
-//});
+    console.log("Selected Date:", selectedDate);
+});
 
 
 function startGame() {
