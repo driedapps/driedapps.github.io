@@ -51,7 +51,7 @@ dateInput.addEventListener("focus",function (evt) {
     }
   });
 
-console.log(dateInput)
+console.log(dateInput.value)
 
 //need to get the month some other way because js has it as Dec
 
