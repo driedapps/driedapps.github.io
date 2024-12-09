@@ -45,6 +45,14 @@ function loadVod() {
 const dateBtn = document.getElementById("guess_date");
 const dateInput = document.getElementById("date");
 
+dateInput.addEventListener("focus",function (evt) {
+    if (this.getAttribute("type")==="date") {
+      this.showPicker();
+    }
+  });
+
+console.log(dateInput)
+
 //need to get the month some other way because js has it as Dec
 
 //check if input and vod are equal
@@ -53,13 +61,6 @@ const dateInput = document.getElementById("date");
 //  } else {
 //    console.log("The strings are not equal.");
 // };
-
-dateBtn.addEventListener("click", () => {
-    dateInput.addEventListener("change", () => {
-        consst selectedDate = new Date(`${dateInput.value}T00:00`);
-        console.log("Selected Date:", selectedDate);
-    });
-});
 
 //dateInput.addEventListener("change", () => {
 //    const selectedDate = new Date(`${dateInput.value}T00:00`);
