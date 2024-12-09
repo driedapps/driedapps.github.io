@@ -49,11 +49,11 @@ let dateInput = document.getElementById("hidden_date");
 //need to get the month some other way because js has it as Dec
 
 //check if input and vod are equal
-//if (input_year === vod_year) {
-//    console.log("The strings are equal.");
-//  } else {
-//    console.log("The strings are not equal.");
-// };
+if (input_year === vod_year) {
+    console.log("The strings are equal.");
+  } else {
+    console.log("The strings are not equal.");
+ };
 
 dateInput.addEventListener("change", () => {
     const selectedDate = new Date(`${dateInput.value}T00:00`);
