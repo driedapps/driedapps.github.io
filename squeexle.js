@@ -43,13 +43,14 @@ function loadVod() {
 //start game options
 // const guess_date = document.getElementById("guess_date");
 const dateBtn = document.getElementById("guess_date");
-const dateInput = document.getElementById("date");
 
-dateInput.addEventListener("focus",function (evt) {
-    if (this.getAttribute("type")==="date") {
-      this.showPicker();
-    }
-  });
+
+document.getElementById('guess_date').addEventListener('click', function() {
+    const dateInput = document.getElementById("hidden_date");
+    dateInput.style.display = 'block';
+    dateInput.focus();
+    dateInput.style.display = 'none';
+});
 
 console.log(dateInput.value)
 
