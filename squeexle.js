@@ -86,4 +86,7 @@ function endGame() {
 //funciton to try again ---- just repeat start game? loadVod()
 
 //initialize game on load
-loadVod()
+window.onload = function() {
+    loadVod();
+};
+    
