@@ -87,6 +87,7 @@ function endGame() {
 
 //initialize game on load
 window.onload = function() {
+    shuffleVods();
     loadVod();
 };
     
