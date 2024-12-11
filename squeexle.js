@@ -41,11 +41,11 @@ function loadVod() {
 const dateBtn = document.getElementById("guess_date");
 let dateInput = document.getElementById("hidden_date");
 
-dateBtn.addEventListener("click", function() {
-    const selectedDate = new Date(`${dateInput.value}T00:00`);
-    // Use the selected date in your game logic
-    console.log("Selected Date:", selectedDate);
-});
+
+const selectedDate = new Date(`${dateInput.value}T00:00`);
+// Use the selected date in your game logic
+console.log("Selected Date:", selectedDate);
+
 
 //need to get the month some other way because js has it as Dec
 
