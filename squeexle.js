@@ -46,7 +46,8 @@ const selectedDate = new Date(`${dateInput.value}T00:00`);
 // Use the selected date in your game logic
 console.log("Selected Date:", selectedDate);
 
-
+const strdate = selectedDate.toDateString();
+const input_year = strdate.slice(-4);
 //need to get the month some other way because js has it as Dec
 
 //check if input and vod are equal
@@ -58,8 +59,7 @@ if (input_year === vod_year) {
 
 
 
-const strdate = dateInput.toDateString();
-const input_year = strdate.slice(-4);
+
 // const input_month = strdate.slice(0,2);
 // const input_day = strdate.slice(3,5);
 
