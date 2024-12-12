@@ -34,14 +34,6 @@ function loadVod() {
     }
 
 //date input.
-
-
-//start game options
-// const guess_date = document.getElementById("guess_date");
-const dateBtn = document.getElementById("guess_date");
-
-document.getElementById("date").onclick = function() {guessDate()};
-
 function guessDate() {
     const selectedDate = dateInput.value;
     console.log("Selected Date:", selectedDate);
@@ -54,6 +46,14 @@ function guessDate() {
         console.log("The strings are not equal.");
      };
 }
+
+//start game options
+// const guess_date = document.getElementById("guess_date");
+const dateBtn = document.getElementById("guess_date");
+
+document.getElementById("date").onclick = function() {guessDate()};
+
+
 
 // const strdate = selectedDate.toDateString();
 // const input_year = strdate.slice(-4);
