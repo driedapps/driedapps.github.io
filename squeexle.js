@@ -39,10 +39,10 @@ function loadVod() {
 //start game options
 // const guess_date = document.getElementById("guess_date");
 const dateBtn = document.getElementById("guess_date");
-let dateInput = document.getElementById("hidden_date");
+const dateInput = document.getElementById("date");
 
 function guessDate() {
-    const selectedDate = new Date(`${dateInput.value}T00:00`);
+    const selectedDate = dateInput.value;
     console.log("Selected Date:", selectedDate);
 }
 
