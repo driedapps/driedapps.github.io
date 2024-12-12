@@ -44,18 +44,22 @@ const dateInput = document.getElementById("date");
 function guessDate() {
     const selectedDate = dateInput.value;
     console.log("Selected Date:", selectedDate);
+    const strdate = selectedDate.toDateString();
+    const input_year = strdate.slice(-4);
+
+    if (input_year === vod_year) {
+        console.log("The strings are equal.");
+      } else {
+        console.log("The strings are not equal.");
+     };
 }
 
-const strdate = selectedDate.toDateString();
-const input_year = strdate.slice(-4);
+// const strdate = selectedDate.toDateString();
+// const input_year = strdate.slice(-4);
 //need to get the month some other way because js has it as Dec
 
 //check if input and vod are equal
-if (input_year === vod_year) {
-    console.log("The strings are equal.");
-  } else {
-    console.log("The strings are not equal.");
- };
+
 
 
 
@@ -88,8 +92,7 @@ function endGame() {
 //funciton to try again ---- just repeat start game? loadVod()
 
 //initialize game on load
-window.onload = function() {
-    shuffleVods();
-    loadVod();
-};
+shuffleVods();
+loadVod();
+
     
