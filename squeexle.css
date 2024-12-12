@@ -107,6 +107,10 @@ footer {
 }
 
 /*input CSS here*/
+input#date {
+    position: relative;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     bottom: 0;
