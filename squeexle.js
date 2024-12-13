@@ -9,6 +9,7 @@ const vod = shuffledVods[currentVodIndex];
 const vod_year = String(vod.voddate.slice(-4))
 const vod_month =String(vod.voddate.slice(0,2))
 const vod_day = String(vod.voddate.slice(3,5))
+const vod_game = String(vod.game)
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -32,15 +33,15 @@ function loadVod() {
         };   
     }
 
-//date input.
+//guess date of vod
 const dateInput = document.getElementById("date");
 
 document.getElementById("guess_date").onclick = function() {guessDate()};
 
 function guessDate() {
     const selectedDate = dateInput.value;
-    
     const input_year = selectedDate.slice(0,4);
+
     console.log("Selected Date:", input_year);
     if (input_year === vod_year) {
         console.log("The strings are equal.");
@@ -49,8 +50,14 @@ function guessDate() {
      };
 }
 
-//start game options
-// const guess_date = document.getElementById("guess_date");
+//guess game
+const gameInput = document.getElementById("game_input");
+
+document.getElementById("guess_game").onclick = function() {guessGame()};
+
+function guessGame() {
+    console.log(gameInput)
+}
 
 
 
