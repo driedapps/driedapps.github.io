@@ -39,9 +39,9 @@ document.getElementById("guess_date").onclick = function() {guessDate()};
 
 function guessDate() {
     const selectedDate = dateInput.value;
-    console.log("Selected Date:", selectedDate);
+    
     const input_year = selectedDate.slice(0,3);
-
+    console.log("Selected Date:", input_year);
     if (input_year === vod_year) {
         console.log("The strings are equal.");
       } else {
