@@ -51,7 +51,7 @@ function guessDate() {
 }
 
 //guess game
-const gameInput = document.getElementById("game_input");
+const gameInput = document.getElementById("game_input").value;
 
 document.getElementById("guess_game").onclick = function() {guessGame()};
 
