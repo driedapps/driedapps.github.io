@@ -25,7 +25,6 @@ function shuffleVods() {
 }
 
 // function to load and display a vods and its options
-/*VODDATE SLICE MIGHT NOT WORK??????????????? ~30:00 in yt video*/
 function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
         document.getElementById('vod').src = vod.filepath;
@@ -41,8 +40,7 @@ document.getElementById("guess_date").onclick = function() {guessDate()};
 function guessDate() {
     const selectedDate = dateInput.value;
     console.log("Selected Date:", selectedDate);
-    const strdate = selectedDate.toDateString();
-    const input_year = strdate.slice(-4);
+    const input_year = selectedDate.slice(0,3);
 
     if (input_year === vod_year) {
         console.log("The strings are equal.");
