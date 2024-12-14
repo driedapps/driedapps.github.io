@@ -50,8 +50,6 @@ function guessDate() {
 }
 
 //guess game
-
-
 document.getElementById("guess_game").onclick = function() {guessGame()};
 
 function guessGame() {
