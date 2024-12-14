@@ -56,7 +56,11 @@ document.getElementById("guess_game").onclick = function() {guessGame()};
 
 function guessGame() {
     let gameInput = document.getElementById("game_input").value;
-    console.log(gameInput)
+    if (gameInput === vod_game) {
+        console.log("The games are equal.");
+      } else {
+        console.log("The games are not equal.");
+     };
 }
 
 
