@@ -9,7 +9,7 @@ const vod = shuffledVods[currentVodIndex];
 const vod_year = String(vod.voddate.slice(-4))
 const vod_month =String(vod.voddate.slice(0,2))
 const vod_day = String(vod.voddate.slice(3,5))
-const vod_game = String(vod.game)
+const vod_game = vod.game
 
 //function to shuffle the array
 function shuffleArray(array) {
@@ -56,7 +56,7 @@ document.getElementById("guess_game").onclick = function() {guessGame()};
 
 function guessGame() {
     let gameInput = document.getElementById("game_input").value;
-    if (gameInput === vod_game) {
+    if (vod_game.includes(gameInput)) {
         console.log("The games are equal.");
       } else {
         console.log("The games are not equal.");
