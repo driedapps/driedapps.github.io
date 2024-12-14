@@ -34,13 +34,12 @@ function loadVod() {
     }
 
 //guess date of vod
-const dateInput = document.getElementById("date");
-
 document.getElementById("guess_date").onclick = function() {guessDate()};
 
 function guessDate() {
-    const selectedDate = dateInput.value;
-    const input_year = selectedDate.slice(0,4);
+    let dateInput = document.getElementById("date").value;
+    let selectedDate = dateInput;
+    let input_year = selectedDate.slice(0,4);
 
     console.log("Selected Date:", input_year);
     if (input_year === vod_year) {
@@ -51,12 +50,13 @@ function guessDate() {
 }
 
 //guess game
-const gameInput = document.getElementById("game_input");
+
 
 document.getElementById("guess_game").onclick = function() {guessGame()};
 
 function guessGame() {
-    console.log(gameInput.value)
+    let gameInput = document.getElementById("game_input").value;
+    console.log(gameInput)
 }
 
 
