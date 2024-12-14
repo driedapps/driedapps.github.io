@@ -51,12 +51,12 @@ function guessDate() {
 }
 
 //guess game
-const gameInput = document.getElementById("game_input").value;
+const gameInput = document.getElementById("game_input");
 
 document.getElementById("guess_game").onclick = function() {guessGame()};
 
 function guessGame() {
-    console.log(gameInput)
+    console.log(gameInput.value)
 }
 
 
