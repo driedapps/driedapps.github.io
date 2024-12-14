@@ -2,7 +2,7 @@ export const vods = [
     {
         filepath: 'screenshots/shot2.png',
         voddate: '10-02-2024',
-        game: 'UFO 50',
+        game: ['UFO 50', 'ufo 50']
         vodlink: 'https://www.twitch.tv/videos/2266307516'
     },
 
