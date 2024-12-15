@@ -46,10 +46,11 @@ function guessDate() {
 
     let num_inputYear = Number(input_year);
     let num_vodYear = Number(vod_year);
+    let yearDiff =  Math.abs(num_inputYear - num_vodYear);
 
-    if (input_year !== vod_year)
-        let yearDiff =  Math.abs(num_inputYear - num_vodYear);
+    if (input_year !== vod_year) {
         document.getElementById('hint').innerHTML = `You are ${yearDiff} years away from the right answer.`
+    };
 
     console.log("Selected Date:", input_year);
     if (input_year === vod_year) {
