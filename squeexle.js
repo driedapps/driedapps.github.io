@@ -43,14 +43,28 @@ function guessDate() {
     let dateInput = document.getElementById("date").value;
     let selectedDate = dateInput;
     let input_year = selectedDate.slice(0,4);
+    let input_month =String(vod.voddate.slice(0,2));
+    let input_day = String(vod.voddate.slice(3,5));
 
     let num_inputYear = Number(input_year);
     let num_vodYear = Number(vod_year);
-    let yearDiff =  Math.abs(num_inputYear - num_vodYear);
+    let yearDiff = Math.abs(num_inputYear - num_vodYear);
 
-    if (input_year !== vod_year) {
-        document.getElementById('hint').innerHTML = `You are ${yearDiff} years away from the right answer.`
+    if (yearDiff = 0) {
+        document.getElementById('hint').innerHTML = `You got the year right!`
     };
+    if (yearDiff = 1) {
+        document.getElementById('hint').innerHTML = `You are ${yearDiff} year away.`
+    };
+    if (yearDiff > 1) {
+        document.getElementById('hint').innerHTML = `You are ${yearDiff} years away...`
+    };
+
+    let num_inputMonth = Number(input_month);
+    let num_vodMonth = Number(vod_month);
+
+    let num_inputDay = Number(input_day);
+    let num_vodDay = Number(vod_day);
 
     console.log("Selected Date:", input_year);
     if (input_year === vod_year) {
