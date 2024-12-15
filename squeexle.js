@@ -29,17 +29,27 @@ function shuffleVods() {
 function loadVod() {
     if (currentVodIndex < shuffledVods.length) {
         document.getElementById('vod').src = vod.filepath;
-        document.getElementById('hint').innerHTML = `<strong>Year: ${vod_year}`
+
         };   
     }
 
 //guess date of vod
 document.getElementById("guess_date").onclick = function() {guessDate()};
 
+// display vod year in game container
+// document.getElementById('hint').innerHTML = `<strong>Year: ${vod_year}`
+
 function guessDate() {
     let dateInput = document.getElementById("date").value;
     let selectedDate = dateInput;
     let input_year = selectedDate.slice(0,4);
+
+    let num_inputYear = Number(input_year);
+    let num_vodYear = Number(vod_year);
+
+    if (input_year !== vod_year)
+        let yearDiff =  Math.abs(num_inputYear - num_vodYear);
+        document.getElementById('hint').innerHTML = `You are ${yearDiff} years away from the right answer.`
 
     console.log("Selected Date:", input_year);
     if (input_year === vod_year) {
