@@ -80,10 +80,10 @@ footer {
 #score{
     font-size: 18px;
     font-weight: 600;
-    margin: 10px 32%;
+    margin: 10px 25%;
     color: black;
     background: #8347a7;
-    border-radius: 8px;
+    border-radius: 5px;
     padding: 2px 0;
 }
 
@@ -92,7 +92,7 @@ footer {
     background-color: black;
     color: #ccc;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
