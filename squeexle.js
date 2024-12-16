@@ -50,35 +50,35 @@ function guessDate() {
     let num_vodYear = Number(vod_year);
     let yearDiff = Math.abs(num_inputYear - num_vodYear);
     if (yearDiff === 0) {
-        document.getElementById('hint').innerHTML = `You got the year right!`;
+        document.getElementById('dateHint_year').innerHTML = `You got the year right!`;
     } else if (yearDiff === 1) {
-        document.getElementById('hint').innerHTML = `You are one year away.`;
+        document.getElementById('dateHint_year').innerHTML = `You are one year away.`;
     } else if (yearDiff > 1) {
-        document.getElementById('hint').innerHTML = `You are ${yearDiff} years away...`;
+        document.getElementById('dateHint_year').innerHTML = `You are ${yearDiff} years away...`;
     }
 
     let num_inputMonth = Number(input_month);
     let num_vodMonth = Number(vod_month);
     let monthDiff = Math.abs(num_inputMonth - num_vodMonth);
     if (monthDiff === 0) {
-        document.getElementById('hint').innerHTML = `You got the month right!`;
+        document.getElementById('dateHint_month').innerHTML = `You got the month right!`;
     } else if (monthDiff === 1) {
-        document.getElementById('hint').innerHTML = `You are one month away.`;
+        document.getElementById('dateHint_month').innerHTML = `You are one month away.`;
     } else if (monthDiff > 1) {
-        document.getElementById('hint').innerHTML = `You are ${monthDiff} months away...`;
+        document.getElementById('dateHint_month').innerHTML = `You are ${monthDiff} months away...`;
     }
 
     let num_inputDay = Number(input_day);
     let num_vodDay = Number(vod_day);
     let dayDiff = Math.abs(num_inputDay - num_vodDay);
     if (dayDiff === 0) {
-        document.getElementById('hint').innerHTML = `You got the year right!`;
+        document.getElementById('dateHint_day').innerHTML = `You got the year right!`;
     } else if (dayDiff === 1) {
-        document.getElementById('hint').innerHTML = `You are only one day away.`;
+        document.getElementById('dateHint_day').innerHTML = `You are only one day away.`;
     } else if (dayDiff > 1 && dayDiff < 14) {
-        document.getElementById('hint').innerHTML = `You are ${dayDiff} days away.`;
+        document.getElementById('dateHint_day').innerHTML = `You are ${dayDiff} days away.`;
     } else if (dayDiff > 14) {
-        document.getElementById('hint').innerHTML = `You are more than 2 weeks away...`;
+        document.getElementById('dateHint_day').innerHTML = `You are more than 2 weeks away...`;
     }
 }
 
