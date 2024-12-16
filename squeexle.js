@@ -46,7 +46,7 @@ function guessDate() {
     let input_month =String(vod.voddate.slice(6,7));
     let input_day = String(vod.voddate.slice(9,10));
 
-    console.log(input_month, input_day)
+    console.log(selectedDate)
 
     let num_inputYear = Number(input_year);
     let num_vodYear = Number(vod_year);
