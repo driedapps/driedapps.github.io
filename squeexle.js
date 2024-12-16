@@ -49,22 +49,37 @@ function guessDate() {
     let num_inputYear = Number(input_year);
     let num_vodYear = Number(vod_year);
     let yearDiff = Math.abs(num_inputYear - num_vodYear);
-
-    console.log(yearDiff)
-
     if (yearDiff === 0) {
         document.getElementById('hint').innerHTML = `You got the year right!`;
     } else if (yearDiff === 1) {
-        document.getElementById('hint').innerHTML = `You are ${yearDiff} year away.`;
+        document.getElementById('hint').innerHTML = `You are one year away.`;
     } else if (yearDiff > 1) {
         document.getElementById('hint').innerHTML = `You are ${yearDiff} years away...`;
     }
 
     let num_inputMonth = Number(input_month);
     let num_vodMonth = Number(vod_month);
+    let monthDiff = Math.abs(num_inputMonth - num_vodMonth);
+    if (monthDiff === 0) {
+        document.getElementById('hint').innerHTML = `You got the month right!`;
+    } else if (monthDiff === 1) {
+        document.getElementById('hint').innerHTML = `You are one month away.`;
+    } else if (monthDiff > 1) {
+        document.getElementById('hint').innerHTML = `You are ${monthDiff} months away...`;
+    }
 
     let num_inputDay = Number(input_day);
     let num_vodDay = Number(vod_day);
+    let dayDiff = Math.abs(num_inputDay - num_vodDay);
+    if (yearDidayDiffff === 0) {
+        document.getElementById('hint').innerHTML = `You got the year right!`;
+    } else if (dayDiff === 1) {
+        document.getElementById('hint').innerHTML = `You are only one day away.`;
+    } else if (dayDiff > 1 && dayDiff < 14) {
+        document.getElementById('hint').innerHTML = `You are ${dayDiff} days away.`;
+    } else if (dayDiff > 14) {
+        document.getElementById('hint').innerHTML = `You are more than 2 weeks away...`;
+    }
 }
 
 //guess game
