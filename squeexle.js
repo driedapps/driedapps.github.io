@@ -65,13 +65,6 @@ function guessDate() {
 
     let num_inputDay = Number(input_day);
     let num_vodDay = Number(vod_day);
-
-    console.log("Selected Date:", input_year);
-    if (input_year === vod_year) {
-        console.log("The strings are equal.");
-      } else {
-        console.log("The strings are not equal.");
-     };
 }
 
 //guess game
@@ -80,9 +73,9 @@ document.getElementById("guess_game").onclick = function() {guessGame()};
 function guessGame() {
     let gameInput = document.getElementById("game_input").value;
     if (vod_game.includes(gameInput)) {
-        console.log("The games are equal.");
+        document.getElementById('game_hint').innerHTML = `You got the game right!`
       } else {
-        console.log("The games are not equal.");
+        document.getElementById('game_hint').innerHTML = `Try again...`
      };
 }
 
