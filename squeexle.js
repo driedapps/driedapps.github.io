@@ -73,9 +73,9 @@ document.getElementById("guess_game").onclick = function() {guessGame()};
 function guessGame() {
     let gameInput = document.getElementById("game_input").value;
     if (vod_game.includes(gameInput)) {
-        document.getElementById('game_hint').innerHTML = `You got the game right!`
+        document.getElementById('game_hint').innerHTML = `You got the game right!`;
       } else {
-        document.getElementById('game_hint').innerHTML = `Try again...`
+        document.getElementById('game_hint').innerHTML = `Try again...`;
      };
 }
 
