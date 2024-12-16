@@ -51,14 +51,12 @@ function guessDate() {
     let yearDiff = Math.abs(num_inputYear - num_vodYear);
 
     if (yearDiff = 0) {
-        document.getElementById('hint').innerHTML = `You got the year right!`
-    };
-    if (yearDiff = 1) {
-        document.getElementById('hint').innerHTML = `You are ${yearDiff} year away.`
-    };
-    if (yearDiff > 1) {
-        document.getElementById('hint').innerHTML = `You are ${yearDiff} years away...`
-    };
+        document.getElementById('hint').innerHTML = `You got the year right!`;
+    } else if (yearDiff = 1) {
+        document.getElementById('hint').innerHTML = `You are ${yearDiff} year away.`;
+    } else (yearDiff > 1) {
+        document.getElementById('hint').innerHTML = `You are ${yearDiff} years away...`;
+    }
 
     let num_inputMonth = Number(input_month);
     let num_vodMonth = Number(vod_month);
