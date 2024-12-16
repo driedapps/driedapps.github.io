@@ -50,7 +50,9 @@ function guessDate() {
     let num_vodYear = Number(vod_year);
     let yearDiff = num_inputYear - num_vodYear;
 
-    if (yearDiff = 0) {
+    console.log(yearDiff)
+
+    if (yearDiff === 0) {
         document.getElementById('hint').innerHTML = `You got the year right!`;
     } else if (Math.abs(yearDiff) === 1) {
         document.getElementById('hint').innerHTML = `You are ${yearDiff} year away.`;
