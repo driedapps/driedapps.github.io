@@ -52,7 +52,7 @@ function guessDate() {
 
     if (yearDiff = 0) {
         document.getElementById('hint').innerHTML = `You got the year right!`;
-    } else if (Math.abs(yearDiff) = 1) {
+    } else if (Math.abs(yearDiff) === 1) {
         document.getElementById('hint').innerHTML = `You are ${yearDiff} year away.`;
     } else if (Math.abs(yearDiff) > 1) {
         document.getElementById('hint').innerHTML = `You are ${yearDiff} years away...`;
