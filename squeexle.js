@@ -71,7 +71,7 @@ function guessDate() {
     let num_inputDay = Number(input_day);
     let num_vodDay = Number(vod_day);
     let dayDiff = Math.abs(num_inputDay - num_vodDay);
-    if (yearDidayDiffff === 0) {
+    if (dayDiff === 0) {
         document.getElementById('hint').innerHTML = `You got the year right!`;
     } else if (dayDiff === 1) {
         document.getElementById('hint').innerHTML = `You are only one day away.`;
