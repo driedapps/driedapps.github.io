@@ -43,11 +43,11 @@ function guessDate() {
     let dateInput = document.getElementById("date").value;
     let selectedDate = dateInput;
     let input_year = selectedDate.slice(0,4);
-    let input_month = String(selectedDate.slice(6,8));
+    let input_month = String(selectedDate.slice(5,7));
     let input_day = String(selectedDate.slice(8,10));
 
     console.log('input month:', input_month)
-    console.log('vod month:', vod_month)
+    console.log('input dat', input_day)
 
     let num_inputYear = Number(input_year);
     let num_vodYear = Number(vod_year);
