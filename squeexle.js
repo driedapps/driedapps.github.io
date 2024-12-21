@@ -83,6 +83,11 @@ function guessDate() {
     } else if (dayDiff > 14) {
         document.getElementById('dateHint_day').innerHTML = `You are more than 2 weeks away...`;
     }
+
+    if (yearDiff === 0 & monthDiff === 0 & dayDiff === 0) {
+        shuffleVods();
+        loadVod();
+    }
 }
 
 //guess game
