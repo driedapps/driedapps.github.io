@@ -1,6 +1,5 @@
 //import the squeextionary
 import { vods } from '/squeextionary.js';
-import React, { useEffect } from 'react';
  
 //initialize variables for tracking game progress and other stuff
 let currentVodIndex = 0;
