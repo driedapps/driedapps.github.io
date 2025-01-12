@@ -3,9 +3,7 @@ import { vods } from '/squeextionary.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   
-    //initialize game on load
-    shuffleVods();
-    loadVod();
+
     
     //initialize variables for tracking game progress and other stuff
     let currentVodIndex = 0;
@@ -148,7 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //funciton to try again ---- just repeat start game? loadVod()
-
+    
+    //initialize game on load
+    shuffleVods();
+    loadVod();
 
 });
     
