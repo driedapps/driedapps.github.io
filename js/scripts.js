@@ -7,6 +7,11 @@
 // Scripts
 // 
 
+function showError(htmlString) {
+    $("#modalPanicBody").html(htmlString);
+    app.modals.error.show();
+  }
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
