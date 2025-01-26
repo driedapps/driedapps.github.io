@@ -34,6 +34,106 @@
                 </div>
             </div>
         </nav>
+        <div class="modal" id="modalWelcome" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"><img src="/pics/forsenle/icon.png" alt="👋" class="inline-flavor" />&nbsp;&nbsp;Welcome to Forsle!</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <ul class="list-unstyled">
+                    <li>Each day you'll get a frame from Forsen's vod. Your task is to guess the date of the stream.</li>
+                    <li>To make a guess, enter a date in the input field and click "Submit" (or hit the Enter button).</li>
+                    <li>In <em>normal mode</em> there is no limit on how many guesses you can submit.</li>
+                    <li>If you want a real challenge, enable <em>♨️ hard mode</em> in Settings.&nbsp;<img alt="nime" src="/pics/forsenle/nime.png" class="inline-smol" /></li>
+                    <li>After each guess you'll get a clue about how close you were to the correct date, and whether the correct date is before or after your guess.</li>
+                  </ul>
+                  <hr />
+                  <h5>Colors and arrows:</h5>
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-5">
+                        <ul class="list-group">
+                          <li class="list-group-item ug-incorrect">⬛ Terrible guess</li>
+                          <li class="list-group-item ug-far">🟥 Bad guess</li>
+                          <li class="list-group-item ug-close">🟨 Good guess</li>
+                          <li class="list-group-item ug-correct">🟩 Correct date</li>
+                        </ul>
+                      </div>
+                      <div class="col-7">
+                        <ul class="list-group list-group-horizontal" style="text-align: center">
+                          <li class="list-group-item">
+                            ⏪<br />
+                            Correct date is lower
+                          </li>
+                          <li class="list-group-item">
+                            ⏩<br />
+                            Correct date is higher
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <h5>Examples:</h5>
+                  <div class="user-guess-example">
+                    <div class="ug-element static ug-date ug-far">19</div>
+                    <div class="ug-element static ug-month ug-close">04</div>
+                    <div class="ug-element static ug-fullyear ug-incorrect">2022</div>
+                    <div class="ug-element static ug-direction">⏪</div>
+                  </div>
+                  The correct date is way lower, since you didn't guess the year. And the day in your guess is not very close. But at least you almost got the month!
+                  <div class="user-guess-example">
+                    <div class="ug-element static ug-date ug-correct">25</div>
+                    <div class="ug-element static ug-month ug-close">06</div>
+                    <div class="ug-element static ug-fullyear ug-close">2016</div>
+                    <div class="ug-element static ug-direction">⏩</div>
+                  </div>
+                  You got the day! But year and month are slightly off. And the whole date is still slightly lower than needed.
+                  <div class="user-guess-example">
+                    <div class="ug-element static ug-date ug-correct">25</div>
+                    <div class="ug-element static ug-month ug-correct">05</div>
+                    <div class="ug-element static ug-fullyear ug-correct">2017</div>
+                    <div class="ug-element static ug-direction">🥳</div>
+                  </div>
+                  That's it! You found the date!<br /><br />Note that although some dates may appear next to each other in calendar, numeric representation of day, month, and year of the dates
+                  will still be far apart. Like so:
+                  <div class="user-guess-example">
+                    <div class="ug-element static ug-date ug-close">30</div>
+                    <div class="ug-element static ug-month ug-correct">12</div>
+                    <div class="ug-element static ug-fullyear ug-correct">2020</div>
+                    <div class="ug-element static ug-direction">⏩</div>
+                  </div>
+                  <div class="user-guess-example user-guess-example-shrink">
+                    <div class="ug-element static ug-date ug-incorrect">01</div>
+                    <div class="ug-element static ug-month ug-incorrect">01</div>
+                    <div class="ug-element static ug-fullyear ug-close">2021</div>
+                    <div class="ug-element static ug-direction">⏪</div>
+                  </div>
+                  <div class="user-guess-example user-guess-example-shrink">
+                    <div class="ug-element static ug-date ug-correct">31</div>
+                    <div class="ug-element static ug-month ug-correct">12</div>
+                    <div class="ug-element static ug-fullyear ug-correct">2020</div>
+                    <div class="ug-element static ug-direction">🥳</div>
+                  </div>
+                  <hr />
+                  <h5>⭐ Prestige round</h5>
+                  After a correct guess you may receive an offer to play a bonus round.
+                  <br />
+                  In Prestige round, you have to name the game on the picture. The game which Forsen is playing (or reacting to).
+                  <br />
+                  Prestige round is optional. You are not limited by timers or attempt counts. You may stop the Prestige round at any time. Prestige round stats are tracked separately.
+                  <hr />
+                  <b>There will be a new Forsen waiting for you every day!</b><br />
+                  <small class="text-body-secondary">Game by driedapps?</a></small>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
