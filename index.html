@@ -1,170 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Creative - Start Bootstrap Theme</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap Icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>        
-        <div class="modal" id="modalWelcome" tabindex="-1">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title"><img src="/pics/forsenle/icon.png" alt="👋" class="inline-flavor" />&nbsp;&nbsp;Welcome to Forsle!</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <ul class="list-unstyled">
-                    <li>Each day you'll get a frame from Forsen's vod. Your task is to guess the date of the stream.</li>
-                    <li>To make a guess, enter a date in the input field and click "Submit" (or hit the Enter button).</li>
-                    <li>In <em>normal mode</em> there is no limit on how many guesses you can submit.</li>
-                    <li>If you want a real challenge, enable <em>♨️ hard mode</em> in Settings.&nbsp;<img alt="nime" src="/pics/forsenle/nime.png" class="inline-smol" /></li>
-                    <li>After each guess you'll get a clue about how close you were to the correct date, and whether the correct date is before or after your guess.</li>
-                  </ul>
-                  <hr />
-                  <h5>Colors and arrows:</h5>
-                  <div class="container-fluid">
-                    <div class="row align-items-center">
-                      <div class="col-5">
-                        <ul class="list-group">
-                          <li class="list-group-item ug-incorrect">⬛ Terrible guess</li>
-                          <li class="list-group-item ug-far">🟥 Bad guess</li>
-                          <li class="list-group-item ug-close">🟨 Good guess</li>
-                          <li class="list-group-item ug-correct">🟩 Correct date</li>
-                        </ul>
-                      </div>
-                      <div class="col-7">
-                        <ul class="list-group list-group-horizontal" style="text-align: center">
-                          <li class="list-group-item">
-                            ⏪<br />
-                            Correct date is lower
-                          </li>
-                          <li class="list-group-item">
-                            ⏩<br />
-                            Correct date is higher
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <hr />
-                  <h5>Examples:</h5>
-                  <div class="user-guess-example">
-                    <div class="ug-element static ug-date ug-far">19</div>
-                    <div class="ug-element static ug-month ug-close">04</div>
-                    <div class="ug-element static ug-fullyear ug-incorrect">2022</div>
-                    <div class="ug-element static ug-direction">⏪</div>
-                  </div>
-                  The correct date is way lower, since you didn't guess the year. And the day in your guess is not very close. But at least you almost got the month!
-                  <div class="user-guess-example">
-                    <div class="ug-element static ug-date ug-correct">25</div>
-                    <div class="ug-element static ug-month ug-close">06</div>
-                    <div class="ug-element static ug-fullyear ug-close">2016</div>
-                    <div class="ug-element static ug-direction">⏩</div>
-                  </div>
-                  You got the day! But year and month are slightly off. And the whole date is still slightly lower than needed.
-                  <div class="user-guess-example">
-                    <div class="ug-element static ug-date ug-correct">25</div>
-                    <div class="ug-element static ug-month ug-correct">05</div>
-                    <div class="ug-element static ug-fullyear ug-correct">2017</div>
-                    <div class="ug-element static ug-direction">🥳</div>
-                  </div>
-                  That's it! You found the date!<br /><br />Note that although some dates may appear next to each other in calendar, numeric representation of day, month, and year of the dates
-                  will still be far apart. Like so:
-                  <div class="user-guess-example">
-                    <div class="ug-element static ug-date ug-close">30</div>
-                    <div class="ug-element static ug-month ug-correct">12</div>
-                    <div class="ug-element static ug-fullyear ug-correct">2020</div>
-                    <div class="ug-element static ug-direction">⏩</div>
-                  </div>
-                  <div class="user-guess-example user-guess-example-shrink">
-                    <div class="ug-element static ug-date ug-incorrect">01</div>
-                    <div class="ug-element static ug-month ug-incorrect">01</div>
-                    <div class="ug-element static ug-fullyear ug-close">2021</div>
-                    <div class="ug-element static ug-direction">⏪</div>
-                  </div>
-                  <div class="user-guess-example user-guess-example-shrink">
-                    <div class="ug-element static ug-date ug-correct">31</div>
-                    <div class="ug-element static ug-month ug-correct">12</div>
-                    <div class="ug-element static ug-fullyear ug-correct">2020</div>
-                    <div class="ug-element static ug-direction">🥳</div>
-                  </div>
-                  <hr />
-                  <h5>⭐ Prestige round</h5>
-                  After a correct guess you may receive an offer to play a bonus round.
-                  <br />
-                  In Prestige round, you have to name the game on the picture. The game which Forsen is playing (or reacting to).
-                  <br />
-                  Prestige round is optional. You are not limited by timers or attempt counts. You may stop the Prestige round at any time. Prestige round stats are tracked separately.
-                  <hr />
-                  <b>There will be a new Forsen waiting for you every day!</b><br />
-                  <small class="text-body-secondary">Game by driedapps?</a></small>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">Your Favorite Place for Free Bootstrap Themes</h1>
-                        <hr class="divider" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-        </section>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Modal #1</title>
+  </head>
+  <body>
+    
+
+    
+
+
+    <div class="container content">
+      <div class="row align-items-center content">
+
+        <div class="col-12 text-center">
+          <h3 class="mb-4">Modal #1</h3>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Launch modal
+        </button>
+      </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"><span class="icon-close2"></span></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Mist enveloped the ship three hours out from port. A shining crescent far beneath the flying vessel. All their equipment and instruments are alive. The sky was cloudless and of a deep dark blue. A shining crescent far beneath the flying vessel.</p>
+            <p>All their equipment and instruments are alive. A shining crescent far beneath the flying vessel. The sky was cloudless and of a deep dark blue. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
