@@ -2,3 +2,16 @@ main {
     min-width: 250px;
     padding-right: 4em;
   }
+
+  .modal-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    width: 500px;
+    height: 400px;
+    position: relative;
+  }
