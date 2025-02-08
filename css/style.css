@@ -40,4 +40,6 @@ main {
     color: white;
     padding: 15px;
     text-align: center;
+    position: fixed;
+    top: 0;
 }
