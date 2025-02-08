@@ -16,7 +16,8 @@ main {
       top: 0;
       bottom: 0;
       margin: auto;
-      position: absolute;
+      position: under;
+      justify-content: center;
   }
 
   body {
