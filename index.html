@@ -12,18 +12,23 @@
   </head>
   <body>
     
-    <div class="modal" id="myModal" tabindex="-1">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+      Launch your first modal?
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">My Modal</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="#myModal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" id="myModalLabel">my title goes here</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>will this ever work?</p>
+            did it work?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="#myModal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>

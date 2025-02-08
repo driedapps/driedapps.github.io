@@ -2,7 +2,3 @@ main {
     min-width: 250px;
     padding-right: 4em;
   }
-
-.selector-for-some-widget {
-    box-sizing: content-box;
-  }
