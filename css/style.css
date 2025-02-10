@@ -10,7 +10,12 @@ main {
     align-items: center;
   }
   
+.button{
+  background-color: rgb(139, 88, 160);
+}
+
   .modal {
+      background-color: rgb(114, 114, 114);
       left: 0;
       right: 0;
       top: 0;
