@@ -9,10 +9,6 @@ main {
     justify-content: center;
     align-items: center;
   }
-  
-button{
-  color: rgb(139, 88, 160);
-}
 
   .modal-body {
       left: 0;
