@@ -4,7 +4,6 @@ main {
   }
 
   .modal-container {
-    background-color: rgb(114, 114, 114);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -12,7 +11,7 @@ main {
   }
   
 button{
-  background-color: rgb(139, 88, 160);
+  color: rgb(139, 88, 160);
 }
 
   .modal-body {
