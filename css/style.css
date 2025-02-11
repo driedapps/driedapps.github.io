@@ -27,10 +27,6 @@ main {
     font-weight: 400;
     margin: auto;
     padding: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,5 +58,9 @@ main {
     position: above;
     align-items: above;
     display: flex;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     max-width: 60%;
 }
