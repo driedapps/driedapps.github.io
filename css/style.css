@@ -6,7 +6,7 @@ main {
   .container{
     text-align: center;
     align-items: center;
-    width: 500px;
+    width: 50%;
 }
 
   .modal-container {
