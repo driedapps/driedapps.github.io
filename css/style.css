@@ -30,6 +30,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 60%;
     user-select: none; /*disables selection aka highlighting*/
     -webkit-user-select: none; /*for safari*/
     -moz-user-select: none; /*for firefox*/
