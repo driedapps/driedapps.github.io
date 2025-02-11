@@ -72,5 +72,7 @@ main {
 }
 
 .vod-screenshot{
-  width: 1.2em;
+  max-height: 550px;
+  max-height: 65vh;
+  user-select: none;
 }
