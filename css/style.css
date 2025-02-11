@@ -54,6 +54,7 @@ main {
 .header{
     color: rgb(0, 0, 0);
     padding: 15px;
+    justify-content: center;
     text-align: center;
     position: above;
     align-items: above;
