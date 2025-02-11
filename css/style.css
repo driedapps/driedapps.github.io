@@ -1,7 +1,6 @@
 main {
     min-width: 250px;
     padding-right: 4em;
-    width: 80%;
   }
 
   .container{
@@ -70,4 +69,8 @@ main {
     right: 0;
     top: 0;
     bottom: 0;
+}
+
+.vod-screenshot{
+  width: 1.2em;
 }
