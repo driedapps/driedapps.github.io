@@ -57,6 +57,6 @@ main {
     text-align: center;
     position: above;
     align-items: above;
-    top: 0;
+    display: flex;
     max-width: 60%;
 }
