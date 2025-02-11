@@ -3,6 +3,13 @@ main {
     padding-right: 4em;
   }
 
+  .container{
+    text-align: center;
+    align-items: center;
+    margin: 10%;
+    margin-top: 10px;
+}
+
   .modal-container {
     position: fixed;
     display: flex;
