@@ -73,8 +73,10 @@ main {
   max-height: 65vh;
   user-select: none;
   justify-content: center;
-  text-align: center;
-  position: center;
   align-items: center;
   display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
