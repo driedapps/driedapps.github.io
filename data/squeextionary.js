@@ -2,14 +2,14 @@ export const vods = [
     {
         filepath: 'screenshots/shot2.png',
         voddate: '10-02-2024',
-        game: ['UFO 50', 'ufo 50'],
+        game: 'UFO 50',
         vodlink: 'https://www.twitch.tv/videos/2266307516'
     },
 
     {
         filepath: 'screenshots/shot3.png',
         voddate: '09-06-2024',
-        game: ['SM64','Super Mario 64'],
+        game: 'Super Mario 64',
         vodlink: 'https://www.twitch.tv/videos/2243958523'
     },
 
@@ -23,7 +23,7 @@ export const vods = [
     {
         filepath: 'screenshots/shot5.png',
         voddate: '11-02-2022',
-        game: ['SM64','Super Mario 64'],
+        game: 'Super Mario 64',
         vodlink: 'https://www.twitch.tv/videos/1641776218'
     }
 ]
