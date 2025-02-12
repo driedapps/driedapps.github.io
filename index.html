@@ -12,12 +12,12 @@
 
   </head>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- Modals -->
+    <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="introModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="myModalLabel">Instructions for Squeexle</h1>
+            <h1 class="modal-title fs-5" id="introModalLabel">Instructions for Squeexle</h1>
           </div>
           <div class="modal-body">
                 <center>Every day you'll see a new Squeex!<br>
@@ -40,6 +40,22 @@
       </div>
     </div>
 
+    <div class="modal fade" id="stats" tabindex="-1" aria-labelledby="statsLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="statsLabel">Your Squeexle Stats</h1>
+          </div>
+          <div class="modal-body">
+              stats will go here
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
   <body>
@@ -49,7 +65,7 @@
         <div class="row header">
           <div class="col">
             <div class="headerleft">
-              <button type="button" class="btn headerbtn" data-bs-toggle="modal" data-bs-target="#myModal">
+              <button type="button" class="btn headerbtn" data-bs-toggle="modal" data-bs-target="#introModal">
                 <i class="bi bi-question-square-fill"></i>
               </button>
             </div>
@@ -61,7 +77,9 @@
           </div>
           <div class="col">
             <div class="headerright">
-              <i class="bi bi-graph-up"></i>
+              <button type="button" class="btn headerbtn" data-bs-toggle="modal" data-bs-target="#stats">
+                <i class="bi bi-graph-up"></i>
+              </button>  
             </div>
           </div>
         </div>
@@ -69,6 +87,14 @@
               <!--display the screenshot with an empty source-->
               <img src="/data/screenshots/shot2.png" alt="Squeex VOD" id="vod">
           </div>
+
+          <div class="row justify-content-center">
+              <div class="input-group w-75 mb-3 p-3">
+                <input type="date" class="form-control" placeholder="Guess Date" aria-label="Guess Date" aria-describedby="button-addon2">
+                <button class="btn btn-secondary" type="button" id="button-addon2">guess date</button>
+              </div>   
+          </div>
+
       </div>
 
     </div>

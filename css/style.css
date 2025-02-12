@@ -7,23 +7,6 @@ main {
     align-items: center;
 }
 
-  .modal-container {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modal-body {
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      position: under;
-      justify-content: center;
-  }
-
   body {
     background-color: rgb(114, 114, 114);
     position: center;
@@ -62,11 +45,4 @@ main {
     position: above;
     align-items: above;
     display: flex;
-}
-
-.vod-screenshot{
-  user-select: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
