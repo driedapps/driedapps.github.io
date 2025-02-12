@@ -65,7 +65,6 @@ main {
 }
 
 .vod-screenshot{
-  max-width: 60%;
   user-select: none;
   justify-content: center;
   align-items: center;
