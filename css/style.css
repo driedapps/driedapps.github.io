@@ -69,7 +69,12 @@ main {
 }
 
 .vod-screenshot{
-  max-width: 250px;
+  max-width: 500px;
   max-height: 65vh;
   user-select: none;
+  justify-content: center;
+  text-align: center;
+  position: center;
+  align-items: center;
+  display: flex;
 }
