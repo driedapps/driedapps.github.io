@@ -62,10 +62,6 @@ main {
     position: above;
     align-items: above;
     display: flex;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
 }
 
 .vod-screenshot{
@@ -75,8 +71,4 @@ main {
   justify-content: center;
   align-items: center;
   display: flex;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
