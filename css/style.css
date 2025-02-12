@@ -1,6 +1,4 @@
 main {
-    min-width: 250px;
-    max-width: 500px;
     padding-right: 4em;
   }
 
@@ -71,7 +69,7 @@ main {
 }
 
 .vod-screenshot{
-  max-height: 250px;
+  max-width: 250px;
   max-height: 65vh;
   user-select: none;
 }
