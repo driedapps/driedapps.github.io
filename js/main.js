@@ -9,6 +9,10 @@ const app = {
             "Rocket League",
 
         ],
-        
     }
-}
+};
+
+document.getElementById("guessDate").onclick = function() {
+    console.log(document.getElementById("dateInput").value); 
+};
+
