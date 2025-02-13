@@ -1,4 +1,4 @@
-export const vods = [
+vods = [
     {
         filepath: 'screenshots/shot2.png',
         voddate: '10-02-2024',
