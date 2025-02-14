@@ -1,7 +1,7 @@
 // defining constants to reference later
 const app = {
     consts:{
-        dateGuessLimit: 5,
+        dateGuessLimit: 6,
         gameList: [
             // list of games to select from (add auto suggestion)
             "UFO 50",
@@ -9,10 +9,19 @@ const app = {
             "Rocket League",
 
         ],
+        html: {
+            dateButton: document.getElementById("guessDate").onclick,
+            dateValue: document.getElementById("dateInput").value,
+            listDiv: document.getElementById("dateOutput")
+        }
     }
 };
 
-document.getElementById("guessDate").onclick = function() {
-    console.log(document.getElementById("dateInput").value); 
+dateButton = function() {
+    console.log(dateValue); 
 };
 
+
+
+// next step: change console log to list output,
+// then have dynamic output based on the person's guess
