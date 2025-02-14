@@ -10,15 +10,48 @@ const app = {
 
         ],
         html: {
-            dateButton: document.getElementById("guessDate").onclick,
-            dateValue: document.getElementById("dateInput").value,
-            listDiv: document.getElementById("dateOutput")
         }
     }
 };
 
-dateButton = function() {
-    console.log(dateValue); 
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("guessDate").addEventListener("click", addDate);
+});
+
+function addDate() {
+    let dateInput = document.getElementById('dateInput');
+    let dateValue = dateInput.value;
+
+    if (dateValue) {
+        let date = new Date(dateValue);
+        let month = date.getMonth();
+        let day = date.getDate();
+        let year = date.getFullYear();
+        
+        let listContainer = document.getElementById('dateListContainer');
+        
+        let listGroup = document.createElement('ul');
+        listGroup.className = 'list-group list-group-horizontal-sm justify-content-center';
+        
+        let monthItem = document.createElement('li');
+        monthItem.className = 'list-group-item';
+        monthItem.textContent = `${month}`;
+        
+        let dayItem = document.createElement('li');
+        dayItem.className = 'list-group-item';
+        dayItem.textContent = `${day}`;
+        
+        let yearItem = document.createElement('li');
+        yearItem.className = 'list-group-item';
+        yearItem.textContent = `${year}`;
+        
+        listGroup.appendChild(monthItem);
+        listGroup.appendChild(dayItem);
+        listGroup.appendChild(yearItem);
+        
+        listContainer.appendChild(listGroup);
+        dateInput.value = '';
+    }
 };
 
 
