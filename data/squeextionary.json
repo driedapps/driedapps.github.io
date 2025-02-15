@@ -1,4 +1,4 @@
-export const vods = [
+{
     {
         filepath: 'screenshots/shot2.png',
         voddate: '10-02-2024',
@@ -26,4 +26,4 @@ export const vods = [
         game: 'Super Mario 64',
         vodlink: 'https://www.twitch.tv/videos/1641776218'
     }
-]
+}

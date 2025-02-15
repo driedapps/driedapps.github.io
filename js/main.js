@@ -1,21 +1,32 @@
 // defining constants to reference later
-const app = {
-    consts:{
-        dateGuessLimit: 6,
-        gameList: [
-            // list of games to select from (add auto suggestion)
-            "UFO 50",
-            "Super Mario 64",
-            "Rocket League",
+import { vods } from '/data/squeextionary.js';
 
-        ],
+const dateGuessLimit = 6
 
-        html: {
-        }
-    }
-};
+const gameList = [
+    // list of games to select from (add auto suggestion)
+    "UFO 50",
+    "Super Mario 64",
+    "Rocket League",
 
+]
 
+const vod = vods[0];
+const vodDate = new Date(vod.voddate)
+const vodYear = vodDate.getFullYear()
+const vodMonth = vodDate.getMonth() + 1
+const vodDay = vodDate.getDay()
+const vodGame = vod.game
+
+console.log(vodYear, vodMonth, vodDay, vodGame)
+
+const getMonthDiff = (dateInitial, dateFinal) =>
+    Math.max(
+      (dateFinal.getFullYear() - dateInitial.getFullYear()) * 12 +
+        dateFinal.getMonth() -
+        dateInitial.getMonth(),
+      0
+    );
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -26,19 +37,47 @@ document.addEventListener("DOMContentLoaded", function() {
             let dateValue = dateInput.value;
 
             if (dateValue) {
-                let date = dateValue;
-
-                let [year, month, day] = date.split('-');
+                let date = new Date(dateValue);
+                
+                let month = date.getMonth() + 1
+                let day = date.getDay()
+                let year = date.getFullYear()
 
                 let listContainer = document.getElementById('dateListContainer');
                 listContainer.style.display = 'block';
                 
                 let listGroup = document.createElement('ul');
                 listGroup.className = 'list-group list-group-horizontal-sm justify-content-center';
-                
-                let monthItem = document.createElement('li');
-                monthItem.className = 'list-group-item';
-                monthItem.textContent = `${month}`;
+
+                let monthDiff = Math.abs(month - vodMonth);
+                if (monthDiff > 6) {
+                    monthDiff = 12 - monthDiff; // Take the shortest distance
+                }
+                console.log(monthDiff)
+
+                if (monthDiff === 0) {
+                    let monthItem = document.createElement('li');
+                    monthItem.className = 'list-group-item list-group-item-success';
+                    monthItem.style = "font-size: large; font-weight: bold;"
+                    monthItem.textContent = `${month}`;
+                    listGroup.appendChild(monthItem);
+                } else if (monthDiff >=1 && monthDiff <=2) {
+                    let monthItem = document.createElement('li');
+                    monthItem.className = 'list-group-item list-group-item-warning';
+                    monthItem.textContent = `${month}`;
+                    listGroup.appendChild(monthItem);
+                } else if (monthDiff >2 && monthDiff <5) {
+                    let monthItem = document.createElement('li');
+                    monthItem.className = 'list-group-item list-group-item-danger';
+                    monthItem.textContent = `${month}`;
+                    listGroup.appendChild(monthItem);
+                } else if (monthDiff >=5) {
+                    let monthItem = document.createElement('li');
+                    monthItem.className = 'list-group-item list-group-item-dark';
+                    monthItem.style = "font-weight: bold;"
+                    monthItem.textContent = `${month}`;
+                    listGroup.appendChild(monthItem);
+                }
                 
                 let dayItem = document.createElement('li');
                 dayItem.className = 'list-group-item';
@@ -48,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 yearItem.className = 'list-group-item';
                 yearItem.textContent = `${year}`;
                 
-                listGroup.appendChild(monthItem);
                 listGroup.appendChild(dayItem);
                 listGroup.appendChild(yearItem);
                 
