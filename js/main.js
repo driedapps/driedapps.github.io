@@ -15,33 +15,26 @@ const vod = vods[0];
 const vodDate = new Date(vod.voddate)
 const vodYear = vodDate.getFullYear()
 const vodMonth = vodDate.getMonth() + 1
-const vodDay = vodDate.getDay()
+const vodDay = vodDate.getDate()
 const vodGame = vod.game
 
 console.log(vodYear, vodMonth, vodDay, vodGame)
 
-const getMonthDiff = (dateInitial, dateFinal) =>
-    Math.max(
-      (dateFinal.getFullYear() - dateInitial.getFullYear()) * 12 +
-        dateFinal.getMonth() -
-        dateInitial.getMonth(),
-      0
-    );
-
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("guessDate").addEventListener("click", function() {
-
-            console.log("addDate function called");
+            console.log("date guessed");
             let dateInput = document.getElementById('dateInput');
             let dateValue = dateInput.value;
 
             if (dateValue) {
                 let date = new Date(dateValue);
                 
-                let month = date.getMonth() + 1
-                let day = date.getDay()
-                let year = date.getFullYear()
+                let month = date.getUTCMonth() + 1
+                let day = date.getUTCDate()
+                let year = date.getUTCFullYear()
+
+                console.log('chosen:', month, day, year)
 
                 let listContainer = document.getElementById('dateListContainer');
                 listContainer.style.display = 'block';
@@ -53,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (monthDiff > 6) {
                     monthDiff = 12 - monthDiff; // Take the shortest distance
                 }
-                console.log(monthDiff)
-
                 if (monthDiff === 0) {
                     let monthItem = document.createElement('li');
                     monthItem.className = 'list-group-item list-group-item-success';
@@ -79,15 +70,35 @@ document.addEventListener("DOMContentLoaded", function() {
                     listGroup.appendChild(monthItem);
                 }
                 
-                let dayItem = document.createElement('li');
-                dayItem.className = 'list-group-item';
-                dayItem.textContent = `${day}`;
+                let dayDiff = Math.abs(day - vodDay);
+
+                if (dayDiff === 0) {
+                    let dayItem = document.createElement('li');
+                    dayItem.className = 'list-group-item list-group-item-success';
+                    dayItem.style = "font-size: large; font-weight: bold;"
+                    dayItem.textContent = `${day}`;
+                    listGroup.appendChild(dayItem);
+                } else if (dayDiff >=1 && dayDiff <=3) {
+                    let dayItem = document.createElement('li');
+                    dayItem.className = 'list-group-item list-group-item-warning';
+                    dayItem.textContent = `${day}`;
+                    listGroup.appendChild(dayItem);
+                } else if (dayDiff >3 && dayDiff <8) {
+                    let dayItem = document.createElement('li');
+                    dayItem.className = 'list-group-item list-group-item-danger';
+                    dayItem.textContent = `${day}`;
+                    listGroup.appendChild(dayItem);
+                } else if (dayDiff >=8) {
+                    let dayItem = document.createElement('li');
+                    dayItem.className = 'list-group-item list-group-item-dark';
+                    dayItem.style = "font-weight: bold;"
+                    dayItem.textContent = `${day}`;
+                    listGroup.appendChild(dayItem);
+                }
                 
                 let yearItem = document.createElement('li');
                 yearItem.className = 'list-group-item';
                 yearItem.textContent = `${year}`;
-                
-                listGroup.appendChild(dayItem);
                 listGroup.appendChild(yearItem);
                 
                 listContainer.appendChild(listGroup);
