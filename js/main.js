@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 let day = date.getUTCDate()
                 let year = date.getUTCFullYear()
 
-                console.log('chosen:', month, day, year)
-
                 let listContainer = document.getElementById('dateListContainer');
                 listContainer.style.display = 'block';
                 
@@ -96,10 +94,31 @@ document.addEventListener("DOMContentLoaded", function() {
                     listGroup.appendChild(dayItem);
                 }
                 
-                let yearItem = document.createElement('li');
-                yearItem.className = 'list-group-item';
-                yearItem.textContent = `${year}`;
-                listGroup.appendChild(yearItem);
+                let yearDiff = Math.abs(year - vodYear);
+
+                if (yearDiff === 0) {
+                    let yearItem = document.createElement('li');
+                    yearItem.className = 'list-group-item list-group-item-success';
+                    yearItem.style = "font-size: large; font-weight: bold;"
+                    yearItem.textContent = `${year}`;
+                    listGroup.appendChild(yearItem);
+                } else if (yearDiff >=1 && yearDiff <=2) {
+                    let yearItem = document.createElement('li');
+                    yearItem.className = 'list-group-item list-group-item-warning';
+                    yearItem.textContent = `${year}`;
+                    listGroup.appendChild(yearItem);
+                } else if (yearDiff >2 && yearDiff <5) {
+                    let yearItem = document.createElement('li');
+                    yearItem.className = 'list-group-item list-group-item-danger';
+                    yearItem.textContent = `${year}`;
+                    listGroup.appendChild(yearItem);
+                } else if (yearDiff >=5) {
+                    let yearItem = document.createElement('li');
+                    yearItem.className = 'list-group-item list-group-item-dark';
+                    yearItem.style = "font-weight: bold;"
+                    yearItem.textContent = `${year}`;
+                    listGroup.appendChild(yearItem);
+                }
                 
                 listContainer.appendChild(listGroup);
                 dateInput.value = '';
