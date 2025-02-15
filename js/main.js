@@ -9,51 +9,58 @@ const app = {
             "Rocket League",
 
         ],
+
         html: {
         }
     }
 };
 
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("guessDate").addEventListener("click", addDate);
+    document.getElementById("guessDate").addEventListener("click", function() {
+
+            console.log("addDate function called");
+            let dateInput = document.getElementById('dateInput');
+            let dateValue = dateInput.value;
+
+            if (dateValue) {
+                let date = dateValue;
+
+                let [year, month, day] = date.split('-');
+
+                let listContainer = document.getElementById('dateListContainer');
+                listContainer.style.display = 'block';
+                
+                let listGroup = document.createElement('ul');
+                listGroup.className = 'list-group list-group-horizontal-sm justify-content-center';
+                
+                let monthItem = document.createElement('li');
+                monthItem.className = 'list-group-item';
+                monthItem.textContent = `${month}`;
+                
+                let dayItem = document.createElement('li');
+                dayItem.className = 'list-group-item';
+                dayItem.textContent = `${day}`;
+                
+                let yearItem = document.createElement('li');
+                yearItem.className = 'list-group-item';
+                yearItem.textContent = `${year}`;
+                
+                listGroup.appendChild(monthItem);
+                listGroup.appendChild(dayItem);
+                listGroup.appendChild(yearItem);
+                
+                listContainer.appendChild(listGroup);
+                dateInput.value = '';
+            }
+            else {
+                    console.warn("No date entered");
+                }
+            
+        });
 });
-
-function addDate() {
-    let dateInput = document.getElementById('dateInput');
-    let dateValue = dateInput.value;
-
-    if (dateValue) {
-        let date = new Date(dateValue);
-        let month = date.getMonth();
-        let day = date.getDate();
-        let year = date.getFullYear();
-        
-        let listContainer = document.getElementById('dateListContainer');
-        
-        let listGroup = document.createElement('ul');
-        listGroup.className = 'list-group list-group-horizontal-sm justify-content-center';
-        
-        let monthItem = document.createElement('li');
-        monthItem.className = 'list-group-item';
-        monthItem.textContent = `${month}`;
-        
-        let dayItem = document.createElement('li');
-        dayItem.className = 'list-group-item';
-        dayItem.textContent = `${day}`;
-        
-        let yearItem = document.createElement('li');
-        yearItem.className = 'list-group-item';
-        yearItem.textContent = `${year}`;
-        
-        listGroup.appendChild(monthItem);
-        listGroup.appendChild(dayItem);
-        listGroup.appendChild(yearItem);
-        
-        listContainer.appendChild(listGroup);
-        dateInput.value = '';
-    }
-};
-
 
 
 // next step: change console log to list output,
