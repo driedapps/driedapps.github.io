@@ -122,6 +122,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 listContainer.appendChild(listGroup);
                 dateInput.value = '';
+
+                if (yearDiff===0 && monthDiff===0 && dayDiff===0) {
+                    document.getElementById('winnersMessage').innerHTML = "You got the whole date right!!"
+                }
+
             }
             else {
                     console.warn("No date entered");
