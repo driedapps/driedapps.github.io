@@ -1,9 +1,7 @@
 // defining constants to reference later
 import { vods } from '/data/squeextionary.js';
 
-const dateGuessLimit = 6
-
-const gameList = [
+const games = [
     // list of games to select from (add auto suggestion)
     "UFO 50",
     "Super Mario 64",
@@ -29,8 +27,10 @@ const vodGame = vod.game
 let currentTries = 0;
 const maxTries = 6;
 
-console.log(vodYear, vodMonth, vodDay, vodGame)
+const dateWinModal = new bootstrap.Modal(document.getElementById('dateWinner'));
+const dateWinBody = document.getElementById('dateWinnerBody');
 
+console.log(vodYear, vodMonth, vodDay, vodGame)
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("guessDate").addEventListener("click", function() {
@@ -139,15 +139,27 @@ document.addEventListener("DOMContentLoaded", function() {
                         currentTries++;
 
                         if (yearDiff===0 && monthDiff===0 && dayDiff===0) {
-                            document.getElementById('winnersMessage').innerHTML = `You got the whole date right in ${currentTries} guesses!!`
-                            document.getElementById('winnersMessage').className = "text-center p-2 fs-3";
+                            // NEED TO ADD GAME STATE = WON
+                            // ALSO NEED to add this win into the stats
+                            
                             document.getElementById('dateInput').disabled = true;
                             document.getElementById('guessDate').disabled = true;
+                            triggerGameGuess();
+                            if (currentTries === 1) {
+                                dateWinBody.innerHTML = `<center><h2>Wow!!</h2>You got the whole date right in one guess!
+                                                <br><br>Now you can guess which game is being played!</center>`;
+                                dateWinModal.show();                                
+                            } else if (currentTries > 1) {
+                                dateWinBody.innerHTML = `<center>You got the whole date right in ${currentTries} guesses!!
+                                                <br><br>Now you can guess which game is being played!</center>`;
+                                dateWinModal.show();
+                            }
                         }
                     }
             if (currentTries === 6) {
                     document.getElementById('dateInput').disabled = true;
                     document.getElementById('guessDate').disabled = true;
+                    document.getElementById('winnersMessage').className = "text-center p-2 fs-4";
                     document.getElementById('winnersMessage').innerHTML = `Oh... you've reached the max number of guesses for today.<br>Try again tomorrow...`;
                     document.getElementById('winnersMessage').className = "text-center";
             }
@@ -159,8 +171,64 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
         });
+}); 
+
+const gameInput = document.createElement('input');
+const gameButton = document.createElement('button');
+
+function triggerGameGuess() {
+    document.getElementById('dateInput').remove();
+    document.getElementById('guessDate').remove();
+    document.getElementById('dateListContainer').remove();
+    
+    
+    gameInput.type = 'text';
+    gameInput.className = 'form-control';
+    gameInput.placeholder = 'Start typing for a suggestion...';
+
+    gameButton.type = 'button';
+    gameButton.className = "btn btn-dark";
+    gameButton.textContent = "guess game";
+
+    document.getElementById('inputDiv').appendChild(gameInput);
+    document.getElementById('inputDiv').appendChild(gameButton);
+}
+
+const acResults = document.getElementById('ac-results');
+
+gameInput.addEventListener('input', function () {
+    const inputValue = this.value.toLowerCase();
+    acResults.innerHTML = '';
+
+    if (inputValue.length === 0) {
+        acResults.classList.add('d-none');
+        return;
+    }
+
+    const filteredGames = games.filter(game => 
+        game.toLowerCase().includes(inputValue)
+    );
+
+    if (filteredGames.length > 0) {
+        filteredGames.forEach(game => {
+            const div = document.createElement('div');
+            div.className = 'autocomplete-item';
+            div.textContent = game;
+            div.addEventListener('click', function () {
+                gameInput.value = game;
+                acResults.classList.add('d-none');
+            });
+            acResults.appendChild(div);
+        });
+        acResults.classList.remove('d-none');
+    } else {
+        acResults.classList.add('d-none');
+    }
 });
 
-
-// next step: change console log to list output,
-// then have dynamic output based on the person's guess
+// Hide autocomplete results when clicking outside
+document.addEventListener('click', function (e) {
+    if (e.target !== gameInput) {
+        acResults.classList.add('d-none');
+    }
+});

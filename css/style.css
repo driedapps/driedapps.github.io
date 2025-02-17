@@ -45,3 +45,20 @@ main {
     align-items: above;
     display: flex;
 }
+
+#ac-results {
+  position: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+  width: 75%;
+  border-radius: 15px;
+}
+.autocomplete-item { 
+  cursor: pointer;
+  opacity: 1;
+}
+.autocomplete-item:hover {
+  background-color: #f1f1f1;
+}

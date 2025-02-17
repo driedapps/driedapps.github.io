@@ -79,6 +79,22 @@
       </div>
     </div>
 
+    <div class="modal fade" id="dateWinner" tabindex="-1" aria-labelledby="dateWinner" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Congratulations!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="dateWinnerBody">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
   <body>
@@ -115,21 +131,22 @@
 
           <div class="row">
               <div id="winnersMessage"></div>
+              <div id="gameMessage" class="text-center"></div>
           </div>
 
           <div class="row justify-content-center">
-              <div class="input-group w-50 mb-3 p-2">
+              <div class="input-group w-75 mb-3 p-2" id="inputDiv">
                 <input type="date" id="dateInput" class="form-control" placeholder="Guess Date">
                 <button class="btn btn-dark" type="button" id="guessDate">guess date</button>
-              </div>   
+              </div> 
+              
+            <div id="dateListContainer" style="display: none;"></div> 
+            <div id="ac-results" class="d-none"></div>
+
           </div>
 
           <!--guess containers-->
-          <div class="row">
-            <div id="dateListContainer" style="display: none;">
-            </div> 
 
-          </div>
 
       </div>
 
