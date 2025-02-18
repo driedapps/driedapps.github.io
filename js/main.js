@@ -33,7 +33,7 @@ const dateWinBody = document.getElementById('dateWinnerBody');
 console.log(vodYear, vodMonth, vodDay, vodGame)
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("guessDate").addEventListener("click", function() {
+    document.getElementById("guessDate").addEventListener("click touchstart", function() {
             console.log("date guessed");
             let dateInput = document.getElementById('dateInput');
             let dateValue = dateInput.value;
