@@ -177,9 +177,8 @@ function handleGuessDate() {
                     console.warn("No date entered");
                 }
 
-        });
-}); 
-
+        }
+        
 const gameInput = document.createElement('input');
 const gameButton = document.createElement('button');
 
