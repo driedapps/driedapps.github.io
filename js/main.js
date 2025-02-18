@@ -153,7 +153,7 @@ function handleGuessDate() {
                             document.getElementById('guessDate').disabled = true;
                             triggerGameGuess();
                             if (currentTries === 1) {
-                                dateWinBody.innerHTML = `<center><h2>Wow!!</h2>You got the whole date right in one guess!
+                                dateWinBody.innerHTML = `<center><h2>Wow!!</h2>You got the whole date right in only one guess!
                                                 <br><br>Now you can guess which game is being played!</center>`;
                                 dateWinModal.show();                                
                             } else if (currentTries > 1) {
@@ -178,7 +178,7 @@ function handleGuessDate() {
                 }
 
         }
-        
+
 const gameInput = document.createElement('input');
 const gameButton = document.createElement('button');
 
