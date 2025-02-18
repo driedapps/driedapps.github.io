@@ -135,9 +135,14 @@
           </div>
 
           <div class="row justify-content-center">
-              <div class="input-group w-75 mb-3 p-2 date" id="inputDiv">
-                <input type="text" id="dateInput" class="form-control" placeholder="Guess Date">
-                <button class="btn btn-dark" type="button" id="guessDate">guess date</button>
+              <div class="input-group w-75 mb-3 p-2" id="inputDiv">
+
+                <div class="datepicker input-group" id='dateInput' data-provide="datepicker">
+                  <input type="text" class="form-control">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th" id="guessDate"></span>
+                  </div>
+
               </div> 
               
             <div id="dateListContainer" style="display: none;"></div> 
