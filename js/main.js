@@ -40,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-function handleGuessDate(event) {
-    event.preventDefault();
+function handleGuessDate() {
             console.log("date guessed");
             let dateInput = document.getElementById('dateInput');
             let dateValue = dateInput.value;
