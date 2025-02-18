@@ -63,7 +63,8 @@ main {
   background-color: #f1f1f1;
 }
 
-input#date {
-  position: relative;
+#guessDate {
+  pointer-events: all; /* Ensure the element can receive events */
+  opacity: 1; /* Ensure the element is visible */
 }
 
