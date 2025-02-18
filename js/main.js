@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var guessDateButton = document.getElementById("guessDate");
 
     // Add event listeners for both click and touch events
-    guessDateButton.addEventListener("click", handleGuessDate);
-    guessDateButton.addEventListener("touchstart", handleGuessDate);
+    guessDateButton.addEventListener("pointerdown", handleGuessDate);
+
 });
 
 function handleGuessDate() {
