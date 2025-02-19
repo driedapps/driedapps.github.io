@@ -22,7 +22,7 @@ const stats = {
 }
 
 const vod = vods[0];
-const vodDate = new Date(vod.voddate + "T00:00:00")
+const vodDate = new Date(vod.voddate)
 const vodYear = vodDate.getFullYear()
 const vodMonth = vodDate.getMonth() + 1
 const vodDay = vodDate.getDate()
@@ -54,7 +54,7 @@ function handleGuessDate() {
             if (dateValue) {
                 for (let i = 0; i < 1; i++) {
                     if (currentTries < maxTries) {
-                        let date = new Date(dateValue + "T00:00:00");
+                        let date = new Date(dateValue);
                         
                         let month = date.getUTCMonth() + 1
                         let day = date.getUTCDate()
