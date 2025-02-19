@@ -1,5 +1,9 @@
+const locale = new Intl.Locale('default', { region: 'US' }); // Replace 'US' with your desired region code
+document.documentElement.lang = locale.baseName; 
+
 // defining constants to reference later
 import { vods } from '/data/squeextionary.js';
+
 
 const games = [
     // list of games to select from (add auto suggestion)
