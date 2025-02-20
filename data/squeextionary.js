@@ -99,34 +99,34 @@ export const vods = [
         vodlink: 'https://www.youtube.com/watch?v=7L_FuoaH4c0'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot18.png',
+        voddate: '05-13-2022',
+        game: 'Super Mario Sunshine',
+        vodlink: 'https://www.youtube.com/watch?v=zG1VgaRtFGI'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot19.png',
+        voddate: '05-17-2022',
+        game: 'The Sims 4',
+        vodlink: 'https://www.youtube.com/watch?v=LEexMWaR7ZA'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot20.png',
+        voddate: '03-03-2016',
+        game: 'Counter-Strike',
+        vodlink: 'https://www.twitch.tv/videos/52177290'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot21.png',
+        voddate: '05-28-2014',
+        game: 'Counter-Strike',
+        vodlink: 'https://www.twitch.tv/videos/49148191'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot22.png',
+        voddate: '01-17-2019',
+        game: 'DARK SOULS 3',
+        vodlink: 'https://www.twitch.tv/videos/365345182'
     },
     {
         filepath: 'screenshots/shot.png',

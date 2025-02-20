@@ -18,7 +18,11 @@ const games = [
     "Fortnite",
     "The Stanley Parable: Ultra Deluxe",
     "Valorant",
-    
+    "Super Mario Sunshine",
+    "The Sims 4",
+    "Counter-Strike",
+    "DARK SOULS 3",
+    "Luigis Mansion"
 ]
 
 const stats = {
