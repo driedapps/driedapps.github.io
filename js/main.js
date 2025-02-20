@@ -213,7 +213,7 @@ gameInput.addEventListener('input', function () {
     const gameValue = this.value.toLowerCase();
     acResults.innerHTML = '';
 
-    if (inputValue.length === 0) {
+    if (gameValue.length === 0) {
         acResults.classList.add('d-none');
         return;
     }
