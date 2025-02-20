@@ -35,7 +35,8 @@ const maxTries = 6;
 const dateWinModal = new bootstrap.Modal(document.getElementById('dateWinner'));
 const dateWinBody = document.getElementById('dateWinnerBody');
 const gameWinnerBody = document.getElementById('gameWinnerBody')
-const gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
+const 
+gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
 
 console.log(vodYear, vodMonth, vodDay, vodGame)
 
@@ -212,7 +213,7 @@ function triggerGameGuess() {
 const acResults = document.getElementById('ac-results');
 
 gameInput.addEventListener('input', function () {
-    const gameValue = this.value.toLowerCase();
+    var gameValue = this.value.toLowerCase();
     acResults.innerHTML = '';
 
     if (gameValue.length === 0) {
@@ -230,26 +231,33 @@ gameInput.addEventListener('input', function () {
             div.className = 'autocomplete-item';
             div.textContent = game;
             div.addEventListener('click', function () {
-                gameInput.value = game;
-                acResults.classList.add('d-none');
+                gameInput.value = game
+                var gameValue = game;
+                acResults.classList.add('d-none');                
+                
+                gameButton.addEventListener('click', function () {
+                    if (gameValue == vodGame) {
+                        document.getElementById('modalTitle').innerHTML = `<h3>Congratulations!</h3>`
+                        gameWinnerBody.innerHTML = `<center>You got the game correct!!!<br>Thanks for playing :)<br><br>
+                                                    <a href="${vodLink}">Click here to watch the VOD</a></center>`;
+                        gameWinnerModal.show();  
+                    } else if (gameValue != vodGame.toLowerCase()) {
+                        document.getElementById('modalTitle').innerHTML = `<b>Uh oh....</b>`
+                        gameWinnerBody.innerHTML = `<center>That is not correct... Try again...</center>`;
+                        gameWinnerModal.show();
+                    }
+                })
             });
             acResults.appendChild(div);
+
         });
         acResults.classList.remove('d-none');
     } else {
         acResults.classList.add('d-none');
     }
 
-    if (gameValue === vodGame.toLowerCase()) {
-        gameWinnerBody.innerHTML = `<center>You got the game correct!<br><br>
-                                    <a href="${vodlink}">Click here to watch the VOD</a></center>`;
-        gameWinnerModal.show();  
-    } else {
-        gameWinnerModal.title = 'Uh oh....'
-        gameWinnerBody.innerHTML = `<center>That is not correct... Try again...</center>`;
-        gameWinnerModal.show();
-    }
 });
+
 
 // Hide autocomplete results when clicking outside
 document.addEventListener('click', function (e) {
