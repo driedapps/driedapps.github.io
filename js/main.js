@@ -34,6 +34,8 @@ const maxTries = 6;
 
 const dateWinModal = new bootstrap.Modal(document.getElementById('dateWinner'));
 const dateWinBody = document.getElementById('dateWinnerBody');
+const gameWinnerBody = document.getElementById('gameWinnerBody')
+const gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
 
 console.log(vodYear, vodMonth, vodDay, vodGame)
 
@@ -238,10 +240,7 @@ gameInput.addEventListener('input', function () {
         acResults.classList.add('d-none');
     }
 
-    gameWinnerBody = document.getElementById('gameWinnerBody')
-    gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
-
-    if (gameValue === vodGame) {
+    if (gameValue === vodGame.toLowerCase()) {
         gameWinnerBody.innerHTML = `<center>You got the game correct!<br><br>
                                     <a href="${vodlink}">Click here to watch the VOD</a></center>`;
         gameWinnerModal.show();  
