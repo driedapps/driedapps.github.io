@@ -129,10 +129,10 @@ export const vods = [
         vodlink: 'https://www.twitch.tv/videos/365345182'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot23.png',
+        voddate: '05-17-2022',
+        game: 'Luigis Mansion',
+        vodlink: 'https://www.youtube.com/watch?v=LkiuDmbzQ6I'
     },
     {
         filepath: 'screenshots/shot.png',
