@@ -4,13 +4,21 @@ document.documentElement.lang = locale.baseName;
 // defining constants to reference later
 import { vods } from '/data/squeextionary.js';
 
-
+// list of games to select from (add auto suggestion)
 const games = [
-    // list of games to select from (add auto suggestion)
     "UFO 50",
     "Super Mario 64",
     "Rocket League",
-
+    "Elden Ring",
+    "Kirby and the Forgotten Land",
+    "God of War",
+    "LEGO Star Wars: The Skywalker Saga Part 4",
+    "At Dead of Night",
+    "The Long Drive",
+    "Fortnite",
+    "The Stanley Parable: Ultra Deluxe",
+    "Valorant",
+    
 ]
 
 const stats = {

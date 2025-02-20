@@ -51,52 +51,52 @@ export const vods = [
         vodlink: 'https://www.youtube.com/watch?v=_z-AbveKlxg'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot10.png',
+        voddate: '04-17-2022',
+        game: 'Super Mario 64',
+        vodlink: 'https://www.youtube.com/watch?v=7Mate5LNz4A'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot11.png',
+        voddate: '04-17-2022',
+        game: 'At Dead of Night',
+        vodlink: 'https://www.youtube.com/watch?v=635uU4qNQ-4'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot12.png',
+        voddate: '04-18-2022',
+        game: 'Super Mario 64',
+        vodlink: 'https://www.youtube.com/watch?v=e_pAiqb5fyc'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot13.png',
+        voddate: '04-24-2022',
+        game: 'Super Mario 64',
+        vodlink: 'https://www.youtube.com/watch?v=WNAEracD7BM'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot14.png',
+        voddate: '02-11-2025',
+        game: 'The Long Drive',
+        vodlink: 'https://www.youtube.com/watch?v=-Cu59RgsghQ'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot15.png',
+        voddate: '04-27-2022',
+        game: 'Fortnite',
+        vodlink: 'https://www.youtube.com/watch?v=0qrXm2QKXhY'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot16.png',
+        voddate: '05-01-2022',
+        game: 'The Stanley Parable: Ultra Deluxe',
+        vodlink: 'https://www.youtube.com/watch?v=xwpzN3xjCXw'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot17.png',
+        voddate: '05-04-2022',
+        game: 'Valorant',
+        vodlink: 'https://www.youtube.com/watch?v=7L_FuoaH4c0'
     },
     {
         filepath: 'screenshots/shot.png',
