@@ -27,6 +27,7 @@ const vodYear = vodDate.getFullYear()
 const vodMonth = vodDate.getMonth() + 1
 const vodDay = vodDate.getDate()
 const vodGame = vod.game
+const vodLink = vod.vodlink
 
 let currentTries = 0;
 const maxTries = 6;
@@ -205,10 +206,11 @@ function triggerGameGuess() {
     document.getElementById('inputDiv').appendChild(gameButton);
 }
 
+// autocomplete container to select a game instead of typing the whole thing out
 const acResults = document.getElementById('ac-results');
 
 gameInput.addEventListener('input', function () {
-    const inputValue = this.value.toLowerCase();
+    const gameValue = this.value.toLowerCase();
     acResults.innerHTML = '';
 
     if (inputValue.length === 0) {
@@ -217,7 +219,7 @@ gameInput.addEventListener('input', function () {
     }
 
     const filteredGames = games.filter(game => 
-        game.toLowerCase().includes(inputValue)
+        game.toLowerCase().includes(gameValue)
     );
 
     if (filteredGames.length > 0) {
@@ -234,6 +236,19 @@ gameInput.addEventListener('input', function () {
         acResults.classList.remove('d-none');
     } else {
         acResults.classList.add('d-none');
+    }
+
+    gameWinnerBody = document.getElementById('gameWinnerBody')
+    gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
+
+    if (gameValue === vodGame) {
+        gameWinnerBody.innerHTML = `<center>You got the game correct!<br><br>
+                                    <a href="${vodlink}">Click here to watch the VOD</a></center>`;
+        gameWinnerModal.show();  
+    } else {
+        gameWinnerModal.title = 'Uh oh....'
+        gameWinnerBody.innerHTML = `<center>That is not correct... Try again...</center>`;
+        gameWinnerModal.show();
     }
 });
 

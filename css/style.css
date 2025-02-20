@@ -66,6 +66,5 @@ main {
 #guessDate {
   pointer-events: auto; /* Ensure the element can receive events */
   opacity: 1; /* Ensure the element is visible */
-  z-index: 9999;
 }
 
