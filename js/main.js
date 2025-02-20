@@ -6,23 +6,23 @@ import { vods } from '/data/squeextionary.js';
 
 // list of games to select from (add auto suggestion)
 const games = [
-    "UFO 50",
-    "Super Mario 64",
-    "Rocket League",
-    "Elden Ring",
-    "Kirby and the Forgotten Land",
-    "God of War",
-    "LEGO Star Wars: The Skywalker Saga Part 4",
     "At Dead of Night",
-    "The Long Drive",
-    "Fortnite",
-    "The Stanley Parable: Ultra Deluxe",
-    "Valorant",
-    "Super Mario Sunshine",
-    "The Sims 4",
     "Counter-Strike",
     "DARK SOULS 3",
-    "Luigis Mansion"
+    "Elden Ring",
+    "Fortnite",
+    "God of War",
+    "Kirby and the Forgotten Land",
+    "LEGO Star Wars: The Skywalker Saga Part 4",
+    "Luigis Mansion",
+    "Rocket League",
+    "Super Mario 64",
+    "Super Mario Sunshine",
+    "The Long Drive",
+    "The Sims 4",
+    "The Stanley Parable: Ultra Deluxe",
+    "UFO 50",
+    "Valorant"
 ]
 
 const stats = {
