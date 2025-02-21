@@ -1,6 +1,3 @@
-const locale = new Intl.Locale('default', { region: 'US' }); 
-document.documentElement.lang = locale.baseName; 
-
 // defining constants to reference later
 import { vods } from '/data/squeextionary.js';
 
@@ -38,7 +35,6 @@ const vodDate_ = vod.voddate
 const [vmonth, vday, vyear] = vodDate_.split('-').map(Number);
 const vodDate = new Date(vyear, vmonth - 1, vday); // Note: Month is 0-indexed in JavaScript
 
-
 const vodYear = vodDate.getFullYear()
 const vodMonth = vodDate.getMonth() + 1
 const vodDay = vodDate.getDate()
@@ -50,9 +46,8 @@ const maxTries = 6;
 
 const dateWinModal = new bootstrap.Modal(document.getElementById('dateWinner'));
 const dateWinBody = document.getElementById('dateWinnerBody');
-const gameWinnerBody = document.getElementById('gameWinnerBody')
-const 
-gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
+const gameWinnerBody = document.getElementById('gameWinnerBody');
+const gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
 
 console.log(vodDate, vodYear, vodMonth, vodDay, vodGame)
 
