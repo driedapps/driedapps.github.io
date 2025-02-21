@@ -3,6 +3,7 @@
 ### Squeexle website loading....
 
 ## to-do:
-- [x] fix mobile
+- [x] fix mobile date input
+- [ ] fix mobile styling
 - [ ] add stats functionality
 - [ ] add daily vod indexing
