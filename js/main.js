@@ -1,4 +1,4 @@
-const locale = new Intl.Locale('default', { region: 'US' }); // Replace 'US' with your desired region code
+const locale = new Intl.Locale('default', { region: 'US' }); 
 document.documentElement.lang = locale.baseName; 
 
 // defining constants to reference later
@@ -34,7 +34,11 @@ const stats = {
 }
 
 const vod = vods[0];
-const vodDate = new Date(vod.voddate)
+const vodDate_ = vod.voddate
+const [vmonth, vday, vyear] = vodDate_.split('-').map(Number);
+const vodDate = new Date(vyear, vmonth - 1, vday); // Note: Month is 0-indexed in JavaScript
+console.log(vodDate);
+
 const vodYear = vodDate.getFullYear()
 const vodMonth = vodDate.getMonth() + 1
 const vodDay = vodDate.getDate()
