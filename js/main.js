@@ -61,6 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+window.addEventListener('keypress', function (e) {
+    if (e.key === "Enter") {
+    e.preventDefault();
+    handleGuessDate();
+    }
+   }, false);
+
 function handleGuessDate() {
             console.log("date guessed");
             let dateInput = document.getElementById('dateInput');
@@ -251,7 +258,7 @@ gameInput.addEventListener('input', function () {
                     if (gameValue == vodGame) {
                         document.getElementById('modalTitle').innerHTML = `<h3>Congratulations!</h3>`
                         gameWinnerBody.innerHTML = `<center>You got the game correct!!!<br>Thanks for playing :)<br><br>
-                                                    <a href="${vodLink}">Click here to watch the VOD</a></center>`;
+                                                    <a href="${vodLink}">Click here to watch the VOD</a><br><span class="small">blame Twitch if this link doesn't work...</span></center>`;
                         gameWinnerModal.show();  
                     } else if (gameValue != vodGame.toLowerCase()) {
                         document.getElementById('modalTitle').innerHTML = `<b>Uh oh....</b>`
