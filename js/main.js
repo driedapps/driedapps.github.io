@@ -37,7 +37,7 @@ const vod = vods[0];
 const vodDate_ = vod.voddate
 const [vmonth, vday, vyear] = vodDate_.split('-').map(Number);
 const vodDate = new Date(vyear, vmonth - 1, vday); // Note: Month is 0-indexed in JavaScript
-console.log(vodDate);
+
 
 const vodYear = vodDate.getFullYear()
 const vodMonth = vodDate.getMonth() + 1
@@ -54,7 +54,7 @@ const gameWinnerBody = document.getElementById('gameWinnerBody')
 const 
 gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
 
-console.log(vodYear, vodMonth, vodDay, vodGame)
+console.log(vodDate, vodYear, vodMonth, vodDay, vodGame)
 
 document.addEventListener("DOMContentLoaded", function() {
     var guessDateButton = document.getElementById("guessDate");
