@@ -4,6 +4,6 @@
 
 ## to-do:
 - [x] fix mobile date input
-- [ ] fix mobile styling
+- [x] fix mobile styling
 - [ ] add stats functionality
 - [ ] add daily vod indexing
