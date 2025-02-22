@@ -46,8 +46,11 @@ const maxTries = 6;
 
 const dateWinModal = new bootstrap.Modal(document.getElementById('dateWinner'));
 const dateWinBody = document.getElementById('dateWinnerBody');
-const gameWinnerBody = document.getElementById('gameWinnerBody');
+const dateLoseModal = new bootstrap.Modal(document.getElementById('dateLoser'));
+const dateLoseBody = document.getElementById('dateLoserBody');
 const gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
+const gameWinnerBody = document.getElementById('gameWinnerBody');
+
 
 console.log(vodDate, vodYear, vodMonth, vodDay, vodGame)
 
@@ -191,11 +194,11 @@ function handleGuessDate() {
                         }
                     }
             if (currentTries === 6) {
-                    document.getElementById('dateInput').disabled = true;
-                    document.getElementById('guessDate').disabled = true;
-                    document.getElementById('winnersMessage').className = "text-center p-2 fs-4";
-                    document.getElementById('winnersMessage').innerHTML = `Oh... you've reached the max number of guesses for today.<br>Try again tomorrow...`;
-                    document.getElementById('winnersMessage').className = "text-center";
+                dateLoseBody.innerHTML = `<center>You've reached the maximum number of guesses for today...<br><br>
+                                            Try again tomorrow?</center>`;
+                dateLoseModal.show();
+                document.getElementById('dateInput').disabled = true;
+                document.getElementById('guessDate').disabled = true;
             }
                 }
 
