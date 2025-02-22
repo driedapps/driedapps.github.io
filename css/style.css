@@ -78,3 +78,12 @@ body {
   opacity: 1; /* Ensure the element is visible */
 }
 
+@media (max-width: 576px) {
+  .list-group-horizontal-sm {
+    flex-direction: row !important;
+    display: flex !important;
+  }
+  .list-group-item {
+    flex: 1 1 auto !important;
+  }
+}
