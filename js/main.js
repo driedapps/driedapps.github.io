@@ -100,7 +100,7 @@ function handleGuessDate() {
                             monthItem.className = 'list-group-item list-group-item-success';
                             monthItem.style = "font-size: large; font-weight: bold;"
                             monthItem.textContent = `${month}`;
-                            listGroup.appendChild(monthItem);
+                            listGroup.insertBefore(monthItem, listGroup.children[0]);
                         } else if (monthDiff >=1 && monthDiff <=2) {
                             let monthItem = document.createElement('li');
                             monthItem.className = 'list-group-item list-group-item-warning';
@@ -171,7 +171,7 @@ function handleGuessDate() {
                             listGroup.appendChild(yearItem);
                         }
                         
-                        listContainer.appendChild(listGroup);
+                        listContainer.insertBefore(listGroup, listContainer.children[0]);
                         dateInput.value = '';
                         currentTries++;
 
