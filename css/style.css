@@ -2,7 +2,7 @@ main {
     padding-right: 4em;
   }
 
-  .container{
+.container{
     text-align: center;
     align-items: center;
 }
@@ -12,7 +12,7 @@ span.small {
 }
 
   
-  body {
+body {
     background-color: rgb(114, 114, 114);
     position: center;
     min-height: 100vh;
@@ -49,6 +49,12 @@ span.small {
     align-items: above;
     display: flex;
 }
+
+#dateListContainer {
+  display: flex;
+  justify-content: center;
+}
+
 
 #ac-results {
   position: center;
