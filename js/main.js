@@ -89,7 +89,7 @@ function handleGuessDate() {
                         listContainer.style.display = 'block';
                         
                         let listGroup = document.createElement('ul');
-                        listGroup.className = 'list-group list-group-horizontal-sm justify-content-center';
+                        listGroup.className = 'list-group list-group-horizontal list-group-horizontal-sm justify-content-center';
 
                         let monthDiff = Math.abs(month - vodMonth);
                         if (monthDiff > 6) {
