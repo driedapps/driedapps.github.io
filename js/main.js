@@ -30,7 +30,10 @@ const stats = {
     maxStreak: 0
 }
 
-const vod = vods[0];
+// vod shots start at 2 currently
+// index plus 2
+// or add two vods to the front of the squeextionary
+const vod = vods[8];
 const vodDate_ = vod.voddate
 const [vmonth, vday, vyear] = vodDate_.split('-').map(Number);
 const vodDate = new Date(vyear, vmonth - 1, vday); // Note: Month is 0-indexed in JavaScript
@@ -260,7 +263,7 @@ gameInput.addEventListener('input', function () {
                     if (gameValue == vodGame) {
                         document.getElementById('modalTitle').innerHTML = `<h3>Congratulations!</h3>`
                         gameWinnerBody.innerHTML = `<center>You got the game correct!!!<br>Thanks for playing :)<br><br>
-                                                    <a href="${vodLink}">Click here to watch the VOD</a><br><span class="small">blame Twitch if this link doesn't work...</span></center>`;
+                                                    <a href="${vodLink}" target="_blank">Click here to watch the VOD</a><br><span class="small">blame Twitch if this link doesn't work...</span></center>`;
                         gameWinnerModal.show();  
                     } else if (gameValue != vodGame.toLowerCase()) {
                         document.getElementById('modalTitle').innerHTML = `<b>Uh oh....</b>`

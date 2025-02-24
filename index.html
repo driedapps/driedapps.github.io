@@ -21,10 +21,11 @@
         <div class="modal-content">
           <div class="modal-header justify-content-center">
             <h1 class="modal-title fs-5" id="introModalLabel">Instructions for Squeexle</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
                 <center>Every day you'll see a new Squeex!<br>
-                Guess which day the stream is from and you'll win.<br><br></center>
+                You have <b>6</b> chances to guess the exact date this screenshot is from.<br><br></center>
 
                 If your guess is close the day, month, or year will be yellow.<br>
                 If your guess is far away the day, month, or year will be red.<br>
@@ -50,7 +51,8 @@
                 </ul>
                 <br>
 
-                You can also guess which game Squeex was playing in the stream.<br><br>
+                You can also guess which game or category this screenshot is from.<br>
+                There is no limit on how many times you can guess this.<br><br>
 
                 Have fun!<br><br>
 
@@ -71,6 +73,7 @@
         <div class="modal-content">
           <div class="modal-header justify-content-center">
             <h1 class="modal-title fs-5" id="statsLabel">Your Squeexle Stats</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
               stats will go here
@@ -163,7 +166,7 @@
         </div>
           <div class="row p-2">
               <!--display the screenshot with an empty source-->
-              <img src="data/screenshots/shot2.png" alt="Squeex VOD" id="vod">
+              <img src="data/screenshots/shot10.png" alt="Squeex VOD" id="vod">
           </div>
 
           <div class="row">
@@ -173,7 +176,7 @@
 
           <div class="row justify-content-center">
               <div class="input-group w-75 mb-3 p-2" id="inputDiv">
-                <input type="date" id="dateInput" class="form-control" placeholder="Guess Date">
+                <input type="date" id="dateInput" class="form-control" placeholder="Guess Date" max="2026-12-31">
                 <button class="btn btn-dark" id="guessDate">guess date</button>
               </div> 
             
