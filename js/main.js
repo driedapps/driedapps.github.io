@@ -43,6 +43,9 @@ const vodMonth = vodDate.getMonth() + 1
 const vodDay = vodDate.getDate()
 const vodGame = vod.game
 const vodLink = vod.vodlink
+const vodImgPath = vod.filepath
+
+document.getElementById("vod").src = `data/${vodImgPath}`;
 
 let currentTries = 0;
 const maxTries = 6;
