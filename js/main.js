@@ -101,7 +101,6 @@ const vodDay = vodDate.getDate()
 const vodGame = vod.game
 const vodLink = vod.vodlink
 const vodImgPath = vod.filepath
-const vodsLength = vods.length
 
 document.getElementById("vod").src = `/data/${vodImgPath}`;
 
@@ -168,6 +167,12 @@ window.addEventListener('keypress', function (e) {
                 currentTries++;
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
+                    // Store the win in localStorage
+                    localStorage.setItem('dateWin', JSON.stringify({
+                        tries: currentTries,
+                        date: dateValue
+                    }));
+
                     document.getElementById('dateInput').disabled = true;
                     document.getElementById('guessDate').disabled = true;
                     triggerGameGuess();
@@ -248,7 +253,15 @@ function getClassForDiff(diff, type) {
 function loadGuesses() {
     let guesses = JSON.parse(localStorage.getItem('guesses')) || [];
     guesses.forEach(guess => renderGuess(guess));
-}
+
+    // Check if there's a stored win
+    let dateWin = JSON.parse(localStorage.getItem('dateWin'));
+    if (dateWin) {
+        // Disable input and button
+        document.getElementById('dateInput').disabled = true;
+        document.getElementById('guessDate').disabled = true;
+        triggerGameGuess()
+}}
 
 // Call loadGuesses when the page loads
 window.onload = loadGuesses;
