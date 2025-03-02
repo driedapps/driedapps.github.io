@@ -324,7 +324,7 @@ gameInput.addEventListener('input', function () {
                     if (gameValue == vodGame) {
                         document.getElementById('modalTitle').innerHTML = `<h3>Congratulations!</h3>`
                         gameWinnerBody.innerHTML = `<center>You got the game correct!!!<br>Thanks for playing :)<br><br>
-                                                    <a href="${vodLink}" target="_blank">Click here to watch the VOD</a><br><span class="small">blame Twitch if this link doesn't work...</span></center>`;
+                                                    <a href="${vodLink}" target="_blank">Click here to watch :3</a><br><span class="small">blame Twitch if this link doesn't work...</span></center>`;
                         gameWinnerModal.show();  
                     } else if (gameValue != vodGame.toLowerCase()) {
                         document.getElementById('modalTitle').innerHTML = `<b>Uh oh....</b>`
