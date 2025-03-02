@@ -134,115 +134,40 @@ window.addEventListener('keypress', function (e) {
     }
    }, false);
 
-function handleGuessDate() {
+   function handleGuessDate() {
     console.log("date guessed");
     let dateInput = document.getElementById('dateInput');
     let dateValue = dateInput.value;
-
 
     if (dateValue) {
         for (let i = 0; i < 1; i++) {
             if (currentTries < maxTries) {
                 let date = new Date(dateValue);
                 
-                let month = date.getUTCMonth() + 1
-                let day = date.getUTCDate()
-                let year = date.getUTCFullYear()
+                let month = date.getUTCMonth() + 1;
+                let day = date.getUTCDate();
+                let year = date.getUTCFullYear();
 
-                let listContainer = document.getElementById('dateListContainer');
-                listContainer.style.display = 'block';
-                
-                let listGroup = document.createElement('ul');
-                listGroup.className = 'list-group list-group-horizontal list-group-horizontal-sm justify-content-center';
+                // Create a guess object
+                let guess = {
+                    month: month,
+                    day: day,
+                    year: year,
+                    monthDiff: Math.abs(month - vodMonth),
+                    dayDiff: Math.abs(day - vodDay),
+                    yearDiff: Math.abs(year - vodYear)
+                };
 
-                let monthDiff = Math.abs(month - vodMonth);
-                if (monthDiff > 6) {
-                    monthDiff = 12 - monthDiff; // Take the shortest distance
-                }
-                if (monthDiff === 0) {
-                    let monthItem = document.createElement('li');
-                    monthItem.className = 'list-group-item list-group-item-success';
-                    monthItem.style = "font-size: large; font-weight: bold;"
-                    monthItem.textContent = `${month}`;
-                    listGroup.insertBefore(monthItem, listGroup.children[0]);
-                } else if (monthDiff >=1 && monthDiff <=2) {
-                    let monthItem = document.createElement('li');
-                    monthItem.className = 'list-group-item list-group-item-warning';
-                    monthItem.textContent = `${month}`;
-                    listGroup.appendChild(monthItem);
-                } else if (monthDiff >2 && monthDiff <5) {
-                    let monthItem = document.createElement('li');
-                    monthItem.className = 'list-group-item list-group-item-danger';
-                    monthItem.textContent = `${month}`;
-                    listGroup.appendChild(monthItem);
-                } else if (monthDiff >=5) {
-                    let monthItem = document.createElement('li');
-                    monthItem.className = 'list-group-item list-group-item-dark';
-                    monthItem.style = "font-weight: bold;"
-                    monthItem.textContent = `${month}`;
-                    listGroup.appendChild(monthItem);
-                }
-                
-                let dayDiff = Math.abs(day - vodDay);
+                // Save the guess to localStorage
+                saveGuess(guess);
 
-                if (dayDiff === 0) {
-                    let dayItem = document.createElement('li');
-                    dayItem.className = 'list-group-item list-group-item-success';
-                    dayItem.style = "font-size: large; font-weight: bold;"
-                    dayItem.textContent = `${day}`;
-                    listGroup.appendChild(dayItem);
-                } else if (dayDiff >=1 && dayDiff <=3) {
-                    let dayItem = document.createElement('li');
-                    dayItem.className = 'list-group-item list-group-item-warning';
-                    dayItem.textContent = `${day}`;
-                    listGroup.appendChild(dayItem);
-                } else if (dayDiff >3 && dayDiff <8) {
-                    let dayItem = document.createElement('li');
-                    dayItem.className = 'list-group-item list-group-item-danger';
-                    dayItem.textContent = `${day}`;
-                    listGroup.appendChild(dayItem);
-                } else if (dayDiff >=8) {
-                    let dayItem = document.createElement('li');
-                    dayItem.className = 'list-group-item list-group-item-dark';
-                    dayItem.style = "font-weight: bold;"
-                    dayItem.textContent = `${day}`;
-                    listGroup.appendChild(dayItem);
-                }
-                
-                let yearDiff = Math.abs(year - vodYear);
+                // Render the guess
+                renderGuess(guess);
 
-                if (yearDiff === 0) {
-                    let yearItem = document.createElement('li');
-                    yearItem.className = 'list-group-item list-group-item-success';
-                    yearItem.style = "font-size: large; font-weight: bold;"
-                    yearItem.textContent = `${year}`;
-                    listGroup.appendChild(yearItem);
-                } else if (yearDiff >=1 && yearDiff <=2) {
-                    let yearItem = document.createElement('li');
-                    yearItem.className = 'list-group-item list-group-item-warning';
-                    yearItem.textContent = `${year}`;
-                    listGroup.appendChild(yearItem);
-                } else if (yearDiff >2 && yearDiff <5) {
-                    let yearItem = document.createElement('li');
-                    yearItem.className = 'list-group-item list-group-item-danger';
-                    yearItem.textContent = `${year}`;
-                    listGroup.appendChild(yearItem);
-                } else if (yearDiff >=5) {
-                    let yearItem = document.createElement('li');
-                    yearItem.className = 'list-group-item list-group-item-dark';
-                    yearItem.style = "font-weight: bold;"
-                    yearItem.textContent = `${year}`;
-                    listGroup.appendChild(yearItem);
-                }
-                
-                listContainer.insertBefore(listGroup, listContainer.children[0]);
                 dateInput.value = '';
                 currentTries++;
 
-                if (yearDiff===0 && monthDiff===0 && dayDiff===0) {
-                    // NEED TO ADD GAME STATE = WON
-                    // ALSO NEED to add this win into the stats
-                    
+                if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
                     document.getElementById('dateInput').disabled = true;
                     document.getElementById('guessDate').disabled = true;
                     triggerGameGuess();
@@ -264,14 +189,69 @@ function handleGuessDate() {
                 document.getElementById('dateInput').disabled = true;
                 document.getElementById('guessDate').disabled = true;
             }
-                }
-
-                }
-            else {
-                    console.warn("No date entered");
-                }
-
         }
+    } else {
+        console.warn("No date entered");
+    }
+}
+
+// Function to save guess to localStorage
+function saveGuess(guess) {
+    let guesses = JSON.parse(localStorage.getItem('guesses')) || [];
+    guesses.push(guess);
+    localStorage.setItem('guesses', JSON.stringify(guesses));
+}
+
+// Function to render a guess
+function renderGuess(guess) {
+    let listContainer = document.getElementById('dateListContainer');
+    listContainer.style.display = 'block';
+    
+    let listGroup = document.createElement('ul');
+    listGroup.className = 'list-group list-group-horizontal list-group-horizontal-sm justify-content-center';
+
+    // Render month
+    let monthItem = document.createElement('li');
+    monthItem.className = getClassForDiff(guess.monthDiff, 'month');
+    monthItem.textContent = `${guess.month}`;
+    listGroup.appendChild(monthItem);
+
+    // Render day
+    let dayItem = document.createElement('li');
+    dayItem.className = getClassForDiff(guess.dayDiff, 'day');
+    dayItem.textContent = `${guess.day}`;
+    listGroup.appendChild(dayItem);
+
+    // Render year
+    let yearItem = document.createElement('li');
+    yearItem.className = getClassForDiff(guess.yearDiff, 'year');
+    yearItem.textContent = `${guess.year}`;
+    listGroup.appendChild(yearItem);
+
+    listContainer.insertBefore(listGroup, listContainer.children[0]);
+}
+
+// Function to get the appropriate class based on the difference
+function getClassForDiff(diff, type) {
+    if (diff === 0) {
+        return `list-group-item list-group-item-success ${type}`;
+    } else if (diff >= 1 && diff <= (type === 'month' ? 2 : 3)) {
+        return `list-group-item list-group-item-warning ${type}`;
+    } else if (diff > (type === 'month' ? 2 : 3) && diff < (type === 'month' ? 5 : 8)) {
+        return `list-group-item list-group-item-danger ${type}`;
+    } else {
+        return `list-group-item list-group-item-dark ${type}`;
+    }
+}
+
+// Function to load guesses from localStorage and render them
+function loadGuesses() {
+    let guesses = JSON.parse(localStorage.getItem('guesses')) || [];
+    guesses.forEach(guess => renderGuess(guess));
+}
+
+// Call loadGuesses when the page loads
+window.onload = loadGuesses;
 
 const gameInput = document.createElement('input');
 const gameButton = document.createElement('button');
