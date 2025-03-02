@@ -1,25 +1,34 @@
 export const vods = [
     {
+        filepath: 'screenshots/shot0.png',
+        voddate: '07-07-2022',
+        game: 'Fall Guys',
+        vodlink: 'https://www.youtube.com/watch?v=zzOCqtejZ2A'
+    },
+    {
+        filepath: 'screenshots/shot1.png',
+        voddate: '12-28-2022',
+        game: 'Super Monkey Ball: Banana Mania',
+        vodlink: 'https://www.youtube.com/watch?v=0nIlpd92-8k'
+    },
+    {
         filepath: 'screenshots/shot2.png',
         voddate: '10-02-2024',
         game: 'UFO 50',
         vodlink: 'https://www.twitch.tv/videos/2266307516'
     },
-
     {
         filepath: 'screenshots/shot3.png',
         voddate: '09-06-2024',
         game: 'Super Mario 64',
         vodlink: 'https://www.twitch.tv/videos/2243958523'
     },
-
     {
         filepath: 'screenshots/shot4.png',
         voddate: '11-05-2024',
         game: 'Rocket League',
         vodlink: 'https://www.twitch.tv/videos/2294504340'
     },
-
     {
         filepath: 'screenshots/shot5.png',
         voddate: '03-11-2022',

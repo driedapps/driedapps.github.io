@@ -7,6 +7,7 @@ const games = [
     "Counter-Strike",
     "DARK SOULS 3",
     "Elden Ring",
+    "Fall Guys",
     "Fortnite",
     "God of War",
     "Kirby and the Forgotten Land",
@@ -15,6 +16,7 @@ const games = [
     "Rocket League",
     "Super Mario 64",
     "Super Mario Sunshine",
+    "Super Monkey Ball: Banana Mania",
     "The Long Drive",
     "The Sims 4",
     "The Stanley Parable: Ultra Deluxe",
@@ -30,12 +32,67 @@ const stats = {
     maxStreak: 0
 }
 
-// vod shots start at 2 currently
-// index plus 2
-// or add two vods to the front of the squeextionary
-const vod = vods[8];
+
+const dateInput = document.getElementById("dateInput");
+
+function resetDateInput() {
+    const today = new Date();
+    const formattedDate = today.toISOString().split("T")[0];
+    dateInput.value = formattedDate;
+}
+
+// Function to generate a seeded random number
+function seededRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
+// Function to generate a unique random number for the day
+function generateDailyRandomNumber() {
+    // Get the current date as a seed (e.g., "2023-10-05")
+    const today = new Date().toISOString().split('T')[0];
+    const seed = today.split('-').join(''); // Convert to a number-like seed
+
+    // Generate a random number between 1 and 100 (or any range you prefer)
+    const randomNumber = Math.floor(seededRandom(seed) * vods.length);
+
+    return randomNumber;
+}
+
+// Function to ensure the number is unique and not repeated
+function getUniqueDailyNumber() {
+    // Retrieve the list of previously generated numbers from localStorage
+    const storedNumbers = JSON.parse(localStorage.getItem('dailyNumbers')) || [];
+
+    // Generate today's number
+    const dailyNumber = generateDailyRandomNumber();
+
+    // Check if the number has already been used
+    if (storedNumbers.includes(dailyNumber)) {
+        localStorage.removeItem('dailyNumbers'); // Reset the list if all numbers are used
+        return getUniqueDailyNumber(); // Retry after resetting
+    }
+
+    // Store the new number in the list
+    storedNumbers.push(dailyNumber);
+    localStorage.setItem('dailyNumbers', JSON.stringify(storedNumbers));
+
+    return dailyNumber;
+}
+
+// Example usage
+const uniqueNumber = getUniqueDailyNumber();
+console.log("Today's unique number:", uniqueNumber);
+
+function removeZeroes(str) {
+    return str.replace(/^0+(?=\d)/, '');
+}
+
+// const vod = vods[8];
+const vod = vods[uniqueNumber];
 const vodDate_ = vod.voddate
-const [vmonth, vday, vyear] = vodDate_.split('-').map(Number);
+var [vmonth, vday, vyear] = vodDate_.split('-');
+
 const vodDate = new Date(vyear, vmonth - 1, vday); // Note: Month is 0-indexed in JavaScript
 
 const vodYear = vodDate.getFullYear()
@@ -44,8 +101,9 @@ const vodDay = vodDate.getDate()
 const vodGame = vod.game
 const vodLink = vod.vodlink
 const vodImgPath = vod.filepath
+const vodsLength = vods.length
 
-document.getElementById("vod").src = `data/${vodImgPath}`;
+document.getElementById("vod").src = `/data/${vodImgPath}`;
 
 let currentTries = 0;
 const maxTries = 6;
