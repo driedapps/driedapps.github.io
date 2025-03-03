@@ -144,27 +144,45 @@ export const vods = [
         vodlink: 'https://www.youtube.com/watch?v=LkiuDmbzQ6I'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot24.png',
+        voddate: '12-16-2024',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=Kbe6mpEDMrc'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot25.png',
+        voddate: '02-04-2025',
+        game: 'Shawarma Legend',
+        vodlink: 'https://www.youtube.com/watch?v=ytxI5H4uQrc'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot26.png',
+        voddate: '09-25-2024',
+        game: 'Spectre Divide',
+        vodlink: 'https://www.youtube.com/watch?v=DNDdK3Olos8'
     },
     {
-        filepath: 'screenshots/shot.png',
-        voddate: '',
-        game: '',
-        vodlink: ''
+        filepath: 'screenshots/shot27.png',
+        voddate: '08-23-2024',
+        game: 'Deadlock',
+        vodlink: 'https://www.youtube.com/watch?v=EF4onHvjbo0'
     },
+    {
+        filepath: 'screenshots/shot28.png',
+        voddate: '05-01-2024',
+        game: 'Grand Theft Auto V',
+        vodlink: 'https://www.youtube.com/watch?v=QGYpa2puIRU'
+    },
+    {
+        filepath: 'screenshots/shot29.png',
+        voddate: '05-07-2024',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=w-CLBTfKr-0'
+    },
+    {
+        filepath: 'screenshots/shot30.png',
+        voddate: '02-10-2025',
+        game: 'Grand Theft Auto IV',
+        vodlink: 'https://www.youtube.com/watch?v=WGGFv_oQYKY'
+    }
 ]
