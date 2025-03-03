@@ -78,6 +78,10 @@ body {
   opacity: 1; /* Ensure the element is visible */
 }
 
+.img-fluid {
+  height: 100%;
+}
+
 @media (max-width: 576px) {
   .list-group-horizontal-sm {
     flex-direction: row !important;

@@ -53,7 +53,7 @@ function generateDailyRandomNumber() {
     const today = new Date().toISOString().split('T')[0];
     const seed = today.split('-').join(''); // Convert to a number-like seed
 
-    // Generate a random number between 1 and 100 (or any range you prefer)
+    // Generate a random number between 1 and length of vods
     const randomNumber = Math.floor(seededRandom(seed) * vods.length);
 
     return randomNumber;
@@ -84,9 +84,6 @@ function getUniqueDailyNumber() {
 const uniqueNumber = getUniqueDailyNumber();
 console.log("Today's unique number:", uniqueNumber);
 
-function removeZeroes(str) {
-    return str.replace(/^0+(?=\d)/, '');
-}
 
 // const vod = vods[8];
 const vod = vods[uniqueNumber];
@@ -133,7 +130,13 @@ window.addEventListener('keypress', function (e) {
     }
    }, false);
 
-   function handleGuessDate() {
+function getTodayDateKey() {
+    let today = new Date();
+    return `dateWin_${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+}
+
+function handleGuessDate() {
+    const today = new Date();
     console.log("date guessed");
     let dateInput = document.getElementById('dateInput');
     let dateValue = dateInput.value;
@@ -168,7 +171,8 @@ window.addEventListener('keypress', function (e) {
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
                     // Store the win in localStorage
-                    localStorage.setItem('dateWin', JSON.stringify({
+                    let todayKey = getTodayDateKey();
+                    localStorage.setItem(todayKey, JSON.stringify({
                         tries: currentTries,
                         date: dateValue
                     }));
@@ -251,11 +255,22 @@ function getClassForDiff(diff, type) {
 
 // Function to load guesses from localStorage and render them
 function loadGuesses() {
+    // Check if it's a new day
+    let lastPlayedDate = localStorage.getItem('lastPlayedDate');
+    let todayKey = getTodayDateKey();
+
+    if (lastPlayedDate !== todayKey) {
+        // Clear guesses for the new day
+        localStorage.removeItem('guesses');
+        localStorage.setItem('lastPlayedDate', todayKey);
+    }
+
+    // Load guesses
     let guesses = JSON.parse(localStorage.getItem('guesses')) || [];
     guesses.forEach(guess => renderGuess(guess));
 
-    // Check if there's a stored win
-    let dateWin = JSON.parse(localStorage.getItem('dateWin'));
+    // Check if there's a stored win for today
+    let dateWin = JSON.parse(localStorage.getItem(todayKey));
     if (dateWin) {
         // Disable input and button
         document.getElementById('dateInput').disabled = true;
