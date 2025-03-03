@@ -101,7 +101,7 @@ const vodImgPath = vod.filepath
 
 document.getElementById("vod").src = `/data/${vodImgPath}`;
 
-let currentTries = 0;
+let currentTries = localStorage.getItem('currentTries') || 0;
 const maxTries = 6;
 
 const dateWinModal = new bootstrap.Modal(document.getElementById('dateWinner'));
@@ -168,6 +168,7 @@ function handleGuessDate() {
 
                 dateInput.value = '';
                 currentTries++;
+                localStorage.setItem('currentTries', currentTries);
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
                     // Store the win in localStorage
@@ -264,10 +265,18 @@ function loadGuesses() {
         localStorage.removeItem('guesses');
         localStorage.setItem('lastPlayedDate', todayKey);
     }
-
     // Load guesses
     let guesses = JSON.parse(localStorage.getItem('guesses')) || [];
     guesses.forEach(guess => renderGuess(guess));
+    
+    //show loser modal when they've guessed 6 times
+    if (guesses.length >= 6) { 
+                dateLoseBody.innerHTML = `<center>You've reached the maximum number of guesses for today...<br><br>
+                                            Try again tomorrow?</center>`;
+                dateLoseModal.show();
+                document.getElementById('dateInput').disabled = true;
+                document.getElementById('guessDate').disabled = true;
+    }
 
     // Check if there's a stored win for today
     let dateWin = JSON.parse(localStorage.getItem(todayKey));
@@ -280,6 +289,8 @@ function loadGuesses() {
 
 // Call loadGuesses when the page loads
 window.onload = loadGuesses;
+
+console.log(currentTries)
 
 const gameInput = document.createElement('input');
 const gameButton = document.createElement('button');
