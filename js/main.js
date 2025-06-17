@@ -396,12 +396,12 @@ function showStats() {
     document.getElementById('statsBody').innerHTML = `Number of guesses today: ${currentTries}<br>
                                                       Wins: ${userStats.numWins}<br>
                                                       Games played: ${userStats.numGames}`;
-    if (gameStatus == 'won') {
+    if (lastPlayedDate == todayString & gameStatus == 'won') {
         document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a winner!!!</b><br>
                                                                 Congrats! Come back tomorrow to find out if you're a winner or loser!
                                                                 </center>`
     }
-    if (gameStatus == 'lost') {
+    if (lastPlayedDate == todayString & gameStatus == 'lost') {
         document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a loser..</b><br>
                                                                 Too bad! Come back tomorrow to find out if you're a winner or loser!
                                                                 </center>`
