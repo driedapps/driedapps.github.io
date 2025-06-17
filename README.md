@@ -6,5 +6,6 @@
 - [x] fix mobile date input
 - [x] fix mobile styling
 - [x] add daily vod indexing
-- [ ] store daily date guesses, so they don't disappear when refreshing
-- [ ] add stats functionality
+- [x] store daily date guesses, so they don't disappear when refreshing
+- [x] add stats functionality
+- [ ] make sure guesses refresh every day
