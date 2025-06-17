@@ -143,8 +143,6 @@ function handleGuessDate() {
     let dateInput = document.getElementById('dateInput');
     let dateValue = dateInput.value;
 
-    localStorage.setItem('gameStatus', 'hasntPlayed');
-
     if (dateValue) {
         for (let i = 0; i < 1; i++) {
             if (currentTries < maxTries) {
@@ -173,6 +171,7 @@ function handleGuessDate() {
                 dateInput.value = '';
                 currentTries++;
                 localStorage.setItem('currentTries', currentTries);
+                showStats();
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
                     // Store the win in localStorage
@@ -199,7 +198,6 @@ function handleGuessDate() {
                 }
             }
             if (JSON.parse(localStorage.getItem('currentTries')) === 6) {
-                let loserKey = getLoserKey();
                 userStats.numGames++;
                 localStorage.setItem("stats", JSON.stringify(userStats));
                 localStorage.setItem('lastPlayedDate', today); 
