@@ -36,7 +36,11 @@ let userStats = JSON.parse(localStorage.getItem("stats")) || {
 };
 
 // Get the current date as a seed (e.g., "2023-10-05")
-const today = new Date()
+let today = new Date()
+let todayString = today.toISOString().split('T')[0];
+
+/// SET TODAY TO TOMORROW FOR DEBUGGING
+// today.setDate(today.getDate() + 1);
 
 // Function to generate a seeded random number
 function seededRandom(seed) {
@@ -46,7 +50,7 @@ function seededRandom(seed) {
 
 // Function to generate a unique random number for the day
 function generateDailyRandomNumber() {
-    let todayString = today.toISOString().split('T')[0];
+    
     // use below for debugging
     // const today = "2025-03-03"
     const seed = todayString.split('-').join(''); // Convert to a number-like seed
@@ -177,7 +181,7 @@ function handleGuessDate() {
                     // Store the win in localStorage
                     localStorage.setItem('gameStatus', 'won');
 
-                    localStorage.setItem('lastPlayedDate', today); 
+                    localStorage.setItem('lastPlayedDate', todayString); 
                     userStats.numWins++;
                     userStats.numGames++;
                     localStorage.setItem("stats", JSON.stringify(userStats));
@@ -200,7 +204,7 @@ function handleGuessDate() {
             if (JSON.parse(localStorage.getItem('currentTries')) === 6) {
                 userStats.numGames++;
                 localStorage.setItem("stats", JSON.stringify(userStats));
-                localStorage.setItem('lastPlayedDate', today); 
+                localStorage.setItem('lastPlayedDate', todayString); 
                 localStorage.setItem('gameStatus', 'lost');
                 dateLoseBody.innerHTML = `<center>You've reached the maximum number of guesses for today...<br><br>
                                             Try again tomorrow?</center>`;
@@ -266,7 +270,7 @@ function getClassForDiff(diff, type) {
 }
 
 // Subtract one day to get yesterday's date
-const yesterday = new Date(today);
+let yesterday = new Date(today);
 yesterday.setDate(today.getDate() - 1);
 // Format the date as a string (e.g., "YYYY-MM-DD")
 const year = yesterday.getFullYear();
@@ -275,7 +279,7 @@ const day = String(yesterday.getDate()).padStart(2, '0');
 
 const yesterdayString = `${year}-${month}-${day}`;
 
-let lastPlayedDate = 'never' || localStorage.getItem('lastPlayedDate');
+let lastPlayedDate = localStorage.getItem('lastPlayedDate') || 'never';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -283,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showStats();
 });
 
-let gameStatus = 'haventplayedyet' || localStorage.getItem('gameStatus');
+let gameStatus = localStorage.getItem('gameStatus') || 'haventplayedyet';
 
 // Function to load guesses from localStorage and render them
 function loadGuesses() {
