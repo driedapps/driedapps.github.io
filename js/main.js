@@ -84,7 +84,7 @@ function getUniqueDailyNumber() {
 
 // Example usage
 const uniqueNumber = getUniqueDailyNumber();
-console.log("Today's unique number:", uniqueNumber);
+// console.log("Today's unique number:", uniqueNumber);
 
 
 // const vod = vods[8];
@@ -115,7 +115,7 @@ const gameWinnerBody = document.getElementById('gameWinnerBody');
 
 // let today = new Date();
 
-console.log('winKey today', getWinKey(), 'vod info:', vodDate, vodYear, vodMonth, vodDay, vodGame)
+console.log("oh you're a nerd? here are the answers:", vodYear, vodMonth, vodDay, vodGame)
 
 document.addEventListener("DOMContentLoaded", function() {
     var guessDateButton = document.getElementById("guessDate");
@@ -320,7 +320,7 @@ function loadGuesses() {
         triggerGameGuess()
 }}
 
-console.log('game status',gameStatus, 'last played date:', lastPlayedDate, 'yesterday', yesterdayString)
+// console.log('game status',gameStatus, 'last played date:', lastPlayedDate, 'yesterday', yesterdayString)
 
 const gameInput = document.createElement('input');
 const gameButton = document.createElement('button');
@@ -415,6 +415,7 @@ document.addEventListener('click', function (e) {
     }
 });
 
+
 // next step: add today's guesses to localStorage
 // then get average number of guesses per game
 // and least amount of guesses
@@ -422,5 +423,3 @@ document.addEventListener('click', function (e) {
 
 // get rid of guesses after win or lose
 // every day check for what day was played last, if game played before then reset
-
-// STATS NOT SHOWING WHEN YOU LOSE AND THEN REFRESH
