@@ -397,7 +397,7 @@ function showStats() {
                                                                 Congrats! Come back tomorrow to find out if you're a winner or loser!
                                                                 </center>`
     }
-    if (gameStatus == 'lose') {
+    if (gameStatus == 'lost') {
         document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a loser..</b><br>
                                                                 Too bad! Come back tomorrow to find out if you're a winner or loser!
                                                                 </center>`
