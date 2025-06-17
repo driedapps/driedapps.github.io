@@ -30,13 +30,13 @@ const games = [
     "Valorant"
 ]
 
-const userStats = JSON.parse(localStorage.getItem("stats")) || {
+let userStats = JSON.parse(localStorage.getItem("stats")) || {
     numGames: 0,
-    numWins: 0,
-    winsInNum: [0, 0, 0, 0, 0, 0],
-    currentStreak: 0,
-    maxStreak: 0,
+    numWins: 0
 };
+
+// Get the current date as a seed (e.g., "2023-10-05")
+const today = new Date()
 
 // Function to generate a seeded random number
 function seededRandom(seed) {
@@ -46,11 +46,10 @@ function seededRandom(seed) {
 
 // Function to generate a unique random number for the day
 function generateDailyRandomNumber() {
-    // Get the current date as a seed (e.g., "2023-10-05")
-    const today = new Date().toISOString().split('T')[0];
+    let todayString = today.toISOString().split('T')[0];
     // use below for debugging
     // const today = "2025-03-03"
-    const seed = today.split('-').join(''); // Convert to a number-like seed
+    const seed = todayString.split('-').join(''); // Convert to a number-like seed
 
     // Generate a random number between 1 and length of vods
     const randomNumber = Math.floor(seededRandom(seed) * vods.length);
@@ -110,8 +109,9 @@ const dateLoseBody = document.getElementById('dateLoserBody');
 const gameWinnerModal = new bootstrap.Modal(document.getElementById('gameWinner'));
 const gameWinnerBody = document.getElementById('gameWinnerBody');
 
+// let today = new Date();
 
-console.log(vodDate, vodYear, vodMonth, vodDay, vodGame)
+console.log('winKey today', getWinKey(), 'vod info:', vodDate, vodYear, vodMonth, vodDay, vodGame)
 
 document.addEventListener("DOMContentLoaded", function() {
     var guessDateButton = document.getElementById("guessDate");
@@ -130,12 +130,10 @@ window.addEventListener('keypress', function (e) {
    }, false);
 
 function getWinKey() {
-    let today = new Date();
     return `dateWin_${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 }
 
 function getLoserKey() {
-    let today = new Date();
     return `dateLoss_${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 }
 
@@ -144,6 +142,8 @@ function handleGuessDate() {
     console.log("date guessed");
     let dateInput = document.getElementById('dateInput');
     let dateValue = dateInput.value;
+
+    localStorage.setItem('gameStatus', 'hasntPlayed');
 
     if (dateValue) {
         for (let i = 0; i < 1; i++) {
@@ -176,12 +176,13 @@ function handleGuessDate() {
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
                     // Store the win in localStorage
-                    let winKey = getWinKey();
-                    localStorage.setItem(winKey, JSON.stringify({
-                        tries: currentTries,
-                        date: dateValue
-                    }));
-                    localStorage.setItem('lastPlayedDate', winKey); 
+                    localStorage.setItem('gameStatus', 'won');
+
+                    localStorage.setItem('lastPlayedDate', today); 
+                    userStats.numWins++;
+                    userStats.numGames++;
+                    localStorage.setItem("stats", JSON.stringify(userStats));
+                    showStats();
 
                     document.getElementById('dateInput').disabled = true;
                     document.getElementById('guessDate').disabled = true;
@@ -199,12 +200,16 @@ function handleGuessDate() {
             }
             if (JSON.parse(localStorage.getItem('currentTries')) === 6) {
                 let loserKey = getLoserKey();
-                localStorage.setItem('lastPlayedDate', loserKey); 
+                userStats.numGames++;
+                localStorage.setItem("stats", JSON.stringify(userStats));
+                localStorage.setItem('lastPlayedDate', today); 
+                localStorage.setItem('gameStatus', 'lost');
                 dateLoseBody.innerHTML = `<center>You've reached the maximum number of guesses for today...<br><br>
                                             Try again tomorrow?</center>`;
                 dateLoseModal.show();
                 document.getElementById('dateInput').disabled = true;
                 document.getElementById('guessDate').disabled = true;
+                showStats();
             }
         }
     } else {
@@ -262,9 +267,6 @@ function getClassForDiff(diff, type) {
     }
 }
 
-// Get the current date
-const today = new Date();
-
 // Subtract one day to get yesterday's date
 const yesterday = new Date(today);
 yesterday.setDate(today.getDate() - 1);
@@ -275,7 +277,15 @@ const day = String(yesterday.getDate()).padStart(2, '0');
 
 const yesterdayString = `${year}-${month}-${day}`;
 
-let lastPlayedDate = localStorage.getItem('lastPlayedDate');
+let lastPlayedDate = 'never' || localStorage.getItem('lastPlayedDate');
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadGuesses();
+    showStats();
+});
+
+let gameStatus = 'haventplayedyet' || localStorage.getItem('gameStatus');
 
 // Function to load guesses from localStorage and render them
 function loadGuesses() {
@@ -301,17 +311,14 @@ function loadGuesses() {
 
     // Check if there's a stored win for today
   //  let dateWin = JSON.parse(localStorage.getItem(winKey));
-    if (dateWin) {
+    if (gameStatus == 'won') {
         // Disable input and button
         document.getElementById('dateInput').disabled = true;
         document.getElementById('guessDate').disabled = true;
         triggerGameGuess()
 }}
 
-// Call loadGuesses when the page loads
-window.onload = loadGuesses;
-
-console.log('current tries:',currentTries, ' last played date:', lastPlayedDate)
+console.log('game status',gameStatus, 'last played date:', lastPlayedDate, 'yesterday', yesterdayString)
 
 const gameInput = document.createElement('input');
 const gameButton = document.createElement('button');
@@ -383,6 +390,21 @@ gameInput.addEventListener('input', function () {
 
 });
 
+function showStats() {
+    document.getElementById('statsBody').innerHTML = `Number of guesses today: ${currentTries}<br>
+                                                      Wins: ${userStats.numWins}<br>
+                                                      Games played: ${userStats.numGames}`;
+    if (gameStatus == 'won') {
+        document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a winner!!!</b><br>
+                                                                Congrats! Come back tomorrow to find out if you're a winner or loser!
+                                                                </center>`
+    }
+    if (gameStatus == 'lose') {
+        document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a loser..</b><br>
+                                                                Too bad! Come back tomorrow to find out if you're a winner or loser!
+                                                                </center>`
+    }
+};
 
 // Hide autocomplete results when clicking outside
 document.addEventListener('click', function (e) {
@@ -390,3 +412,13 @@ document.addEventListener('click', function (e) {
         acResults.classList.add('d-none');
     }
 });
+
+// next step: add today's guesses to localStorage
+// then get average number of guesses per game
+// and least amount of guesses
+// add counter for how many games have been played
+
+// get rid of guesses after win or lose
+// every day check for what day was played last, if game played before then reset
+
+// STATS NOT SHOWING WHEN YOU LOSE AND THEN REFRESH
