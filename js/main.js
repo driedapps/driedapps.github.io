@@ -469,6 +469,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 .replace(/[^\S\n]+\n/g, '\n') // Remove spaces before newlines
                 .replace(/(\n){2,}/g, '\n\n') // Limit consecutive newlines to 2
                 .trim();
+
+            const websiteLink = "\n\nPlay at: https://squeexle.com";
+            const textToCopy = statsContent + websiteLink;
+            
             await navigator.clipboard.writeText(statsContent);
             
             const originalText = this.innerText;
