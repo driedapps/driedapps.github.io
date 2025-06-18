@@ -34,9 +34,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none; /*disables selection aka highlighting*/
-    -webkit-user-select: none; /*for safari*/
-    -moz-user-select: none; /*for firefox*/
 }
 
 .headercenter {

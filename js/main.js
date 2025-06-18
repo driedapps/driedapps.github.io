@@ -127,6 +127,7 @@ const gameWinnerBody = document.getElementById('gameWinnerBody');
 
 console.log("oh you're a nerd? here are the answers:", vodYear, vodMonth, vodDay, vodGame)
 
+
 document.addEventListener("DOMContentLoaded", function() {
     var guessDateButton = document.getElementById("guessDate");
 
@@ -441,4 +442,22 @@ document.addEventListener('click', function (e) {
     if (e.target !== gameInput) {
         acResults.classList.add('d-none');
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('copyButton').addEventListener('click', async function() {
+        try {
+            const statsContent = document.getElementById('statsBody').textContent;
+            await navigator.clipboard.writeText(statsContent);
+            
+            const originalText = this.innerText;
+            this.innerText = 'Copied!';
+            setTimeout(() => {
+                this.innerText = originalText;
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy. Please manually select and copy the text.');
+        }
+    });
 });
