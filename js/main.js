@@ -288,6 +288,7 @@ const yesterdayString = `${year}-${month}-${day}`;
 
 let lastPlayedDate = localStorage.getItem('lastPlayedDate') || 'never';
 
+addPlayDate(lastPlayedDate);
 
 document.addEventListener('DOMContentLoaded', function() {
     loadGuesses();
@@ -296,11 +297,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let gameStatus = localStorage.getItem('gameStatus') || 'haventplayedyet';
 
+// check is there is a date stored as last played date, 
+// if there is then -- clear guesses and other normal new day behavior
+function addPlayDate(lastPlayedDate) {
+    const playHistory = JSON.parse(localStorage.getItem('playHistory') || '[]');
+    if (!playHistory.includes(lastPlayedDate)) {
+        playHistory.push(lastPlayedDate);
+        localStorage.setItem('playHistory', JSON.stringify(playHistory));
+    }
+}
+
+console.log(JSON.parse(localStorage.getItem('playHistory')))
+
 // Function to load guesses from localStorage and render them
 function loadGuesses() {
     // Check if it's a new day
-
-    if (lastPlayedDate.includes(yesterdayString)) {
+    const playDates = JSON.parse(localStorage.getItem('playHistory'));
+    if (lastPlayedDate.includes(playDates)) {
         // Clear guesses for the new day
         localStorage.removeItem('guesses');
         localStorage.removeItem('currentTries');
@@ -326,6 +339,8 @@ function loadGuesses() {
         document.getElementById('guessDate').disabled = true;
         triggerGameGuess()
 }}
+
+
 
 // console.log('game status',gameStatus, 'last played date:', lastPlayedDate, 'yesterday', yesterdayString)
 
@@ -448,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('copyButton').addEventListener('click', async function() {
         try {
             const statsContent = document.getElementById('statsBody').textContent
-            .replace(/\s+/g, ' ')       // Collapse multiple spaces
+            .replace(/\s+/g, ', ')       // Collapse multiple spaces
             .trim();                    // Remove leading/trailing space;
             await navigator.clipboard.writeText(statsContent);
             
