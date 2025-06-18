@@ -449,7 +449,6 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const statsContent = document.getElementById('statsBody').textContent
             .replace(/\s+/g, ' ')       // Collapse multiple spaces
-            .replace(/[\t\n]+/g, '\n')  // Normalize line breaks
             .trim();                    // Remove leading/trailing space;
             await navigator.clipboard.writeText(statsContent);
             
