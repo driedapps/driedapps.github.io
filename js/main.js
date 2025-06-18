@@ -40,6 +40,7 @@ let userStats = JSON.parse(localStorage.getItem("stats")) || {
 
 // Get the current date as a seed (e.g., "2023-10-05")
 let today = new Date();
+
 // Format the date as a string (e.g., "YYYY-MM-DD")
 const todayYear = today.getFullYear();
 const todayMonth = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
@@ -333,7 +334,7 @@ function loadGuesses() {
 
     // Check if there's a stored win for today
   //  let dateWin = JSON.parse(localStorage.getItem(winKey));
-    if (gameStatus == 'won') {
+    if (gameStatus == 'won' & lastPlayedDate == todayString) {
         // Disable input and button
         document.getElementById('dateInput').disabled = true;
         document.getElementById('guessDate').disabled = true;
