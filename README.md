@@ -8,4 +8,8 @@
 - [x] add daily vod indexing
 - [x] store daily date guesses, so they don't disappear when refreshing
 - [x] add stats functionality
-- [ ] make sure guesses refresh every day
+- [x] make sure guesses refresh every day
+done????????
+
+last step:
+- [ ] make sure hosting on squeexle.com works
