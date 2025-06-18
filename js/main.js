@@ -32,7 +32,10 @@ const games = [
 
 let userStats = JSON.parse(localStorage.getItem("stats")) || {
     numGames: 0,
-    numWins: 0
+    numWins: 0,
+    numOfGuesses: [0, 0, 0, 0, 0, 0],
+    currentStreak: 0,
+    maxStreak: 0,
 };
 
 // Get the current date as a seed (e.g., "2023-10-05")
@@ -140,17 +143,10 @@ window.addEventListener('keypress', function (e) {
     }
    }, false);
 
-function getWinKey() {
-    return `dateWin_${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-}
-
-function getLoserKey() {
-    return `dateLoss_${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-}
-
 function handleGuessDate() {
     const today = new Date();
     console.log("date guessed");
+    localStorage.setItem('lastPlayedDate', todayString);
     let dateInput = document.getElementById('dateInput');
     let dateValue = dateInput.value;
 
@@ -185,12 +181,14 @@ function handleGuessDate() {
                 showStats();
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
-                    // Store the win in localStorage
+                    // Store the WIN in localStorage
                     localStorage.setItem('gameStatus', 'won');
 
                     localStorage.setItem('lastPlayedDate', todayString); 
+                    userStats.currentStreak++;
                     userStats.numWins++;
                     userStats.numGames++;
+                    userStats.numOfGuesses[currentTries - 1]++;
                     localStorage.setItem("stats", JSON.stringify(userStats));
                     showStats();
 
@@ -210,6 +208,7 @@ function handleGuessDate() {
             }
             if (JSON.parse(localStorage.getItem('currentTries')) === 6) {
                 userStats.numGames++;
+                userStats.currentStreak = 0;
                 localStorage.setItem("stats", JSON.stringify(userStats));
                 localStorage.setItem('lastPlayedDate', todayString); 
                 localStorage.setItem('gameStatus', 'lost');
@@ -400,9 +399,16 @@ gameInput.addEventListener('input', function () {
 });
 
 function showStats() {
-    document.getElementById('statsBody').innerHTML = `Number of guesses today: ${currentTries}<br>
-                                                      Wins: ${userStats.numWins}<br>
-                                                      Games played: ${userStats.numGames}`;
+    if (userStats.numGames == 0) {
+        var winPercentage = 0;
+    } else {
+        var winPercentage = Math.round((userStats.numWins / userStats.numGames) * 100)
+    }
+
+    document.getElementById('statsBody').innerHTML = `<center><h5><b>guesses today:</b> ${currentTries}<br>
+                                                      <b>current win streak:</b> ${userStats.currentStreak}<br>
+                                                      <b>win%:</b> ${winPercentage}</h5></center>`;
+    graphDistribution();
     if (lastPlayedDate == todayString & gameStatus == 'won') {
         document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a winner!!!</b><br>
                                                                 Congrats! Come back tomorrow to find out if you're a winner or loser!
@@ -415,14 +421,24 @@ function showStats() {
     }
 };
 
+// graph wins, to go in stats modal, taken from costcodle
+function graphDistribution() {
+    userStats.numOfGuesses.forEach((value, index) => {
+      const graphElem = document.getElementById(`graph-${index + 1}`);
+      if (userStats.numWins === 0) {
+        graphElem.style = `width: 5%`;
+      } else {
+        graphElem.style = `width: ${
+          Math.floor((value / userStats.numWins) * 0.95 * 100) + 5
+        }%`;
+      }
+      graphElem.innerHTML = `${value}`;
+    });
+}
+
 // Hide autocomplete results when clicking outside
 document.addEventListener('click', function (e) {
     if (e.target !== gameInput) {
         acResults.classList.add('d-none');
     }
 });
-
-
-// next step: ADD twich chat in navigation bar
-// also link to squeex stream page
-// and the squeex vod youtube page

@@ -20,7 +20,7 @@ span.small {
 
 .navbar{
   font-size: 20px;
-  padding: 5px 22px 5px 22px;
+  padding: 5px 10px 5px 10px;
   display: flex;
 }
   
@@ -127,3 +127,39 @@ body {
   border-top: 1px solid  rgb(114, 114, 114);
 }
 
+.graph {
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.graph-label {
+  margin-right: 6px;
+}
+
+.graphElem {
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  justify-content: end;
+
+  padding-right: 7px;
+
+  color: white;
+  background-color: rgb(37, 153, 173);
+}
+
+.graph-row {
+  display: flex;
+  align-items: center;
+
+  height: 26px;
+  margin-bottom: 15px;
+}
