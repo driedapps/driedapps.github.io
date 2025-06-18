@@ -464,9 +464,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('copyButton').addEventListener('click', async function() {
         try {
             const statsContent = document.getElementById('statsBody').textContent
-            .replace(/\s+/g, ' ')       // Collapse multiple spaces
-            .replace(/\n+/g, '\n') 
-            .trim();                    // Remove leading/trailing space;
+                .replace(/[^\S\n]+/g, ' ')  // Collapse multiple spaces (except newlines)
+                .replace(/\n[^\S\n]+/g, '\n') // Remove spaces after newlines
+                .replace(/[^\S\n]+\n/g, '\n') // Remove spaces before newlines
+                .replace(/(\n){2,}/g, '\n\n') // Limit consecutive newlines to 2
+                .trim();
             await navigator.clipboard.writeText(statsContent);
             
             const originalText = this.innerText;
