@@ -380,7 +380,7 @@ gameInput.addEventListener('input', function () {
                     if (gameValue == vodGame) {
                         document.getElementById('modalTitle').innerHTML = `<h3>Congratulations!</h3>`
                         gameWinnerBody.innerHTML = `<center>You got the game correct!!!<br>Thanks for playing :)<br><br>
-                                                    <a href="${vodLink}" target="_blank">Click here to watch!</a><br><span class="small">blame Twitch if this link doesn't work...</span></center>`;
+                                                    <a href="${vodLink}" target="_blank">Click here to watch!</a></center>`;
                         gameWinnerModal.show();  
                     } else if (gameValue != vodGame.toLowerCase()) {
                         document.getElementById('modalTitle').innerHTML = `<b>Uh oh....</b>`
@@ -447,7 +447,10 @@ document.addEventListener('click', function (e) {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('copyButton').addEventListener('click', async function() {
         try {
-            const statsContent = document.getElementById('statsBody').textContent;
+            const statsContent = document.getElementById('statsBody').textContent
+            .replace(/\s+/g, ' ')       // Collapse multiple spaces
+            .replace(/[\t\n]+/g, '\n')  // Normalize line breaks
+            .trim();                    // Remove leading/trailing space;
             await navigator.clipboard.writeText(statsContent);
             
             const originalText = this.innerText;
