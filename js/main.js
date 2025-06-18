@@ -36,8 +36,15 @@ let userStats = JSON.parse(localStorage.getItem("stats")) || {
 };
 
 // Get the current date as a seed (e.g., "2023-10-05")
-let today = new Date()
-let todayString = today.toISOString().split('T')[0];
+let today = new Date();
+// Format the date as a string (e.g., "YYYY-MM-DD")
+const todayYear = today.getFullYear();
+const todayMonth = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+const todayDay = String(today.getDate()).padStart(2, '0');
+
+const todayString = `${todayYear}-${todayMonth}-${todayDay}`;
+
+console.log(today, todayString)
 
 /// SET TODAY TO TOMORROW FOR DEBUGGING
 // today.setDate(today.getDate() + 1);
@@ -416,10 +423,6 @@ document.addEventListener('click', function (e) {
 });
 
 
-// next step: add today's guesses to localStorage
-// then get average number of guesses per game
-// and least amount of guesses
-// add counter for how many games have been played
-
-// get rid of guesses after win or lose
-// every day check for what day was played last, if game played before then reset
+// next step: ADD twich chat in navigation bar
+// also link to squeex stream page
+// and the squeex vod youtube page
