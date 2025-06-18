@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const websiteLink = "\n\nhttps://squeexle.com";
             const textToCopy = statsContent + websiteLink;
             
-            await navigator.clipboard.writeText(statsContent);
+            await navigator.clipboard.writeText(textToCopy);
             
             const originalText = this.innerText;
             this.innerText = 'Copied!';
