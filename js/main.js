@@ -308,14 +308,13 @@ function addPlayDate(lastPlayedDate) {
     }
 }
 
-console.log(JSON.parse(localStorage.getItem('playHistory')))
+console.log(gameStatus)
 
 // Function to load guesses from localStorage and render them
 function loadGuesses() {
-    // Check if it's a new day
     const playDates = JSON.parse(localStorage.getItem('playHistory'));
-    
-    if (todayString.includes(playDates)) {
+    // Check if it's a new day
+    if (!todayString.includes(playDates) || gameStatus == 'didntfinish') {
         // Clear guesses for the new day
         localStorage.removeItem('guesses');
         localStorage.removeItem('currentTries');
@@ -335,7 +334,7 @@ function loadGuesses() {
 
     // Check if there's a stored win for today
   //  let dateWin = JSON.parse(localStorage.getItem(winKey));
-    if (lastPlayedDate == todayString) {
+    if (gameStatus == 'won' & lastPlayedDate == todayString) {
         // Disable input and button
         document.getElementById('dateInput').disabled = true;
         document.getElementById('guessDate').disabled = true;
