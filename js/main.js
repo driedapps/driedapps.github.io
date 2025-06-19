@@ -42,6 +42,7 @@ let userStats = JSON.parse(localStorage.getItem("stats")) || {
 
 // Get the current date as a seed (e.g., "2023-10-05")
 let today = new Date();
+today.setDate(today.getDate() + 1);
 
 // Format the date as a string (e.g., "YYYY-MM-DD")
 const todayYear = today.getFullYear();
@@ -319,14 +320,14 @@ function loadGuesses() {
     const playDates = JSON.parse(localStorage.getItem('playHistory'));
 
     if (!playDates.includes(lastPlayedDate)) {
-        localStorage.setItem('currentTries', 0)
+        localStorage.setItem('currentTries', 0);
     }
 
     // Check if it's a new day
-    if (!playDates.includes(todayString) & gameStatus == 'didntfinish') {
+    if (!playDates.includes(todayString)) {
         // Clear guesses for the new day
         localStorage.removeItem('guesses');
-        localStorage.removeItem('currentTries');
+        localStorage.setItem('currentTries', 0);
     }
     // Load guesses
     let guesses = JSON.parse(localStorage.getItem('guesses')) || [];
