@@ -1,6 +1,8 @@
 // defining constants to reference later
 import { vods } from '/data/squeextionary.js';
 
+localStorage.clear();
+
 // list of games to select from (add auto suggestion)
 const games = [
     "At Dead of Night",
