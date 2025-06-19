@@ -42,7 +42,7 @@ let userStats = JSON.parse(localStorage.getItem("stats")) || {
 
 // Get the current date as a seed (e.g., "2023-10-05")
 let today = new Date();
-today.setDate(today.getDate() + 1);
+
 
 // Format the date as a string (e.g., "YYYY-MM-DD")
 const todayYear = today.getFullYear();
