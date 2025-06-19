@@ -296,7 +296,6 @@ addPlayDate(lastPlayedDate);
 document.addEventListener('DOMContentLoaded', function() {
     loadGuesses();
     showStats();
-    localStorage.clear();
 });
 
 let gameStatus = localStorage.getItem('gameStatus') || 'didntfinish';
