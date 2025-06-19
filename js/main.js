@@ -50,7 +50,7 @@ const todayDay = String(today.getDate()).padStart(2, '0');
 
 const todayString = `${todayYear}-${todayMonth}-${todayDay}`;
 
-console.log(today, todayString)
+console.log('today is:', todayString)
 
 /// SET TODAY TO TOMORROW FOR DEBUGGING
 // today.setDate(today.getDate() + 1);
@@ -148,7 +148,6 @@ window.addEventListener('keypress', function (e) {
    }, false);
 
 function handleGuessDate() {
-    const today = new Date();
     console.log("date guessed");
 
     let dateInput = document.getElementById('dateInput');
@@ -182,6 +181,8 @@ function handleGuessDate() {
                 dateInput.value = '';
                 currentTries++;
                 localStorage.setItem('currentTries', currentTries);
+                localStorage.setItem('lastPlayedDate', todayString);
+                localStorage.setItem('gameStatus', 'didntfinish');
                 showStats();
 
                 if (guess.yearDiff === 0 && guess.monthDiff === 0 && guess.dayDiff === 0) {
@@ -294,11 +295,12 @@ let lastPlayedDate = localStorage.getItem('lastPlayedDate') || 'never';
 addPlayDate(lastPlayedDate);
 
 document.addEventListener('DOMContentLoaded', function() {
-    loadGuesses();
     showStats();
+    loadGuesses();
+ 
 });
 
-let gameStatus = localStorage.getItem('gameStatus') || 'didntfinish';
+let gameStatus = localStorage.getItem('gameStatus')
 
 // check is there is a date stored as last played date, 
 // if there is then -- clear guesses and other normal new day behavior
@@ -310,13 +312,18 @@ function addPlayDate(lastPlayedDate) {
     }
 }
 
-console.log(gameStatus)
+// console.log(JSON.parse(localStorage.getItem('playHistory')))
 
 // Function to load guesses from localStorage and render them
-function loadGuesses() {
+function loadGuesses() {   
     const playDates = JSON.parse(localStorage.getItem('playHistory'));
+
+    if (!playDates.includes(lastPlayedDate)) {
+        localStorage.setItem('currentTries', 0)
+    }
+
     // Check if it's a new day
-    if (!todayString.includes(playDates) || gameStatus == 'didntfinish') {
+    if (!playDates.includes(todayString) & gameStatus == 'didntfinish') {
         // Clear guesses for the new day
         localStorage.removeItem('guesses');
         localStorage.removeItem('currentTries');
