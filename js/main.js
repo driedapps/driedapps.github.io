@@ -1,7 +1,7 @@
 // defining constants to reference later
 import { vods } from '/data/squeextionary.js';
 
-localStorage.clear();
+
 
 // list of games to select from (add auto suggestion)
 const games = [
@@ -296,6 +296,7 @@ addPlayDate(lastPlayedDate);
 document.addEventListener('DOMContentLoaded', function() {
     loadGuesses();
     showStats();
+    localStorage.clear();
 });
 
 let gameStatus = localStorage.getItem('gameStatus') || 'didntfinish';
