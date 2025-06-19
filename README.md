@@ -1,6 +1,6 @@
-# driedapps.github.io
+# SQUEEXLE.COM
  
-### Squeexle website loading....
+### Squeexle website UP AND RUNNING!!!!
 
 ## to-do:
 - [x] fix mobile date input
@@ -12,4 +12,4 @@
 done????????
 
 last step:
-- [ ] make sure hosting on squeexle.com works
+- [x] make sure hosting on squeexle.com works
