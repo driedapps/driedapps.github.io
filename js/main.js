@@ -148,7 +148,7 @@ window.addEventListener('keypress', function (e) {
 function handleGuessDate() {
     const today = new Date();
     console.log("date guessed");
-    localStorage.setItem('lastPlayedDate', todayString);
+
     let dateInput = document.getElementById('dateInput');
     let dateValue = dateInput.value;
 
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showStats();
 });
 
-let gameStatus = localStorage.getItem('gameStatus') || 'haventplayedyet';
+let gameStatus = localStorage.getItem('gameStatus') || 'didntfinish';
 
 // check is there is a date stored as last played date, 
 // if there is then -- clear guesses and other normal new day behavior
@@ -314,6 +314,7 @@ console.log(JSON.parse(localStorage.getItem('playHistory')))
 function loadGuesses() {
     // Check if it's a new day
     const playDates = JSON.parse(localStorage.getItem('playHistory'));
+    
     if (todayString.includes(playDates)) {
         // Clear guesses for the new day
         localStorage.removeItem('guesses');
@@ -334,7 +335,7 @@ function loadGuesses() {
 
     // Check if there's a stored win for today
   //  let dateWin = JSON.parse(localStorage.getItem(winKey));
-    if (gameStatus == 'won' & lastPlayedDate == todayString) {
+    if (lastPlayedDate == todayString) {
         // Disable input and button
         document.getElementById('dateInput').disabled = true;
         document.getElementById('guessDate').disabled = true;
@@ -414,6 +415,12 @@ gameInput.addEventListener('input', function () {
     }
 
 });
+
+
+// if last played date is only called when you win
+// and its a new day, we want the old guesses to go away if you didnt finish and if you did
+// so dont call last played date until you win
+// and then if its a new day when you refresh, call last played date and run loadguesses
 
 function showStats() {
     if (userStats.numGames == 0) {
