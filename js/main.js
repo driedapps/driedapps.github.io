@@ -314,7 +314,7 @@ console.log(JSON.parse(localStorage.getItem('playHistory')))
 function loadGuesses() {
     // Check if it's a new day
     const playDates = JSON.parse(localStorage.getItem('playHistory'));
-    if (lastPlayedDate.includes(playDates)) {
+    if (todayString.includes(playDates)) {
         // Clear guesses for the new day
         localStorage.removeItem('guesses');
         localStorage.removeItem('currentTries');
