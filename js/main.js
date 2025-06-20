@@ -250,16 +250,30 @@ function handleGuessDate() {
                                         <br><br>Now you can guess which game is being played!</center>`;
                         dateWinModal.show();
                     }
+                    return; // Exit the function if the guess was correct
                 }
             }
-            if ((JSON.parse(localStorage.getItem('currentTries')) === 6 & (guess.yearDiff != 0 && guess.monthDiff != 0 && guess.dayDiff != 0))) {
+        }
+
+        // Check for losing condition after the loop (when currentTries reaches maxTries)
+        if (currentTries === maxTries) {
+            let guess = {
+                month: month,
+                day: day,
+                year: year,
+                monthDiff: Math.abs(month - vodMonth),
+                dayDiff: Math.abs(day - vodDay),
+                yearDiff: Math.abs(year - vodYear)
+            };
+            
+            if (guess.yearDiff !== 0 || guess.monthDiff !== 0 || guess.dayDiff !== 0) {
                 userStats.numGames++;
                 userStats.currentStreak = 0;
                 localStorage.setItem("stats", JSON.stringify(userStats));
                 localStorage.setItem('lastPlayedDate', todayString); 
                 localStorage.setItem('gameStatus', 'lost');
                 dateLoseBody.innerHTML = `<center>You've reached the maximum number of guesses for today...<br><br>
-                                            Try again tomorrow?</center>`;
+                                        Try again tomorrow?</center>`;
                 dateLoseModal.show();
                 document.getElementById('dateInput').disabled = true;
                 document.getElementById('guessDate').disabled = true;
@@ -498,9 +512,9 @@ function showStats() {
         var winPercentage = Math.round((userStats.numWins / userStats.numGames) * 100)
     }
 
-    document.getElementById('statsBody').innerHTML = `<center><h5><b>guesses today:</b> ${currentTries}<br>
-                                                      <b>current win streak:</b> ${userStats.currentStreak}<br>
-                                                      <b>win%:</b> ${winPercentage}</h5></center>`;
+    document.getElementById('statsBody').innerHTML = `<center><h5><b>Guesses Today:</b> ${currentTries}<br>
+                                                      <b>Current Win Streak:</b> ${userStats.currentStreak}<br>
+                                                      <b>Win%:</b> ${winPercentage}</h5></center>`;
     graphDistribution();
     if (lastPlayedDate == todayString & gameStatus == 'won') {
         document.getElementById('todayGameStatus').innerHTML = `<center><b>Today, you are a winner!!!</b><br>
