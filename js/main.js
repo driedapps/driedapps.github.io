@@ -212,7 +212,7 @@ function handleGuessDate() {
                     }
                 }
             }
-            if (JSON.parse(localStorage.getItem('currentTries')) === 6) {
+            if ((JSON.parse(localStorage.getItem('currentTries')) === 6 & (guess.yearDiff != 0 && guess.monthDiff != 0 && guess.dayDiff != 0))) {
                 userStats.numGames++;
                 userStats.currentStreak = 0;
                 localStorage.setItem("stats", JSON.stringify(userStats));
@@ -272,14 +272,34 @@ function renderGuess(guess) {
 function getClassForDiff(diff, type) {
     if (diff === 0) {
         return `list-group-item list-group-item-success ${type}`;
-    } else if (diff >= 1 && diff <= (type === 'month' ? 2 : 3)) {
-        return `list-group-item list-group-item-warning ${type}`;
-    } else if (diff > (type === 'month' ? 2 : 3) && diff < (type === 'month' ? 5 : 8)) {
-        return `list-group-item list-group-item-danger ${type}`;
-    } else {
-        return `list-group-item list-group-item-dark ${type}`;
     }
-}
+    
+    if (type === 'year') {
+        if (diff === 1) {
+            return `list-group-item list-group-item-warning ${type}`;
+        } else if (diff > 1 && diff < 3) {
+            return `list-group-item list-group-item-danger ${type}`;
+        } else {
+            return `list-group-item list-group-item-dark ${type}`;
+        }
+    } else if (type === 'day') {
+        if (diff >= 1 && diff < 3) {
+            return `list-group-item list-group-item-warning ${type}`;
+        } else if (diff >= 3 && diff < 7) {
+            return `list-group-item list-group-item-danger ${type}`;
+        } else {
+            return `list-group-item list-group-item-dark ${type}`;
+        }
+    } else if (type === 'month') {
+        if (diff >= 1 && diff <= 2) {
+            return `list-group-item list-group-item-warning ${type}`;
+        } else if (diff > 2 && diff < 5) {
+            return `list-group-item list-group-item-danger ${type}`;
+        } else {
+            return `list-group-item list-group-item-dark ${type}`;
+        }
+    }
+};
 
 // Subtract one day to get yesterday's date
 let yesterday = new Date(today);
