@@ -6,31 +6,71 @@ import { vods } from '/data/squeextionary.js';
 // list of games to select from (add auto suggestion)
 const games = [
     "At Dead of Night",
+    "Balatro",
+    "Brain Age",
+    "Bully: Scholarship Edition",
+    "Call of Duty: Black Ops 6",
+    "Chess",
+    "Counter Strike",
     "Counter-Strike",
+    "Cuphead",
     "DARK SOULS 3",
     "Deadlock",
+    "Donkey Kong Tropical Freeze",
     "Elden Ring",
     "Fall Guys",
     "Fortnite",
+    "Garfield: Furious Racing",
     "God of War",
-    'Grand Theft Auto IV',
-    'Grand Theft Auto V',
+    "Grand Theft Auto IV",
+    "Grand Theft Auto V",
+    "Hitman Freelancer",
+    "INSIDE",
+    "IRL",
     "Just Chatting",
+    "Jump King",
     "Kirby and the Forgotten Land",
     "LEGO Star Wars: The Skywalker Saga Part 4",
+    "Limbo",
     "Luigis Mansion",
+    "Mario Kart 8",
+    "Mario Kart 8 Deluxe",
+    "Mario Kart World",
+    "Mario Kart: Super Circuit",
+    "Mario Party Superstars",
+    "Marvels Spiderman",
+    "Minecraft",
+    "Multiplayer Platform Golf",
+    "Pikmin 4",
+    "Portal 2",
+    "Resident Evil 2",
+    "Resident Evil 7: Biohazard",
+    "Rhythm Heaven",
     "Rocket League",
-    "Spectre Divide",
+    "Roller Coaster Tycoon",
+    "Sekiro: Shadows Die Twice",
     "Shawarma Legends",
+    "Spectre Divide",
+    "Spongebob: The Cosmic Shake",
+    "Stardew Valley",
     "Super Mario 64",
     "Super Mario Sunshine",
     "Super Monkey Ball: Banana Mania",
+    "Superliminal",
+    "Team Fortress 2",
+    "TCG Card Shop Simulator",
+    "Tetrio",
+    "The Closing Shift",
+    "The Legend of Zelda: Wind Waker",
     "The Long Drive",
     "The Sims 4",
     "The Stanley Parable: Ultra Deluxe",
     "UFO 50",
-    "Valorant"
-]
+    "Valorant",
+    "WarioWare: Get It Together!",
+    "We Love Katamari REROLL Royal Reverie",
+    "Yoshis Crafted World"
+];
 
 let userStats = JSON.parse(localStorage.getItem("stats")) || {
     numGames: 0,
@@ -51,7 +91,7 @@ const todayDay = String(today.getDate()).padStart(2, '0');
 
 const todayString = `${todayYear}-${todayMonth}-${todayDay}`;
 
-console.log('today is:', todayString)
+console.log('today is:', todayString);
 
 /// SET TODAY TO TOMORROW FOR DEBUGGING
 // today.setDate(today.getDate() + 1);
