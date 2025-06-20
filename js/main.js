@@ -429,7 +429,7 @@ function triggerGameGuess() {
     gameInput.placeholder = 'Start typing for a suggestion...';
 
     gameButton.type = 'button';
-    gameButton.className = "btn btn-dark";
+    gameButton.className = "btn btn-info";
     gameButton.textContent = "guess game";
 
     document.getElementById('inputDiv').appendChild(gameInput);
