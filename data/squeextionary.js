@@ -184,5 +184,353 @@ export const vods = [
         voddate: '02-10-2025',
         game: 'Grand Theft Auto IV',
         vodlink: 'https://www.youtube.com/watch?v=WGGFv_oQYKY'
+    },   
+    {
+        filepath: 'screenshots/shot31.png',
+        voddate: '03-26-2024',
+        game: 'Stardew Valley',
+        vodlink: 'https://www.youtube.com/watch?v=YMSVSTcqyy0'
+    },
+    {
+        filepath: 'screenshots/shot32.png',
+        voddate: '03-01-2024',
+        game: 'Multiplayer Platform Golf',
+        vodlink: 'https://www.youtube.com/watch?v=whPnCGdTveY'
+    },
+    {
+        filepath: 'screenshots/shot33.png',
+        voddate: '05-13-2023',
+        game: 'Fall Guys',
+        vodlink: 'https://www.youtube.com/watch?v=rCfVHjdSAB8'
+    },
+    {
+        filepath: 'screenshots/shot34.png',
+        voddate: '11-01-2024',
+        game: 'Call of Duty: Black Ops 6',
+        vodlink: 'https://www.youtube.com/watch?v=Aqe5ytzfTXk'
+    },
+    {
+        filepath: 'screenshots/shot35.png',
+        voddate: '09-25-2024',
+        game: 'Team Fortress 2',
+        vodlink: 'https://www.youtube.com/watch?v=kZxDmD153Hw'
+    },
+    {
+        filepath: 'screenshots/shot36.png',
+        voddate: '12-15-2020',
+        game: 'Super Mario 64',
+        vodlink: 'https://clips.twitch.tv/AnimatedBombasticDragonfruitPartyTime'
+    },
+    {
+        filepath: 'screenshots/shot37.png',
+        voddate: '01-06-2024',
+        game: 'Grand Theft Auto V',
+        vodlink: 'https://www.youtube.com/watch?v=vREtLwjc3NE'
+    },
+    {
+        filepath: 'screenshots/shot38.png',
+        voddate: '10-16-2024',
+        game: 'TCG Card Shop Simulator',
+        vodlink: 'https://www.youtube.com/watch?v=S5oSpE2dFyk'
+    },
+    {
+        filepath: 'screenshots/shot39.png',
+        voddate: '09-30-2024',
+        game: 'Balatro',
+        vodlink: 'https://www.youtube.com/watch?v=EqlsAq5pD_M'
+    },
+    {
+        filepath: 'screenshots/shot40.png',
+        voddate: '12-14-2021',
+        game: 'Minecraft',
+        vodlink: 'https://clips.twitch.tv/ScrumptiousMoldyGerbilSMOrc-hRNechP8T6AQAkdw'
+    },
+    {
+        filepath: 'screenshots/shot41.png',
+        voddate: '12-1-2024',
+        game: 'Counter-Strike',
+        vodlink: 'https://www.youtube.com/watch?v=K_WK2WY2FIc'
+    },
+    {
+        filepath: 'screenshots/shot42.png',
+        voddate: '05-18-2022',
+        game: 'The Closing Shift',
+        vodlink: 'https://www.youtube.com/watch?v=3F-yR-TDVA4'
+    },
+    {
+        filepath: 'screenshots/shot43.png',
+        voddate: '05-29-2022',
+        game: 'The Legend of Zelda: Wind Waker',
+        vodlink: 'https://www.youtube.com/watch?v=BVV3nZLBszI'
+    },
+    {
+        filepath: 'screenshots/shot44.png',
+        voddate: '06-23-2022',
+        game: 'Counter Strike',
+        vodlink: 'https://www.youtube.com/watch?v=sbHn3SNcs-k'
+    },
+    {
+        filepath: 'screenshots/shot45.png',
+        voddate: '07-07-2022',
+        game: 'Cuphead',
+        vodlink: 'https://www.youtube.com/watch?v=GForfcObgso'
+    },
+    {
+        filepath: 'screenshots/shot46.png',
+        voddate: '10-24-2022',
+        game: 'Brain Age',
+        vodlink: 'https://www.youtube.com/watch?v=ITnKeOuUqJI'
+    },
+    {
+        filepath: 'screenshots/shot47.png',
+        voddate: '09-27-2022',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=-oAPhz6gwS0'
+    },
+    {
+        filepath: 'screenshots/shot48.png',
+        voddate: '10-13-2022',
+        game: 'Rhythm Heaven',
+        vodlink: 'https://www.youtube.com/watch?v=5EOJSjooRLo'
+    },
+    {
+        filepath: 'screenshots/shot49.png',
+        voddate: '12-25-2022',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=G8bNV_bjh8Y'
+    },
+    {
+        filepath: 'screenshots/shot50.png',
+        voddate: '12-27-2022',
+        game: 'Portal 2',
+        vodlink: 'https://www.youtube.com/watch?v=lZhiNO55O3Y'
+    },
+    {
+        filepath: 'screenshots/shot51.png',
+        voddate: '6-6-2025',
+        game: 'Mario Kart World',
+        vodlink: 'https://www.youtube.com/watch?v=I3Z1Ods_OPM'
+    },
+    {
+        filepath: 'screenshots/shot52.png',
+        voddate: '5-6-2025',
+        game: 'Mario Kart 8 Deluxe',
+        vodlink: 'https://www.youtube.com/watch?v=FRmyC_XzJ4I'
+    },
+     {
+        filepath: 'screenshots/shot53.png',
+        voddate: '6-18-2022',
+        game: 'Resident Evil 7: Biohazard',
+        vodlink: 'https://www.youtube.com/watch?v=t5vlGrcNa64'
+    },
+    {
+        filepath: 'screenshots/shot54.png',
+        voddate: '9-30-2022',
+        game: 'Marvels Spiderman',
+        vodlink: 'https://www.youtube.com/watch?v=onRlYETo0iQ'
+    },
+    {
+        filepath: 'screenshots/shot55.png',
+        voddate: '10-13-2022',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=0hz21ahVqKc'
+    },
+    {
+        filepath: 'screenshots/shot56.png',
+        voddate: '10-22-2022',
+        game: 'Brain Age',
+        vodlink: 'https://www.youtube.com/watch?v=Gat0ZnElPpg'
+    },
+    {
+        filepath: 'screenshots/shot57.png',
+        voddate: '10-31-2022',
+        game: 'Super Mario 64',
+        vodlink: 'https://www.youtube.com/watch?v=poRLmGsAO4o'
+    },
+    {
+        filepath: 'screenshots/shot58.png',
+        voddate: '12-21-2022',
+        game: 'WarioWare: Get It Together!',
+        vodlink: 'https://www.youtube.com/watch?v=NVrvlt-r5aA'
+    },
+    {
+        filepath: 'screenshots/shot59.png',
+        voddate: '1-14-2016',
+        game: 'Bully: Scholarship Edition',
+        vodlink: 'https://www.youtube.com/watch?v=hFsRxNm2edY'
+    },
+        {
+        filepath: 'screenshots/shot60.png',
+        voddate: '1-11-2023',
+        game: 'Super Monkey Ball: Banana Mania',
+        vodlink: 'https://www.youtube.com/watch?v=jpjHMMJ9AmQ'
+    },
+        {
+        filepath: 'screenshots/shot61.png',
+        voddate: '1-9-2023',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=70SeZAYSzDI'
+    },
+        {
+        filepath: 'screenshots/shot62.png',
+        voddate: '1-9-2023',
+        game: 'Roller Coaster Tycoon',
+        vodlink: 'https://www.youtube.com/watch?v=qFGUjyer2V8'
+    },
+        {
+        filepath: 'screenshots/shot63.png',
+        voddate: '1-21-2023',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=MHfiFU1fQvI&t=7415s'
+    },
+    {
+        filepath: 'screenshots/shot64.png',
+        voddate: '10-28-2022',
+        game: 'Resident Evil 2',
+        vodlink: 'https://www.youtube.com/watch?v=Ho1cxXvhANU'
+    },
+    {
+        filepath: 'screenshots/shot65.png',
+        voddate: '9-3-2023',
+        game: 'Donkey Kong Tropical Freeze',
+        vodlink: 'https://www.youtube.com/watch?v=8lXTWiCht9E'
+    },
+    {
+        filepath: 'screenshots/shot66.png',
+        voddate: '12-25-2022',
+        game: 'Superliminal',
+        vodlink: 'https://www.youtube.com/watch?v=KWmcenwV838'
+    },
+    {
+        filepath: 'screenshots/shot67.png',
+        voddate: '12-31-2022',
+        game: 'Garfield: Furious Racing',
+        vodlink: 'https://www.youtube.com/watch?v=8C0fOXkp1m0'
+    },
+    {
+        filepath: 'screenshots/shot68.png',
+        voddate: '2-1-2023',
+        game: 'Mario Kart: Super Circuit',
+        vodlink: 'https://www.youtube.com/watch?v=6MBFCpLrM8Y'
+    },
+    {
+        filepath: 'screenshots/shot69.png',
+        voddate: '2-1-2019',
+        game: 'Sekiro: Shadows Die Twice',
+        vodlink: 'https://www.youtube.com/watch?v=HOGB_19QICs'
+    },
+    {
+        filepath: 'screenshots/shot70.png',
+        voddate: '2-2-2019',
+        game: 'Limbo',
+        vodlink: 'https://www.youtube.com/watch?v=MYlOxuaMhbE'
+    },
+        {
+        filepath: 'screenshots/shot71.png',
+        voddate: '2-7-2019',
+        game: 'INSIDE',
+        vodlink: 'https://www.youtube.com/watch?v=InMq8uadY6U'
+    },
+        {
+        filepath: 'screenshots/shot72.png',
+        voddate: '2-5-2023',
+        game: 'Spongebob: The Cosmic Shake',
+        vodlink: 'https://www.youtube.com/watch?v=IkA7s_k_r-4'
+    },
+        {
+        filepath: 'screenshots/shot73.png',
+        voddate: '2-10-2023',
+        game: 'Hitman Freelancer',
+        vodlink: 'https://www.youtube.com/watch?v=VE2vWgYgOrc'
+    },
+        {
+        filepath: 'screenshots/shot74.png',
+        voddate: '02-17-2023',
+        game: 'Mario Kart 8',
+        vodlink: 'https://www.youtube.com/watch?v=YtSvbphtz7s'
+    },
+    {
+        filepath: 'screenshots/shot75.png',
+        voddate: '02-26-2023',
+        game: 'Super Mario 64',
+        vodlink: 'https://www.youtube.com/watch?v=GommWGATBy0'
+    },
+    {
+        filepath: 'screenshots/shot76.png',
+        voddate: '3-16-2023',
+        game: 'Jump King',
+        vodlink: 'https://www.youtube.com/watch?v=J8K5AeB6adU'
+    },
+    {
+        filepath: 'screenshots/shot77.png',
+        voddate: '3-23-2023',
+        game: 'IRL',
+        vodlink: 'https://www.youtube.com/watch?v=2i-vNRZ5BAw'
+    },
+    {
+        filepath: 'screenshots/shot78.png',
+        voddate: '4-4-2023',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=kEFGZsiUWbg'
+    },
+    {
+        filepath: 'screenshots/shot79.png',
+        voddate: '4-17-2023',
+        game: 'Super Mario 64',
+        vodlink: 'https://www.youtube.com/watch?v=f_kzYEkkcVk'
+    },
+    {
+        filepath: 'screenshots/shot80.png',
+        voddate: '4-20-2023',
+        game: 'Just Chatting',
+        vodlink: 'https://www.youtube.com/watch?v=JK_M18__lrk'
+    },
+    {
+        filepath: 'screenshots/shot81.png',
+        voddate: '5-25-2023',
+        game: 'Mario Party Superstars',
+        vodlink: 'https://www.youtube.com/watch?v=0SY__XqRpzw'
+    },
+        {
+        filepath: 'screenshots/shot82.png',
+        voddate: '5-19-2023',
+        game: 'IRL',
+        vodlink: 'https://www.youtube.com/watch?v=_fFt-AGOpc8'
+    },
+        {
+        filepath: 'screenshots/shot83.png',
+        voddate: '6-21-2023',
+        game: 'We Love Katamari REROLL Royal Reverie',
+        vodlink: 'https://www.youtube.com/watch?v=i_rdZOWpPZw'
+    },
+        {
+        filepath: 'screenshots/shot84.png',
+        voddate: '6-26-2023',
+        game: 'Minecraft',
+        vodlink: 'https://www.youtube.com/watch?v=03dW9kpDRyk'
+    },
+        {
+        filepath: 'screenshots/shot85.png',
+        voddate: '7-17-2023',
+        game: 'Tetrio',
+        vodlink: 'https://www.youtube.com/watch?v=4wYrukGK5Pw'
+    },
+    {
+        filepath: 'screenshots/shot86.png',
+        voddate: '7-31-2023',
+        game: 'Chess',
+        vodlink: 'https://www.youtube.com/watch?v=rE6dTWTBFNo'
+    },
+    {
+        filepath: 'screenshots/shot87.png',
+        voddate: '8-3-2023',
+        game: 'Pikmin 4',
+        vodlink: 'https://www.youtube.com/watch?v=I3glbkib_So'
+    },
+    {
+        filepath: 'screenshots/shot88.png',
+        voddate: '8-21-2023',
+        game: 'Yoshis Crafted World',
+        vodlink: 'https://www.youtube.com/watch?v=1KhBekEox7c'
     }
 ]
