@@ -71,8 +71,8 @@ body {
 }
 
 .list-group-horizontal-sm li {
-    min-width: 50px; /* Adjust this value as needed */
-    text-align: center; /* Center the text */
+    min-width: 50px; 
+    text-align: center;
 }
 
 #ac-results {
