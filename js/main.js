@@ -299,7 +299,7 @@ function renderGuess(guess) {
     listContainer.style.display = 'block';
     
     let listGroup = document.createElement('ul');
-    listGroup.className = 'list-group list-group-horizontal list-group-horizontal-sm justify-content-center';
+    listGroup.className = 'list-group list-group-horizontal list-group-horizontal-sm justify-content-center p-1';
 
     // Render month
     let monthItem = document.createElement('li');

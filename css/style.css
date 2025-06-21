@@ -70,6 +70,10 @@ body {
   justify-content: center;
 }
 
+.list-group-horizontal-sm li {
+    min-width: 50px; /* Adjust this value as needed */
+    text-align: center; /* Center the text */
+}
 
 #ac-results {
   position: center;
