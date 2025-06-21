@@ -339,7 +339,7 @@ function getClassForDiff(diff, type) {
     } else if (type === 'day') {
         if (diff >= 1 && diff < 3) {
             return `list-group-item list-group-item-warning ${type}`;
-        } else if (diff >= 3 && diff < 7) {
+        } else if (diff >= 3 && diff < 5) {
             return `list-group-item list-group-item-danger ${type}`;
         } else {
             return `list-group-item list-group-item-dark ${type}`;
@@ -347,7 +347,7 @@ function getClassForDiff(diff, type) {
     } else if (type === 'month') {
         if (diff >= 1 && diff <= 2) {
             return `list-group-item list-group-item-warning ${type}`;
-        } else if (diff > 2 && diff < 5) {
+        } else if (diff > 2 && diff < 4) {
             return `list-group-item list-group-item-danger ${type}`;
         } else {
             return `list-group-item list-group-item-dark ${type}`;
