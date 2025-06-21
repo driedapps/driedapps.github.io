@@ -23,6 +23,7 @@ span.small {
   font-size: 20px;
   padding: 5px 10px 5px 10px;
   display: flex;
+  margin-bottom: 5px;
 }
   
 body {
@@ -45,14 +46,17 @@ body {
   font-weight: 400;
   font-size: larger;
   font-style: normal;
+  margin-top: 2rem;
 }
 
 .headerleft {
   text-align: right;
+  margin-top: 2rem;
 }
 
 .headerright {
   text-align: left;
+  margin-top: 2rem;
 }
 
 .header{
