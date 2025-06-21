@@ -246,7 +246,7 @@ function handleGuessDate() {
                                         <br><br>Now you can guess which game is being played!</center>`;
                         dateWinModal.show();                                
                     } else if (currentTries > 1) {
-                        dateWinBody.innerHTML = `<center>You got the whole date right in ${currentTries} guesses!!
+                        dateWinBody.innerHTML = `<center>You got the whole date right in ${currentTries} guesses!
                                         <br><br>Now you can guess which game is being played!</center>`;
                         dateWinModal.show();
                     }
