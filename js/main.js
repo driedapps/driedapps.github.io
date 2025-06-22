@@ -83,7 +83,6 @@ let userStats = JSON.parse(localStorage.getItem("stats")) || {
 // Get the current date as a seed (e.g., "2023-10-05")
 let today = new Date();
 
-
 // Format the date as a string (e.g., "YYYY-MM-DD")
 const todayYear = today.getFullYear();
 const todayMonth = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
@@ -250,6 +249,7 @@ function handleGuessDate() {
                                         <br><br>Now you can guess which game is being played!</center>`;
                         dateWinModal.show();
                     }
+                    localStorage.setItem('currentTries', 0);
                     return; // Exit the function if the guess was correct
                 }
             }
@@ -277,6 +277,7 @@ function handleGuessDate() {
                 dateLoseModal.show();
                 document.getElementById('dateInput').disabled = true;
                 document.getElementById('guessDate').disabled = true;
+                localStorage.setItem('currentTries', 0);
                 showStats();
             }
         }
