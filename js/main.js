@@ -373,7 +373,6 @@ addPlayDate(lastPlayedDate);
 document.addEventListener('DOMContentLoaded', function() {
     showStats();
     loadGuesses();
- 
 });
 
 let gameStatus = localStorage.getItem('gameStatus')
