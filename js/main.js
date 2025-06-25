@@ -413,9 +413,9 @@ function getClassForDiff(diff, type) {
             return `list-group-item list-group-item-dark ${type}`;
         }
     } else if (type === 'day') {
-        if (diff >= 1 && diff < 3) {
+        if (diff <= 2) {
             return `list-group-item list-group-item-warning ${type}`;
-        } else if (diff >= 3 && diff < 5) {
+        } else if (diff > 2 && diff < 5) {
             return `list-group-item list-group-item-danger ${type}`;
         } else {
             return `list-group-item list-group-item-dark ${type}`;
@@ -483,7 +483,7 @@ function loadGuesses() {
     guesses.forEach(guess => renderGuess(guess));
     
     //show loser modal when they've guessed 6 times
-    if (guesses.length >= 6) { 
+    if (guesses.length >= 6 && gameStatus == 'lost') { 
                 dateLoseBody.innerHTML = `<center>You've reached the maximum number of guesses for today...<br><br>
                                             Try again tomorrow?</center>`;
                 dateLoseModal.show();
